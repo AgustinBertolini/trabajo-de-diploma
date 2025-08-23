@@ -1,0 +1,5 @@
+CREATE OR ALTER PROCEDURE GetUsuarios
+AS
+BEGIN
+    SELECT * FROM Usuarios WHERE isActive = 1
+END;

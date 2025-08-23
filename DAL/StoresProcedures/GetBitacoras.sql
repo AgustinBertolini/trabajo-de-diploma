@@ -1,0 +1,5 @@
+CREATE OR ALTER PROCEDURE GetBitacoras
+AS
+BEGIN
+    SELECT * FROM Bitacora
+END;

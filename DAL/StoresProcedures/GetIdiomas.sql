@@ -1,0 +1,5 @@
+CREATE OR ALTER PROCEDURE GetIdiomas
+AS
+BEGIN
+    SELECT * FROM Idiomas
+END;

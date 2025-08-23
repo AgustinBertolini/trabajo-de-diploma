@@ -1,0 +1,6 @@
+CREATE OR ALTER PROCEDURE GetIdioma
+  @Id int
+AS
+BEGIN
+    SELECT * FROM Idiomas WHERE id = @Id
+END;

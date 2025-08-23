@@ -1,0 +1,6 @@
+CREATE OR ALTER PROCEDURE GetUsuario
+  @Email NVARCHAR(255)
+AS
+BEGIN
+    SELECT * FROM Usuarios WHERE email = @Email
+END;

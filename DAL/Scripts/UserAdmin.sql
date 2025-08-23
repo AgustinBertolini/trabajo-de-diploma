@@ -1,0 +1,1 @@
+INSERT Usuarios(nombre,apellido,dni,email,contraseña,isActive) values('Admin','admin',41449840,'admin@admin.com','!#/)zW??C?JJ??',1)

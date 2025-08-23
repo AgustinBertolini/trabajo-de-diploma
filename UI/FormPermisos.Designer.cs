@@ -1,0 +1,200 @@
+﻿namespace UI
+{
+    partial class FormPermisos
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.btnDeletePermiso = new System.Windows.Forms.Button();
+            this.btnEditPermiso = new System.Windows.Forms.Button();
+            this.btnAddPermiso = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.sesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cambiarIdiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnVincularPermisos = new System.Windows.Forms.Button();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.bitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // btnDeletePermiso
+            // 
+            this.btnDeletePermiso.Location = new System.Drawing.Point(715, 314);
+            this.btnDeletePermiso.Name = "btnDeletePermiso";
+            this.btnDeletePermiso.Size = new System.Drawing.Size(177, 23);
+            this.btnDeletePermiso.TabIndex = 10;
+            this.btnDeletePermiso.Tag = "label_borrar_permiso";
+            this.btnDeletePermiso.Text = "Borrar permiso";
+            this.btnDeletePermiso.UseVisualStyleBackColor = true;
+            this.btnDeletePermiso.Click += new System.EventHandler(this.btnDeleteUser_Click);
+            // 
+            // btnEditPermiso
+            // 
+            this.btnEditPermiso.Location = new System.Drawing.Point(715, 161);
+            this.btnEditPermiso.Name = "btnEditPermiso";
+            this.btnEditPermiso.Size = new System.Drawing.Size(177, 23);
+            this.btnEditPermiso.TabIndex = 9;
+            this.btnEditPermiso.Tag = "label_editar_permiso";
+            this.btnEditPermiso.Text = "Editar permiso";
+            this.btnEditPermiso.UseVisualStyleBackColor = true;
+            this.btnEditPermiso.Click += new System.EventHandler(this.btnEditUser_Click);
+            // 
+            // btnAddPermiso
+            // 
+            this.btnAddPermiso.Location = new System.Drawing.Point(715, 85);
+            this.btnAddPermiso.Name = "btnAddPermiso";
+            this.btnAddPermiso.Size = new System.Drawing.Size(177, 23);
+            this.btnAddPermiso.TabIndex = 8;
+            this.btnAddPermiso.Tag = "label_agregar_permiso";
+            this.btnAddPermiso.Text = "Agregar permiso";
+            this.btnAddPermiso.UseVisualStyleBackColor = true;
+            this.btnAddPermiso.Click += new System.EventHandler(this.btnAddUser_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sesiónToolStripMenuItem,
+            this.usuariosToolStripMenuItem,
+            this.productosToolStripMenuItem,
+            this.cambiarIdiomaToolStripMenuItem,
+            this.bitacoraToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(942, 28);
+            this.menuStrip1.TabIndex = 11;
+            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            // 
+            // sesiónToolStripMenuItem
+            // 
+            this.sesiónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cerrarSesiónToolStripMenuItem});
+            this.sesiónToolStripMenuItem.Name = "sesiónToolStripMenuItem";
+            this.sesiónToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.sesiónToolStripMenuItem.Tag = "label_sesion";
+            this.sesiónToolStripMenuItem.Text = "Sesión";
+            this.sesiónToolStripMenuItem.Click += new System.EventHandler(this.sesiónToolStripMenuItem_Click);
+            // 
+            // cerrarSesiónToolStripMenuItem
+            // 
+            this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
+            this.cerrarSesiónToolStripMenuItem.Tag = "label_cerrar_sesion";
+            this.cerrarSesiónToolStripMenuItem.Text = "Cerrar sesión";
+            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
+            // 
+            // usuariosToolStripMenuItem
+            // 
+            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
+            this.usuariosToolStripMenuItem.Tag = "label_usuarios";
+            this.usuariosToolStripMenuItem.Text = "Usuarios";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
+            // 
+            // productosToolStripMenuItem
+            // 
+            this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
+            this.productosToolStripMenuItem.Tag = "label_productos";
+            this.productosToolStripMenuItem.Text = "Productos";
+            this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click);
+            // 
+            // cambiarIdiomaToolStripMenuItem
+            // 
+            this.cambiarIdiomaToolStripMenuItem.Name = "cambiarIdiomaToolStripMenuItem";
+            this.cambiarIdiomaToolStripMenuItem.Size = new System.Drawing.Size(109, 24);
+            this.cambiarIdiomaToolStripMenuItem.Tag = "label_traducciones";
+            this.cambiarIdiomaToolStripMenuItem.Text = "Traducciones";
+            this.cambiarIdiomaToolStripMenuItem.Click += new System.EventHandler(this.cambiarIdiomaToolStripMenuItem_Click_1);
+            // 
+            // btnVincularPermisos
+            // 
+            this.btnVincularPermisos.Location = new System.Drawing.Point(715, 240);
+            this.btnVincularPermisos.Name = "btnVincularPermisos";
+            this.btnVincularPermisos.Size = new System.Drawing.Size(177, 23);
+            this.btnVincularPermisos.TabIndex = 12;
+            this.btnVincularPermisos.Tag = "label_vincular_permisos";
+            this.btnVincularPermisos.Text = "Vincular permisos";
+            this.btnVincularPermisos.UseVisualStyleBackColor = true;
+            this.btnVincularPermisos.Click += new System.EventHandler(this.btnVincularPermisos_Click);
+            // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(28, 64);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(649, 323);
+            this.treeView1.TabIndex = 13;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            // 
+            // bitacoraToolStripMenuItem
+            // 
+            this.bitacoraToolStripMenuItem.Name = "bitacoraToolStripMenuItem";
+            this.bitacoraToolStripMenuItem.Size = new System.Drawing.Size(78, 24);
+            this.bitacoraToolStripMenuItem.Tag = "label_bitacora";
+            this.bitacoraToolStripMenuItem.Text = "Bitacora";
+            this.bitacoraToolStripMenuItem.Click += new System.EventHandler(this.bitacoraToolStripMenuItem_Click);
+            // 
+            // FormPermisos
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(942, 443);
+            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.btnVincularPermisos);
+            this.Controls.Add(this.btnDeletePermiso);
+            this.Controls.Add(this.btnEditPermiso);
+            this.Controls.Add(this.btnAddPermiso);
+            this.Controls.Add(this.menuStrip1);
+            this.Name = "FormPermisos";
+            this.Text = "FormPermisos";
+            this.Load += new System.EventHandler(this.FormPermisos_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Button btnDeletePermiso;
+        private System.Windows.Forms.Button btnEditPermiso;
+        private System.Windows.Forms.Button btnAddPermiso;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem sesiónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
+        private System.Windows.Forms.Button btnVincularPermisos;
+        private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cambiarIdiomaToolStripMenuItem;
+        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.ToolStripMenuItem bitacoraToolStripMenuItem;
+    }
+}

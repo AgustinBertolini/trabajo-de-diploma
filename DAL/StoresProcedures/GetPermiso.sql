@@ -1,0 +1,6 @@
+CREATE OR ALTER PROCEDURE GetPermiso
+  @Id int
+AS
+BEGIN
+    SELECT * FROM Permisos WHERE id = @Id
+END;

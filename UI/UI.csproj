@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6454F332-1115-42F8-8794-AFC24539FF9E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>UI</RootNamespace>
+    <AssemblyName>UI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormAgregarIdioma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAgregarIdioma.Designer.cs">
+      <DependentUpon>FormAgregarIdioma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAgregarPermiso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAgregarPermiso.Designer.cs">
+      <DependentUpon>FormAgregarPermiso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAgregarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAgregarProducto.Designer.cs">
+      <DependentUpon>FormAgregarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAgregarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAgregarUsuario.Designer.cs">
+      <DependentUpon>FormAgregarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAsignarPermiso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAsignarPermiso.Designer.cs">
+      <DependentUpon>FormAsignarPermiso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBitacora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBitacora.Designer.cs">
+      <DependentUpon>FormBitacora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditarIdioma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditarIdioma.Designer.cs">
+      <DependentUpon>FormEditarIdioma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditarPermiso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditarPermiso.Designer.cs">
+      <DependentUpon>FormEditarPermiso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditarProducto.Designer.cs">
+      <DependentUpon>FormEditarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditarTraduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditarTraduccion.Designer.cs">
+      <DependentUpon>FormEditarTraduccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditarUsuario.Designer.cs">
+      <DependentUpon>FormEditarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHistorico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHistorico.Designer.cs">
+      <DependentUpon>FormHistorico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPermisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPermisos.Designer.cs">
+      <DependentUpon>FormPermisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProductos.Designer.cs">
+      <DependentUpon>FormProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTraducciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTraducciones.Designer.cs">
+      <DependentUpon>FormTraducciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUsuarios.Designer.cs">
+      <DependentUpon>FormUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVincularPermisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVincularPermisos.Designer.cs">
+      <DependentUpon>FormVincularPermisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAgregarIdioma.resx">
+      <DependentUpon>FormAgregarIdioma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAgregarPermiso.resx">
+      <DependentUpon>FormAgregarPermiso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAgregarProducto.resx">
+      <DependentUpon>FormAgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAgregarUsuario.resx">
+      <DependentUpon>FormAgregarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAsignarPermiso.resx">
+      <DependentUpon>FormAsignarPermiso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBitacora.resx">
+      <DependentUpon>FormBitacora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditarIdioma.resx">
+      <DependentUpon>FormEditarIdioma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditarPermiso.resx">
+      <DependentUpon>FormEditarPermiso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditarProducto.resx">
+      <DependentUpon>FormEditarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditarTraduccion.resx">
+      <DependentUpon>FormEditarTraduccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditarUsuario.resx">
+      <DependentUpon>FormEditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHistorico.resx">
+      <DependentUpon>FormHistorico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPermisos.resx">
+      <DependentUpon>FormPermisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProductos.resx">
+      <DependentUpon>FormProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTraducciones.resx">
+      <DependentUpon>FormTraducciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUsuarios.resx">
+      <DependentUpon>FormUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVincularPermisos.resx">
+      <DependentUpon>FormVincularPermisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Abstraccion\Abstraccion.csproj">
+      <Project>{507E5931-7291-4667-9338-567753D491AF}</Project>
+      <Name>Abstraccion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{cd05ecbb-4fde-45c3-9053-917c9a1893f9}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{d7d3252b-4be9-4bff-a6eb-7849059f7a09}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Servicios\Servicios.csproj">
+      <Project>{7b016f2d-96d7-4554-ad23-113964d93343}</Project>
+      <Name>Servicios</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

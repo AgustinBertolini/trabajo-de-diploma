@@ -1,0 +1,5 @@
+CREATE OR ALTER PROCEDURE GetPermisos
+AS
+BEGIN
+    SELECT * FROM Permisos
+END;

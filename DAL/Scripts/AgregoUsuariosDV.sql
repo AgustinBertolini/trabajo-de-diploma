@@ -1,0 +1,1 @@
+ALTER TABLE usuarios ADD DV NVARCHAR(300);

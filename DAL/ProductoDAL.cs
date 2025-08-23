@@ -1,0 +1,277 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Entidades;
+using System.Configuration;
+using System.Net;
+
+namespace DAL
+{
+    public class ProductoDAL
+    {
+        public Producto GetProducto(int id)
+        {
+            Producto producto = new Producto();
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlTransaction transaction = conn.BeginTransaction();
+
+                    try
+                    {
+                        using (SqlCommand cmd = new SqlCommand("GetProducto", conn, transaction))
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+
+                            cmd.Parameters.AddWithValue("@Id", id);
+
+                            using (SqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    producto = new Producto
+                                    {
+                                        Id = Convert.ToInt32(reader["id"]),
+                                        Nombre = reader["nombre"].ToString(),
+                                        Precio = Convert.ToInt32(reader["precio"])
+                                    };
+                                }
+                            }
+
+                            transaction.Commit();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        throw ex;
+                    }
+
+                }
+
+                return producto;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<Producto> GetProductos()
+        {
+            List<Producto> productos = new List<Producto>();
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlTransaction transaction = conn.BeginTransaction();
+
+                    try
+                    {
+                        using (SqlCommand cmd = new SqlCommand("GetProductos", conn, transaction))
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+
+
+                            using (SqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    productos.Add(new Producto
+                                    {
+                                        Id = Convert.ToInt32(reader["id"]),
+                                        Nombre = reader["nombre"].ToString(),
+                                        Precio = Convert.ToInt32(reader["precio"])
+                                    });
+                                }
+                            }
+                        }
+
+                        transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        throw ex;
+                    }
+
+                }
+
+                return productos;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public int AltaProducto(Producto producto)
+        {
+            try
+            {
+                int userId = 0;
+
+                string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlTransaction transaction = conn.BeginTransaction();
+
+                    try
+                    {
+                        using (SqlCommand cmd = new SqlCommand("InsertProducto", conn, transaction))
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+
+                            cmd.Parameters.AddWithValue("@Nombre", producto.Nombre);
+                            cmd.Parameters.AddWithValue("@Precio", producto.Precio);
+
+
+                            object result = cmd.ExecuteScalar();
+
+                            if (result != null)
+                            {
+                                userId = Convert.ToInt32(result);
+                            }
+                        }
+
+                        transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        throw ex;
+                    }
+
+                }
+
+                return userId;
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
+        public bool BorrarProducto(int id)
+        {
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlTransaction transaction = conn.BeginTransaction();
+
+                    try
+                    {
+                        using (SqlCommand cmd = new SqlCommand("DeleteProducto", conn))
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+
+                            cmd.Parameters.AddWithValue("@Id", id);
+
+
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        throw ex;
+                    }
+
+                }
+
+                return true;
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public bool EditarProducto(Producto producto)
+        {
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlTransaction transaction = conn.BeginTransaction();
+
+                    try
+                    {
+                        using (SqlCommand cmd = new SqlCommand("EditProducto", conn))
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+
+                            cmd.Parameters.AddWithValue("@Id", producto.Id);
+                            cmd.Parameters.AddWithValue("@Nombre", producto.Nombre);
+                            cmd.Parameters.AddWithValue("@Precio", producto.Precio);
+
+
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        throw ex;
+                    }
+
+                }
+
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+    }
+}

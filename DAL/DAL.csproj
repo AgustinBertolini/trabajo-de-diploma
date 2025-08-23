@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3922161B-D9EF-4255-A083-35D95C466ED4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=9.0.0.4, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.9.0.4\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BitacoraDAL.cs" />
+    <Compile Include="DigitoVerificadorDAL.cs" />
+    <Compile Include="IdiomaDAL.cs" />
+    <Compile Include="PermisoDAL.cs" />
+    <Compile Include="ProductoDAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TraduccionHistoricoDAL.cs" />
+    <Compile Include="TraductorDAL.cs" />
+    <Compile Include="UsuarioDAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{d7d3252b-4be9-4bff-a6eb-7849059f7a09}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\AgregoUsuariosDV.sql" />
+    <Content Include="Scripts\CreateDatabase.sql" />
+    <Content Include="Scripts\CreatePermisos.sql" />
+    <Content Include="Scripts\CreatePermisos_Permisos.sql" />
+    <Content Include="Scripts\CreateTableBitacora.sql" />
+    <Content Include="Scripts\CreateTableDigitoVerificador.sql" />
+    <Content Include="Scripts\CreateTableIdiomas.sql" />
+    <Content Include="Scripts\CreateTableProductos.sql" />
+    <Content Include="Scripts\CreateTableTag.sql" />
+    <Content Include="Scripts\CreateTableTraduccion.sql" />
+    <Content Include="Scripts\CreateTableTraduccionesHistorico.sql" />
+    <Content Include="Scripts\CreateTableUsuarios.sql" />
+    <Content Include="Scripts\CreateTableUsuario_Permiso.sql" />
+    <Content Include="Scripts\PopularPermisos.sql" />
+    <Content Include="Scripts\PopularTraducciones.sql" />
+    <Content Include="Scripts\UserAdmin.sql" />
+    <Content Include="StoresProcedures\AsignarPermiso.sql" />
+    <Content Include="StoresProcedures\DeleteIdioma.sql" />
+    <Content Include="StoresProcedures\DeleteProducto.sql" />
+    <Content Include="StoresProcedures\DeletePermiso.sql" />
+    <Content Include="StoresProcedures\DeleteUsuario.sql" />
+    <Content Include="StoresProcedures\EditIdioma.sql" />
+    <Content Include="StoresProcedures\EditPermiso.sql" />
+    <Content Include="StoresProcedures\EditProducto.sql" />
+    <Content Include="StoresProcedures\EditTraduccion.sql" />
+    <Content Include="StoresProcedures\EditUsuario.sql" />
+    <Content Include="StoresProcedures\GetBitacoras.sql" />
+    <Content Include="StoresProcedures\GetDigitoVerificador.sql" />
+    <Content Include="StoresProcedures\GetIdioma.sql" />
+    <Content Include="StoresProcedures\GetIdiomas.sql" />
+    <Content Include="StoresProcedures\GetPermiso.sql" />
+    <Content Include="StoresProcedures\GetPermisos.sql" />
+    <Content Include="StoresProcedures\GetProducto.sql" />
+    <Content Include="StoresProcedures\GetProductos.sql" />
+    <Content Include="StoresProcedures\GetTraduccion.sql" />
+    <Content Include="StoresProcedures\GetTraducciones.sql" />
+    <Content Include="StoresProcedures\GetTraduccionesHistorico.sql" />
+    <Content Include="StoresProcedures\GetUsuario.sql" />
+    <Content Include="StoresProcedures\GetUsuarioPermisos.sql" />
+    <Content Include="StoresProcedures\GetUsuarios.sql" />
+    <Content Include="StoresProcedures\InsertBitacora.sql" />
+    <Content Include="StoresProcedures\InsertDigitoVerificador.sql" />
+    <Content Include="StoresProcedures\InsertDigitoVerificadorHorizontal.sql" />
+    <Content Include="StoresProcedures\InsertIdioma.sql" />
+    <Content Include="StoresProcedures\InsertPermiso.sql" />
+    <Content Include="StoresProcedures\InsertProducto.sql" />
+    <Content Include="StoresProcedures\InsertTraduccionHistorico.sql" />
+    <Content Include="StoresProcedures\InsertUsuario.sql" />
+    <Content Include="StoresProcedures\VincularPermisos.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Backups\ProyectoIntegrador.bak" />
+    <None Include="packages.config" />
+    <None Include="Scripts\ProyectoIntegrador.bak" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
