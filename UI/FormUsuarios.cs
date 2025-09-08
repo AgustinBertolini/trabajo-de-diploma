@@ -8,6 +8,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Abstraccion;
 using BLL;
 using Entidades;
 using Servicios;
@@ -20,6 +21,8 @@ namespace UI
         {
             InitializeComponent();
             Traducir();
+            dataGridView1.ReadOnly = true;
+            MostrarItemsSegunPermisos();
         }
 
         public void Traducir()
@@ -136,7 +139,22 @@ namespace UI
 
             int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id"].Value);
 
-            usuarioBLL.BorrarUsuario(id);
+            string email = dataGridView1.SelectedRows[0].Cells["email"].Value.ToString();
+
+            Usuario usuario = usuarioBLL.GetUsuario(email);
+
+            bool usuarioBorrado = usuarioBLL.BorrarUsuario(id);
+
+            if (usuarioBorrado)
+            {
+                Bitacoras.AltaBitacora("El usuario " + email + " fue dado de baja", TipoEvento.Message, SessionManager.GetInstance.Usuario.Id);
+
+                var usuariosObtenidos = usuarioBLL.GetUsuarios();
+
+                string digitoVerificador = DigitoVerificador.CalcularDigitoVerificador(usuariosObtenidos.Cast<IVerificableEntity>().ToList(), true);
+
+                DigitoVerificador.GuardarDigitoVerificador(digitoVerificador);
+            }
 
             CargarUsuarios();
         }
@@ -254,6 +272,72 @@ namespace UI
             form.Show();
             
             this.Hide();
+        }
+
+        private void btnDesasignarPermiso_Click(object sender, EventArgs e)
+        {
+            if (!(SessionManager.TienePermiso("Permisos")))
+            {
+                MessageBox.Show("No tenes permisos suficientes");
+                return;
+            }
+
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("No hay un usuario seleccionado");
+                return;
+            }
+
+            if (dataGridView1.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("Se tiene que seleccionar un unico usuario");
+                return;
+            }
+
+            UsuarioBLL usuarioBLL = new UsuarioBLL();
+
+            Usuario usuario = (Usuario)dataGridView1.CurrentRow.DataBoundItem;
+
+            PermisoBLL permisoBLL = new PermisoBLL();
+            permisoBLL.DesasignarPermisos(usuario.Id);
+        }
+
+        private void MostrarItemsSegunPermisos()
+        {
+            var items = menuStrip1.Items;
+
+            var permisosMap = new Dictionary<string, string>
+            {
+                { "label_usuarios", "Usuarios"},
+                { "label_productos", "Productos"},
+                { "label_permisos", "Permisos" },
+                { "label_traducciones", "Traducciones" },
+                { "label_bitacora", "Bitacora" }
+            };
+
+            foreach (var item in items)
+            {
+                if (item is ToolStripMenuItem menuItem)
+                {
+                    if (menuItem.Tag != null)
+                    {
+                        var tag = menuItem.Tag.ToString();
+                        if(tag == "label_sesion")
+                        {
+                            menuItem.Visible = true;
+                            continue;
+                        }
+                        if (SessionManager.TienePermiso(permisosMap[tag]))
+                        {
+                            menuItem.Visible = true;
+                        }
+                        else
+                        {
+                            menuItem.Visible = false;
+                        }
+                    }
+                }
+            }
         }
     }
 }

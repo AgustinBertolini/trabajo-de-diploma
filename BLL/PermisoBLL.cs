@@ -146,6 +146,22 @@ namespace BLL
                 throw ex;
             }
         }
+        
+        public bool DesasignarPermisos(int idUsuario)
+        {
+            try
+            {
+                PermisoDAL permisoDAL = new PermisoDAL();
+                permisoDAL.DesasignarPermisos(idUsuario);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
 
 
     }

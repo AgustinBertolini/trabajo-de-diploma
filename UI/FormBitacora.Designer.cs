@@ -38,6 +38,9 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -56,13 +59,14 @@
             this.menuStrip1.Size = new System.Drawing.Size(1097, 28);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // sesiónToolStripMenuItem
             // 
             this.sesiónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cerrarSesiónToolStripMenuItem});
             this.sesiónToolStripMenuItem.Name = "sesiónToolStripMenuItem";
-            this.sesiónToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.sesiónToolStripMenuItem.Size = new System.Drawing.Size(66, 26);
             this.sesiónToolStripMenuItem.Tag = "label_sesion";
             this.sesiónToolStripMenuItem.Text = "Sesión";
             // 
@@ -77,7 +81,7 @@
             // permisosToolStripMenuItem
             // 
             this.permisosToolStripMenuItem.Name = "permisosToolStripMenuItem";
-            this.permisosToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
+            this.permisosToolStripMenuItem.Size = new System.Drawing.Size(81, 26);
             this.permisosToolStripMenuItem.Tag = "label_permisos";
             this.permisosToolStripMenuItem.Text = "Permisos";
             this.permisosToolStripMenuItem.Click += new System.EventHandler(this.permisosToolStripMenuItem_Click_1);
@@ -85,7 +89,7 @@
             // productosToolStripMenuItem
             // 
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(89, 26);
             this.productosToolStripMenuItem.Tag = "label_productos";
             this.productosToolStripMenuItem.Text = "Productos";
             this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click_1);
@@ -93,7 +97,7 @@
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(79, 26);
             this.usuariosToolStripMenuItem.Tag = "label_usuarios";
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
@@ -101,7 +105,7 @@
             // traduccionesToolStripMenuItem
             // 
             this.traduccionesToolStripMenuItem.Name = "traduccionesToolStripMenuItem";
-            this.traduccionesToolStripMenuItem.Size = new System.Drawing.Size(109, 24);
+            this.traduccionesToolStripMenuItem.Size = new System.Drawing.Size(109, 26);
             this.traduccionesToolStripMenuItem.Tag = "label_traducciones";
             this.traduccionesToolStripMenuItem.Text = "Traducciones";
             this.traduccionesToolStripMenuItem.Click += new System.EventHandler(this.traduccionesToolStripMenuItem_Click);
@@ -120,27 +124,60 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(387, 67);
+            this.label1.Location = new System.Drawing.Point(645, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 16);
             this.label1.TabIndex = 9;
             this.label1.Tag = "label_usuarios";
             this.label1.Text = "Usuarios";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(454, 67);
+            this.comboBox1.Location = new System.Drawing.Point(712, 59);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(228, 24);
             this.comboBox1.TabIndex = 10;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(112, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 16);
+            this.label2.TabIndex = 11;
+            this.label2.Tag = "label_fecha";
+            this.label2.Text = "Fecha";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(163, 62);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.TabIndex = 12;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(456, 57);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(111, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Tag = "label_eliminar_filtros";
+            this.button1.Text = "Eliminar filtros";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormBitacora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1097, 522);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
@@ -168,5 +205,8 @@
         private System.Windows.Forms.ToolStripMenuItem traduccionesToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button button1;
     }
 }

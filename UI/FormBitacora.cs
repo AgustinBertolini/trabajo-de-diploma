@@ -19,13 +19,15 @@ namespace UI
         {
             InitializeComponent();
             Traducir();
-            CargarBitacora(null);
+            CargarBitacora(null,null);
             UsuarioBLL usuario = new UsuarioBLL();
             comboBox1.DataSource = usuario.GetUsuarios();
             comboBox1.DisplayMember = "Email";
+            dataGridView1.ReadOnly = true;
+            MostrarItemsSegunPermisos();
         }
 
-        public void CargarBitacora(int? idUsuario)
+        public void CargarBitacora(int? idUsuario,DateTime? date)
         {
             if (!(SessionManager.TienePermiso("Bitacora") || SessionManager.TienePermiso("Listar Bitacora")))
             {
@@ -48,6 +50,11 @@ namespace UI
             if(idUsuario != null)
             {
                 data = data.Where(bitacora => bitacora.IdUsuario == idUsuario).OrderByDescending(b => b.Fecha).ToList();
+            }
+
+            if (date != null)
+            {
+                data = data.Where(bitacora => bitacora.Fecha.Date == date.Value.Date).OrderByDescending(b => b.Fecha).ToList();
             }
 
             var dataSource = data;
@@ -173,8 +180,78 @@ namespace UI
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Usuario usuario = (Usuario)comboBox1.SelectedItem;
-            
-            CargarBitacora(usuario.Id);
+
+            if (usuario != null)
+            {
+                CargarBitacora(usuario.Id, null);
+            }
+            else
+            {
+                CargarBitacora(null, null);
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime date = dateTimePicker1.Value;
+
+            CargarBitacora(null,date);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            comboBox1.SelectedItem = null;
+            dateTimePicker1.Value = DateTime.Now;
+
+            CargarBitacora(null, null);
+        }
+
+        private void MostrarItemsSegunPermisos()
+        {
+            var items = menuStrip1.Items;
+
+            var permisosMap = new Dictionary<string, string>
+            {
+                { "label_usuarios", "Usuarios"},
+                { "label_productos", "Productos"},
+                { "label_permisos", "Permisos" },
+                { "label_traducciones", "Traducciones" },
+                { "label_bitacora", "Bitacora" }
+            };
+
+            foreach (var item in items)
+            {
+                if (item is ToolStripMenuItem menuItem)
+                {
+                    if (menuItem.Tag != null)
+                    {
+                        var tag = menuItem.Tag.ToString();
+                        if (tag == "label_sesion")
+                        {
+                            menuItem.Visible = true;
+                            continue;
+                        }
+                        if (SessionManager.TienePermiso(permisosMap[tag]))
+                        {
+                            menuItem.Visible = true;
+                        }
+                        else
+                        {
+                            menuItem.Visible = false;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+           
         }
     }
 }

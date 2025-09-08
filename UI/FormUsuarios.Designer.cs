@@ -39,8 +39,9 @@
             this.permisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiarIdiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnAsignarPermiso = new System.Windows.Forms.Button();
             this.bitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAsignarPermiso = new System.Windows.Forms.Button();
+            this.btnDesasignarPermiso = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -156,17 +157,6 @@
             this.cambiarIdiomaToolStripMenuItem.Text = "Traducciones";
             this.cambiarIdiomaToolStripMenuItem.Click += new System.EventHandler(this.cambiarIdiomaToolStripMenuItem_Click);
             // 
-            // btnAsignarPermiso
-            // 
-            this.btnAsignarPermiso.Location = new System.Drawing.Point(699, 208);
-            this.btnAsignarPermiso.Name = "btnAsignarPermiso";
-            this.btnAsignarPermiso.Size = new System.Drawing.Size(177, 23);
-            this.btnAsignarPermiso.TabIndex = 6;
-            this.btnAsignarPermiso.Tag = "label_asignar_permiso";
-            this.btnAsignarPermiso.Text = "Asignar permiso";
-            this.btnAsignarPermiso.UseVisualStyleBackColor = true;
-            this.btnAsignarPermiso.Click += new System.EventHandler(this.btnAsignarPermiso_Click);
-            // 
             // bitacoraToolStripMenuItem
             // 
             this.bitacoraToolStripMenuItem.Name = "bitacoraToolStripMenuItem";
@@ -175,11 +165,34 @@
             this.bitacoraToolStripMenuItem.Text = "Bitacora";
             this.bitacoraToolStripMenuItem.Click += new System.EventHandler(this.bitacoraToolStripMenuItem_Click);
             // 
+            // btnAsignarPermiso
+            // 
+            this.btnAsignarPermiso.Location = new System.Drawing.Point(699, 186);
+            this.btnAsignarPermiso.Name = "btnAsignarPermiso";
+            this.btnAsignarPermiso.Size = new System.Drawing.Size(177, 23);
+            this.btnAsignarPermiso.TabIndex = 6;
+            this.btnAsignarPermiso.Tag = "label_asignar_permiso";
+            this.btnAsignarPermiso.Text = "Asignar permiso";
+            this.btnAsignarPermiso.UseVisualStyleBackColor = true;
+            this.btnAsignarPermiso.Click += new System.EventHandler(this.btnAsignarPermiso_Click);
+            // 
+            // btnDesasignarPermiso
+            // 
+            this.btnDesasignarPermiso.Location = new System.Drawing.Point(699, 241);
+            this.btnDesasignarPermiso.Name = "btnDesasignarPermiso";
+            this.btnDesasignarPermiso.Size = new System.Drawing.Size(177, 23);
+            this.btnDesasignarPermiso.TabIndex = 7;
+            this.btnDesasignarPermiso.Tag = "label_desasignar_permiso";
+            this.btnDesasignarPermiso.Text = "Desasignar permisos";
+            this.btnDesasignarPermiso.UseVisualStyleBackColor = true;
+            this.btnDesasignarPermiso.Click += new System.EventHandler(this.btnDesasignarPermiso_Click);
+            // 
             // FormUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(909, 327);
+            this.Controls.Add(this.btnDesasignarPermiso);
             this.Controls.Add(this.btnAsignarPermiso);
             this.Controls.Add(this.btnDeleteUser);
             this.Controls.Add(this.btnEditUser);
@@ -214,5 +227,6 @@
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cambiarIdiomaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bitacoraToolStripMenuItem;
+        private System.Windows.Forms.Button btnDesasignarPermiso;
     }
 }

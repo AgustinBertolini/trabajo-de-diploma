@@ -19,6 +19,7 @@ namespace UI
         {
             InitializeComponent();
             Traducir();
+            dataGridView1.ReadOnly = true;
         }
 
         private void button1_Click(object sender, EventArgs e)

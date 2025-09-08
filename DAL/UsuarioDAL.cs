@@ -205,7 +205,7 @@ namespace DAL
 
                     try
                     {
-                        using (SqlCommand cmd = new SqlCommand("DeleteUsuario", conn))
+                        using (SqlCommand cmd = new SqlCommand("DeleteUsuario", conn, transaction))
                         {
                             cmd.CommandType = CommandType.StoredProcedure;
 

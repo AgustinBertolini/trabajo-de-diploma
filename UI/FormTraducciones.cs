@@ -21,6 +21,9 @@ namespace UI
             InitializeComponent();
             Traducir();
             CargarIdiomas(true);
+            dataGridView1.ReadOnly = true;
+            dataGridView2.ReadOnly = true;
+            MostrarItemsSegunPermisos();
         }
 
         public void Traducir()
@@ -326,6 +329,44 @@ namespace UI
             form.Show();
 
             this.Hide();
+        }
+
+        private void MostrarItemsSegunPermisos()
+        {
+            var items = menuStrip1.Items;
+
+            var permisosMap = new Dictionary<string, string>
+            {
+                { "label_usuarios", "Usuarios"},
+                { "label_productos", "Productos"},
+                { "label_permisos", "Permisos" },
+                { "label_traducciones", "Traducciones" },
+                { "label_bitacora", "Bitacora" }
+            };
+
+            foreach (var item in items)
+            {
+                if (item is ToolStripMenuItem menuItem)
+                {
+                    if (menuItem.Tag != null)
+                    {
+                        var tag = menuItem.Tag.ToString();
+                        if (tag == "label_sesion")
+                        {
+                            menuItem.Visible = true;
+                            continue;
+                        }
+                        if (SessionManager.TienePermiso(permisosMap[tag]))
+                        {
+                            menuItem.Visible = true;
+                        }
+                        else
+                        {
+                            menuItem.Visible = false;
+                        }
+                    }
+                }
+            }
         }
     }
 }

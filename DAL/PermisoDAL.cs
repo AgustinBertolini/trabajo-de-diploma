@@ -502,6 +502,52 @@ namespace DAL
                 throw ex;
             }
         }
+        
+        public void DesasignarPermisos(int idUsuario)
+        {
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlTransaction transaction = conn.BeginTransaction();
+
+                    try
+                    {
+                        using (SqlCommand cmd = new SqlCommand("DesasignarPermisos", conn, transaction))
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+
+                            cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
+
+
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        throw ex;
+                    }
+
+                }
+
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
 
         public List<Container> GetPermisosDeUsuario(int idUsuario)
         {

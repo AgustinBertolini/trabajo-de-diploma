@@ -83,6 +83,7 @@
     <Content Include="StoresProcedures\DeleteProducto.sql" />
     <Content Include="StoresProcedures\DeletePermiso.sql" />
     <Content Include="StoresProcedures\DeleteUsuario.sql" />
+    <Content Include="StoresProcedures\DesasignarPermisos.sql" />
     <Content Include="StoresProcedures\EditIdioma.sql" />
     <Content Include="StoresProcedures\EditPermiso.sql" />
     <Content Include="StoresProcedures\EditProducto.sql" />
