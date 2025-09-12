@@ -46,13 +46,14 @@ namespace BLL
             }
         }
 
-        public int AltaProducto(string nombre, int precio)
+        public int AltaProducto(string nombre, int precio, int stock)
         {
             try
             {
                 Producto producto = new Producto();
                 producto.Nombre = nombre;
                 producto.Precio = precio;
+                producto.Stock = stock;
 
                 ProductoDAL productoDAL = new ProductoDAL();
 
@@ -84,7 +85,7 @@ namespace BLL
             }
         }
 
-        public bool EditarProducto(int id, string nombre, int precio)
+        public bool EditarProducto(int id, string nombre, int precio, int stock)
         {
             try
             {
@@ -92,6 +93,7 @@ namespace BLL
                 producto.Id = id;
                 producto.Nombre = nombre;
                 producto.Precio = precio;
+                producto.Stock = stock;
 
                 ProductoDAL productoDAL= new ProductoDAL();
                 

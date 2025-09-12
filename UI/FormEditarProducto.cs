@@ -21,6 +21,28 @@ namespace UI
             Traducir();
             txtId.Hide();
             txtId.Text = id.ToString();
+            CargarVendedores();
+            numericUpDown1.Maximum = 9999999;
+            numericStock.Maximum = 9999999;
+
+            ProductoBLL productoBLL = new ProductoBLL();
+            var producto = productoBLL.GetProducto(id);
+            inputNombre.Text = producto.Nombre;
+            numericUpDown1.Value = producto.Precio;
+            numericStock.Value = producto.Stock;
+
+        }
+
+        public void CargarVendedores()
+        {
+            UsuarioBLL usuarioBLL = new UsuarioBLL();
+
+            var usuarios = usuarioBLL.GetUsuarios();
+
+            comboUsuarios.DataSource = usuarios.Where(u => u.Rol.Nombre == "VENDEDOR").Select(u => new { u.Id, NombreCompleto = u.Nombre + " " + u.Apellido }).ToList();
+
+            comboUsuarios.DisplayMember = "NombreCompleto";
+            comboUsuarios.ValueMember = "Id";
         }
 
         public void Traducir()
@@ -67,15 +89,26 @@ namespace UI
                 MessageBox.Show("El campo precio es obligatorio");
                 return;
             }
+            
+            if (numericStock.Value <= 0)
+            {
+                MessageBox.Show("El campo stock es obligatorio");
+                return;
+            }
 
             ProductoBLL productoBLL = new ProductoBLL();
 
-            productoBLL.EditarProducto(Convert.ToInt32(txtId.Text), inputNombre.Text, (int)numericUpDown1.Value);
+            productoBLL.EditarProducto(Convert.ToInt32(txtId.Text), inputNombre.Text, (int)numericUpDown1.Value, (int)numericStock.Value);
 
             FormProductos form = new FormProductos();
             form.Show();
 
             this.Hide();
+        }
+
+        private void comboUsuarios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

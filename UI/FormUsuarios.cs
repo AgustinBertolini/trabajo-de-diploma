@@ -77,17 +77,18 @@ namespace UI
 
         private void CargarUsuarios()
         {
-            if (!(SessionManager.TienePermiso("Usuarios") || SessionManager.TienePermiso("Listar Usuario")))
-            {
-                MessageBox.Show("No tenes permisos suficientes para listar usuarios");
-                return;
-            }
+            UsuarioBLL usuarioBLL = new UsuarioBLL();
 
-            UsuarioBLL usuarioBLL = new UsuarioBLL();   
-            dataGridView1.DataSource = usuarioBLL.GetUsuarios();
+            dataGridView1.DataSource = usuarioBLL.GetUsuarios().Select(x => new { 
+                x.Id,
+                x.Nombre,
+                x.Apellido,
+                x.DNI,
+                x.Email,
+                Rol = x.Rol.Nombre 
+            }).ToList();
+
             dataGridView1.Columns["Id"].Visible = false;
-            dataGridView1.Columns["Contraseña"].Visible = false;
-            dataGridView1.Columns["IsActive"].Visible = false;
         }
 
         private void FormUsuarios_Load(object sender, EventArgs e)

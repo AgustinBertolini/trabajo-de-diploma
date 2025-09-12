@@ -44,7 +44,12 @@ namespace DAL
                                         DNI = Convert.ToInt64(reader["dni"]),
                                         Email = reader["email"].ToString(),
                                         Contraseña = reader["contraseña"].ToString(),
-                                        IsActive = Convert.ToBoolean(reader["isActive"])
+                                        IsActive = Convert.ToBoolean(reader["isActive"]),
+                                        Rol = new Rol
+                                        {
+                                            Id = Convert.ToInt32(reader["rolId"]),
+                                            Nombre = reader["rolNombre"].ToString()
+                                        }
                                     };
                                 }
                             }
@@ -102,7 +107,12 @@ namespace DAL
                                         DNI = Convert.ToInt64(reader["dni"]),
                                         Email = reader["email"].ToString(),
                                         Contraseña = reader["contraseña"].ToString(),
-                                        IsActive = Convert.ToBoolean(reader["isActive"])
+                                        IsActive = Convert.ToBoolean(reader["isActive"]),
+                                        Rol = new Rol
+                                        {
+                                            Id = Convert.ToInt32(reader["rolId"]),
+                                            Nombre = reader["rolNombre"].ToString()
+                                        }
                                     });
                                 }
                             }
@@ -154,6 +164,7 @@ namespace DAL
                             cmd.Parameters.AddWithValue("@DNI", usuario.DNI);
                             cmd.Parameters.AddWithValue("@Email", usuario.Email);
                             cmd.Parameters.AddWithValue("@Contrasena", usuario.Contraseña);
+                            cmd.Parameters.AddWithValue("@RolId", usuario.Rol.Id);
 
 
                             object result = cmd.ExecuteScalar();

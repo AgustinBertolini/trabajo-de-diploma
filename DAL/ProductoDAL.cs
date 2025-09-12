@@ -40,7 +40,8 @@ namespace DAL
                                     {
                                         Id = Convert.ToInt32(reader["id"]),
                                         Nombre = reader["nombre"].ToString(),
-                                        Precio = Convert.ToInt32(reader["precio"])
+                                        Precio = Convert.ToInt32(reader["precio"]),
+                                        Stock = Convert.ToInt32(reader["stock"])
                                     };
                                 }
                             }
@@ -94,7 +95,10 @@ namespace DAL
                                     {
                                         Id = Convert.ToInt32(reader["id"]),
                                         Nombre = reader["nombre"].ToString(),
-                                        Precio = Convert.ToInt32(reader["precio"])
+                                        Precio = Convert.ToInt32(reader["precio"]),
+                                        Stock = Convert.ToInt32(reader["stock"]),
+                                        FechaCreacion = Convert.ToDateTime(reader["fechaCreacion"]),
+                                        FechaActualizacion = Convert.ToDateTime(reader["fechaActualizacion"]),
                                     });
                                 }
                             }
@@ -126,7 +130,7 @@ namespace DAL
         {
             try
             {
-                int userId = 0;
+                int productId = 0;
 
                 string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
@@ -143,13 +147,14 @@ namespace DAL
 
                             cmd.Parameters.AddWithValue("@Nombre", producto.Nombre);
                             cmd.Parameters.AddWithValue("@Precio", producto.Precio);
+                            cmd.Parameters.AddWithValue("@Stock", producto.Stock);
 
 
                             object result = cmd.ExecuteScalar();
 
                             if (result != null)
                             {
-                                userId = Convert.ToInt32(result);
+                                productId = Convert.ToInt32(result);
                             }
                         }
 
@@ -163,7 +168,7 @@ namespace DAL
 
                 }
 
-                return userId;
+                return productId;
             }
             catch (SqlException ex)
             {
@@ -238,13 +243,14 @@ namespace DAL
 
                     try
                     {
-                        using (SqlCommand cmd = new SqlCommand("EditProducto", conn))
+                        using (SqlCommand cmd = new SqlCommand("EditProducto", conn,transaction))
                         {
                             cmd.CommandType = CommandType.StoredProcedure;
 
                             cmd.Parameters.AddWithValue("@Id", producto.Id);
                             cmd.Parameters.AddWithValue("@Nombre", producto.Nombre);
                             cmd.Parameters.AddWithValue("@Precio", producto.Precio);
+                            cmd.Parameters.AddWithValue("@Stock", producto.Stock);
 
 
                             cmd.ExecuteNonQuery();

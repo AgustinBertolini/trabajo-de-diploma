@@ -76,12 +76,6 @@ namespace UI
 
         private void CargarProducto()
         {
-            if (!(SessionManager.TienePermiso("Productos") || SessionManager.TienePermiso("Listar Producto")))
-            {
-                MessageBox.Show("No tenes permisos suficientes para listar productos");
-                return;
-            }
-
             ProductoBLL productoBLL = new ProductoBLL();
             dataGridView1.DataSource = productoBLL.GetProductos();
 

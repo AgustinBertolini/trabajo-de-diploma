@@ -89,20 +89,20 @@ namespace UI
 
             string digitoVerificadorHistorico = DigitoVerificador.ObtenerDigitoGuardado();
 
-            if(digitoVerificador != digitoVerificadorHistorico)
-            {
-                DialogResult result = MessageBox.Show(
-                    "Los datos fueron manipulados, por favor corrije las incosistencias.",
-                    "Error de datos", 
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+            //if(digitoVerificador != digitoVerificadorHistorico)
+            //{
+            //    DialogResult result = MessageBox.Show(
+            //        "Los datos fueron manipulados, por favor corrije las incosistencias.",
+            //        "Error de datos", 
+            //        MessageBoxButtons.OK,
+            //        MessageBoxIcon.Error
+            //    );
 
-                if (result == DialogResult.OK)
-                {
-                    Application.Exit();
-                }
-            }
+            //    if (result == DialogResult.OK)
+            //    {
+            //        Application.Exit();
+            //    }
+            //}
         }
     }
 }

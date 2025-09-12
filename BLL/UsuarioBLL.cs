@@ -59,7 +59,7 @@ namespace BLL
             }
         }
         
-        public int AltaUsuario(string nombre, string apellido, string email, string contraseña, long dni)
+        public int AltaUsuario(string nombre, string apellido, string email, string contraseña, long dni, int rolId)
         {
             try
             {
@@ -69,6 +69,7 @@ namespace BLL
                 usuario.Email = email;
                 usuario.Contraseña = contraseña;
                 usuario.DNI = dni;
+                usuario.Rol = new Rol { Id = rolId };
 
                 UsuarioDAL usuarioDAL = new UsuarioDAL();
                 Usuario usuarioWithPass = new Usuario();

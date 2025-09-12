@@ -3,11 +3,12 @@ CREATE OR ALTER PROCEDURE InsertUsuario
     @Apellido NVARCHAR(50),
     @DNI bigint,
 	@Email NVARCHAR(100),
-	@Contrasena NVARCHAR(255)
+	@Contrasena NVARCHAR(255),
+    @RolId int
 AS
 BEGIN
-    INSERT INTO Usuarios (nombre, apellido, dni, email, contraseña, isActive)
-    VALUES (@Nombre, @Apellido, @DNI, @Email, @Contrasena, 1);
+    INSERT INTO Usuarios (nombre, apellido, dni, email, contraseña, isActive, rolId)
+    VALUES (@Nombre, @Apellido, @DNI, @Email, @Contrasena, 1, @RolId);
 
     SELECT SCOPE_IDENTITY() AS IdUsuario;
 END;

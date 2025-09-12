@@ -18,5 +18,6 @@ namespace Entidades
         public bool IsActive { get; set; }
         public Idioma Idioma { get; set; }
         public string DV { get; set; }
+        public Rol Rol { get; set; }
     }
 }

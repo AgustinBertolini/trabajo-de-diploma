@@ -61,15 +61,15 @@ namespace UI
                 return;
             }
 
-            if (!(SessionManager.TienePermiso("Asignar precio")))
+            if (numericStock.Value <= 0)
             {
-                MessageBox.Show("No tenes permisos suficientes para asignar precio");
+                MessageBox.Show("El campo stock es obligatorio");
                 return;
             }
 
             ProductoBLL productoBLL = new ProductoBLL();
 
-            int userId = productoBLL.AltaProducto(inputNombre.Text, (int)numericUpDown1.Value);
+            int userId = productoBLL.AltaProducto(inputNombre.Text, (int)numericUpDown1.Value, (int)numericStock.Value);
 
             FormProductos form = new FormProductos();
             form.Show();

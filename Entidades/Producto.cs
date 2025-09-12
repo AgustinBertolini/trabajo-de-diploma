@@ -14,5 +14,16 @@ namespace Entidades
         public string Nombre { get; set; }
 
         public int Precio { get; set; }
+
+        public int Stock { get; set; }
+
+        public DateTime FechaCreacion { get; set; }
+        
+        public DateTime FechaActualizacion{ get; set; }
+
+        public List<Usuario> Usuarios { get; set; }
+        
+        public List<ProductoPrecio> Precios { get; set; }
+
     }
 }

@@ -62,13 +62,13 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(528, 282);
+            this.dataGridView1.Size = new System.Drawing.Size(750, 282);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnAgregarProducto
             // 
-            this.btnAgregarProducto.Location = new System.Drawing.Point(618, 67);
+            this.btnAgregarProducto.Location = new System.Drawing.Point(24, 395);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(142, 23);
             this.btnAgregarProducto.TabIndex = 2;
@@ -79,7 +79,7 @@
             // 
             // btnEditarProducto
             // 
-            this.btnEditarProducto.Location = new System.Drawing.Point(618, 193);
+            this.btnEditarProducto.Location = new System.Drawing.Point(323, 395);
             this.btnEditarProducto.Name = "btnEditarProducto";
             this.btnEditarProducto.Size = new System.Drawing.Size(142, 23);
             this.btnEditarProducto.TabIndex = 3;
@@ -90,7 +90,7 @@
             // 
             // btnBorrarProducto
             // 
-            this.btnBorrarProducto.Location = new System.Drawing.Point(618, 311);
+            this.btnBorrarProducto.Location = new System.Drawing.Point(632, 383);
             this.btnBorrarProducto.Name = "btnBorrarProducto";
             this.btnBorrarProducto.Size = new System.Drawing.Size(142, 23);
             this.btnBorrarProducto.TabIndex = 4;

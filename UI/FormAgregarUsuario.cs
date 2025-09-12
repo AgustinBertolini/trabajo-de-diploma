@@ -20,6 +20,17 @@ namespace UI
         {
             InitializeComponent();
             Traducir();
+            CargarRoles();
+        }
+
+        public void CargarRoles()
+        {
+            RolBLL rolBLL = new RolBLL();
+
+            var roles = rolBLL.GetRoles();
+
+            comboRoles.DataSource = roles;
+            comboRoles.DisplayMember = "Nombre";
         }
 
         public void Traducir()
@@ -100,9 +111,17 @@ namespace UI
                 return;
             }
 
+            if (comboRoles.SelectedItem == null)
+            {
+                MessageBox.Show("Debe seleccionar un rol");
+                return;
+            }
+
             UsuarioBLL usuarioBLL = new UsuarioBLL();
 
-            int userId = usuarioBLL.AltaUsuario(txtNombre.Text,txtApellido.Text,txtEmail.Text,txtContraseña.Text, Convert.ToInt64(numericDni.Value));
+            Rol rolSeleccionado = (Rol)comboRoles.SelectedItem;
+
+            int userId = usuarioBLL.AltaUsuario(txtNombre.Text,txtApellido.Text,txtEmail.Text,txtContraseña.Text, Convert.ToInt64(numericDni.Value), rolSeleccionado.Id);
 
             if (userId != 0)
             {

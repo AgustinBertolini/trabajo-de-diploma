@@ -45,6 +45,7 @@
     <Compile Include="PermisoBLL.cs" />
     <Compile Include="ProductoBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RolBLL.cs" />
     <Compile Include="TraduccionHistoricoBLL.cs" />
     <Compile Include="UsuarioBLL.cs" />
   </ItemGroup>

@@ -34,14 +34,17 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.numericStock = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericStock)).BeginInit();
             this.SuspendLayout();
             // 
             // inputNombre
             // 
             this.inputNombre.Location = new System.Drawing.Point(21, 43);
             this.inputNombre.Name = "inputNombre";
-            this.inputNombre.Size = new System.Drawing.Size(202, 22);
+            this.inputNombre.Size = new System.Drawing.Size(319, 22);
             this.inputNombre.TabIndex = 0;
             this.inputNombre.TextChanged += new System.EventHandler(this.inputNombre_TextChanged);
             // 
@@ -59,7 +62,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 98);
+            this.label2.Location = new System.Drawing.Point(18, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 16);
             this.label2.TabIndex = 2;
@@ -69,9 +72,9 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(21, 121);
+            this.numericUpDown1.Location = new System.Drawing.Point(21, 107);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(202, 22);
+            this.numericUpDown1.Size = new System.Drawing.Size(319, 22);
             this.numericUpDown1.TabIndex = 3;
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
@@ -88,7 +91,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(149, 203);
+            this.btnAceptar.Location = new System.Drawing.Point(266, 203);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(74, 32);
             this.btnAceptar.TabIndex = 5;
@@ -97,11 +100,31 @@
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(18, 145);
+            this.label3.Name = "label3";
+            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label3.Size = new System.Drawing.Size(41, 16);
+            this.label3.TabIndex = 6;
+            this.label3.Tag = "label_stock";
+            this.label3.Text = "Stock";
+            // 
+            // numericStock
+            // 
+            this.numericStock.Location = new System.Drawing.Point(21, 165);
+            this.numericStock.Name = "numericStock";
+            this.numericStock.Size = new System.Drawing.Size(319, 22);
+            this.numericStock.TabIndex = 7;
+            // 
             // FormAgregarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(259, 265);
+            this.ClientSize = new System.Drawing.Size(368, 265);
+            this.Controls.Add(this.numericStock);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.numericUpDown1);
@@ -109,9 +132,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.inputNombre);
             this.Name = "FormAgregarProducto";
-            this.Text = "FormAgregarProducto";
+            this.Text = "Agregar Producto";
             this.Load += new System.EventHandler(this.FormAgregarProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericStock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,5 +149,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown numericStock;
     }
 }

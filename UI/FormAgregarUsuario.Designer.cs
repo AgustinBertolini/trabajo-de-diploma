@@ -40,6 +40,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.numericDni = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboRoles = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericDni)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,11 +161,31 @@
             this.numericDni.Size = new System.Drawing.Size(314, 22);
             this.numericDni.TabIndex = 12;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(60, 277);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(28, 16);
+            this.label6.TabIndex = 13;
+            this.label6.Tag = "label_rol";
+            this.label6.Text = "Rol";
+            // 
+            // comboRoles
+            // 
+            this.comboRoles.FormattingEnabled = true;
+            this.comboRoles.Location = new System.Drawing.Point(63, 296);
+            this.comboRoles.Name = "comboRoles";
+            this.comboRoles.Size = new System.Drawing.Size(121, 24);
+            this.comboRoles.TabIndex = 14;
+            // 
             // FormAgregarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(457, 396);
+            this.Controls.Add(this.comboRoles);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.numericDni);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtContraseña);
@@ -199,5 +221,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.NumericUpDown numericDni;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboRoles;
     }
 }
