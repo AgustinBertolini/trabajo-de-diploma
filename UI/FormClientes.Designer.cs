@@ -74,6 +74,7 @@
             this.btnAgregarCliente.Tag = "label_agregar_cliente";
             this.btnAgregarCliente.Text = "Agregar cliente";
             this.btnAgregarCliente.UseVisualStyleBackColor = true;
+            this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarCliente_Click);
             // 
             // btnEditarCliente
             // 
@@ -85,6 +86,7 @@
             this.btnEditarCliente.Tag = "label_agregar_cliente";
             this.btnEditarCliente.Text = "Editar cliente";
             this.btnEditarCliente.UseVisualStyleBackColor = true;
+            this.btnEditarCliente.Click += new System.EventHandler(this.btnEditarCliente_Click);
             // 
             // button1
             // 
@@ -96,6 +98,7 @@
             this.button1.Tag = "label_borrar_cliente";
             this.button1.Text = "Borrar cliente";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // menuStrip1
             // 

@@ -32,5 +32,55 @@ namespace UI
         {
             CargarClientes();
         }
+
+        private void btnEditarCliente_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null || dataGridView1.CurrentRow.DataBoundItem == null)
+            {
+                MessageBox.Show("Seleccione un cliente para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            Cliente clienteSeleccionado = dataGridView1.CurrentRow.DataBoundItem as Cliente;
+            if (clienteSeleccionado == null)
+            {
+                MessageBox.Show("No se pudo obtener la información del cliente seleccionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            FormEditarCliente formEditar = new FormEditarCliente(clienteSeleccionado);
+            formEditar.Show();
+
+            this.Hide();
+        }
+
+        private void btnAgregarCliente_Click(object sender, EventArgs e)
+        {
+            FormAgregarCliente formAgregarCliente = new FormAgregarCliente();
+            formAgregarCliente.Show();
+
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null || dataGridView1.CurrentRow.DataBoundItem == null)
+            {
+                MessageBox.Show("Seleccione un cliente para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            Cliente clienteSeleccionado = dataGridView1.CurrentRow.DataBoundItem as Cliente;
+            if (clienteSeleccionado == null)
+            {
+                MessageBox.Show("No se pudo obtener la información del cliente seleccionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            ClienteBLL clienteBLL = new ClienteBLL();
+            clienteBLL.BorrarCliente(clienteSeleccionado.Id);
+            MessageBox.Show("Cliente eliminado correctamente.");
+            CargarClientes();
+        }
     }
 }
