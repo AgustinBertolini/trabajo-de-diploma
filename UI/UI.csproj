@@ -64,6 +64,12 @@
     <Compile Include="FormAgregarPermiso.Designer.cs">
       <DependentUpon>FormAgregarPermiso.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAgregarPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAgregarPresupuesto.Designer.cs">
+      <DependentUpon>FormAgregarPresupuesto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAgregarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAgregarPermiso.resx">
       <DependentUpon>FormAgregarPermiso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAgregarPresupuesto.resx">
+      <DependentUpon>FormAgregarPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAgregarProducto.resx">
       <DependentUpon>FormAgregarProducto.cs</DependentUpon>

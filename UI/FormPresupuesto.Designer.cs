@@ -41,6 +41,7 @@
             this.bitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnVerPresupuesto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -163,11 +164,22 @@
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
+            // btnVerPresupuesto
+            // 
+            this.btnVerPresupuesto.Location = new System.Drawing.Point(321, 377);
+            this.btnVerPresupuesto.Name = "btnVerPresupuesto";
+            this.btnVerPresupuesto.Size = new System.Drawing.Size(131, 23);
+            this.btnVerPresupuesto.TabIndex = 15;
+            this.btnVerPresupuesto.Tag = "label_ver_presupuesto";
+            this.btnVerPresupuesto.Text = "Ver presupuesto";
+            this.btnVerPresupuesto.UseVisualStyleBackColor = true;
+            // 
             // FormPresupuesto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVerPresupuesto);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnCrearVenta);
             this.Controls.Add(this.btnCrearPresupuesto);
@@ -199,5 +211,6 @@
         private System.Windows.Forms.ToolStripMenuItem bitacoraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
+        private System.Windows.Forms.Button btnVerPresupuesto;
     }
 }
