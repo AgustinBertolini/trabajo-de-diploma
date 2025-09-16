@@ -1,0 +1,6 @@
+CREATE PROCEDURE DeleteCliente
+    @Id INT
+AS
+BEGIN
+    DELETE FROM Cliente WHERE id = @Id
+END

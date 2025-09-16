@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BitacoraDAL.cs" />
+    <Compile Include="ClienteDAL.cs" />
     <Compile Include="DigitoVerificadorDAL.cs" />
     <Compile Include="IdiomaDAL.cs" />
     <Compile Include="PermisoDAL.cs" />
@@ -64,6 +65,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\AgregoUsuariosDV.sql" />
+    <Content Include="Scripts\CreateTableCliente.sql" />
+    <Content Include="Scripts\CreateTableTipoCliente.sql" />
+    <Content Include="Scripts\DeleteCliente.sql" />
+    <Content Include="Scripts\GetClientes.sql" />
+    <Content Include="StoresProcedures\DeleteCliente.sql" />
+    <Content Include="StoresProcedures\EditCliente.sql" />
+    <Content Include="StoresProcedures\GetClientes.sql" />
+    <Content Include="StoresProcedures\InsertCliente.sql" />
+    <Content Include="StoresProcedures\GetProductoVendedores.sql" />
+    <Content Include="StoresProcedures\GuardarPrecioHistorico.sql" />
+    <Content Include="StoresProcedures\DesasignarProducto.sql" />
+    <Content Include="StoresProcedures\AsignarProducto.sql" />
     <Content Include="Scripts\CreateDatabase.sql" />
     <Content Include="Scripts\CreatePermisos.sql" />
     <Content Include="Scripts\CreatePermisos_Permisos.sql" />

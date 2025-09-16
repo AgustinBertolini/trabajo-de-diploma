@@ -31,6 +31,14 @@ namespace UI
             numericUpDown1.Value = producto.Precio;
             numericStock.Value = producto.Stock;
 
+            if (!SessionManager.TienePermiso("Editar Producto"))
+            {
+                MessageBox.Show("No tienes permisos suficientes para editar un producto.");
+                FormProductos form = new FormProductos();
+                form.Show();
+                this.Hide();
+                return;
+            }
         }
 
         public void CargarVendedores()
@@ -39,10 +47,28 @@ namespace UI
 
             var usuarios = usuarioBLL.GetUsuarios();
 
-            comboUsuarios.DataSource = usuarios.Where(u => u.Rol.Nombre == "VENDEDOR").Select(u => new { u.Id, NombreCompleto = u.Nombre + " " + u.Apellido }).ToList();
+            comboUsuarios.SelectedItem = null;
+
+            ProductoBLL productoBLL = new ProductoBLL();
+
+            var vendedoresAsignados = productoBLL.GetProductoVendedores(Convert.ToInt32(txtId.Text));
+
+            var vendedoresAsignadosIds = vendedoresAsignados.Select(v => v.IdUsuario).ToList();
+
+            comboUsuarios.DataSource = usuarios.Where(u => u.Rol.Nombre == "VENDEDOR" && !vendedoresAsignadosIds.Contains(u.Id)).Select(u => new { u.Id, NombreCompleto = u.Nombre + " " + u.Apellido }).ToList();
 
             comboUsuarios.DisplayMember = "NombreCompleto";
             comboUsuarios.ValueMember = "Id";
+
+            dataGridView1.DataSource = null;
+
+            if (vendedoresAsignados.Count > 0)
+            {
+
+                dataGridView1.DataSource = vendedoresAsignados.Select(v => new { v.IdUsuario, NombreCompleto = v.Nombre + " " + v.Apellido }).ToList();
+
+                dataGridView1.Columns["IdUsuario"].Visible = false;
+            }
         }
 
         public void Traducir()
@@ -109,6 +135,52 @@ namespace UI
         private void comboUsuarios_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAsignarUsuario_Click(object sender, EventArgs e)
+        {
+            if (comboUsuarios.SelectedItem == null)
+            {
+                MessageBox.Show("Debe seleccionar un vendedor para asignar.");
+                return;
+            }
+
+            var selected = comboUsuarios.SelectedItem;
+            int userId = (int)comboUsuarios.SelectedValue;
+            int productId = Convert.ToInt32(txtId.Text);
+
+            ProductoBLL productoBLL = new ProductoBLL();
+            bool resultado = productoBLL.AsignarProducto(userId, productId);
+
+            if (resultado)
+                MessageBox.Show("Usuario asignado correctamente al producto.");
+            else
+                MessageBox.Show("No se pudo asignar el usuario al producto.");
+
+            CargarVendedores();
+
+        }
+
+        private void btnDesasignarUsuario_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar un vendedor en la lista para desasignar.");
+                return;
+            }
+
+            int userId = (int)dataGridView1.SelectedRows[0].Cells["IdUsuario"].Value;
+            int productId = Convert.ToInt32(txtId.Text);
+
+            ProductoBLL productoBLL = new ProductoBLL();
+            bool resultado = productoBLL.DesasignarProducto(userId, productId);
+
+            if (resultado)
+                MessageBox.Show("Usuario desasignado correctamente del producto.");
+            else
+                MessageBox.Show("No se pudo desasignar el usuario del producto.");
+
+            CargarVendedores();
         }
     }
 }

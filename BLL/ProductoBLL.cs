@@ -96,14 +96,55 @@ namespace BLL
                 producto.Stock = stock;
 
                 ProductoDAL productoDAL= new ProductoDAL();
-                
                 productoDAL.EditarProducto(producto);
+                productoDAL.GuardarPrecioHistorico(id, precio);
 
                 return true;
             }
             catch (Exception ex)
             {
 
+                throw ex;
+            }
+        }
+
+        public bool AsignarProducto(int userId, int productId)
+        {
+            try
+            {
+                ProductoDAL productoDAL = new ProductoDAL();
+                productoDAL.AsignarProducto(userId, productId);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool DesasignarProducto(int userId, int productId)
+        {
+            try
+            {
+                ProductoDAL productoDAL = new ProductoDAL();
+                productoDAL.DesasignarProducto(userId, productId);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<Producto_Usuario> GetProductoVendedores(int productId)
+        {
+            try
+            {
+                ProductoDAL productoDAL = new ProductoDAL();
+                return productoDAL.GetProductoVendedores(productId);
+            }
+            catch (Exception ex)
+            {
                 throw ex;
             }
         }

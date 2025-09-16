@@ -1,0 +1,5 @@
+CREATE PROCEDURE GetClientes
+AS
+BEGIN
+    SELECT * FROM Cliente
+END

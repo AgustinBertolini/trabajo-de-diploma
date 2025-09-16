@@ -19,6 +19,15 @@ namespace UI
         {
             InitializeComponent();
             Traducir();
+
+            if (!SessionManager.TienePermiso("Editar Producto"))
+            {
+                MessageBox.Show("No tienes permisos suficientes para agregar un producto.");
+                FormProductos form = new FormProductos();
+                form.Show();
+                this.Hide();
+                return;
+            }
         }
 
         public void Traducir()

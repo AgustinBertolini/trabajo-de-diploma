@@ -191,6 +191,7 @@
             this.btnAsignarUsuario.TabIndex = 19;
             this.btnAsignarUsuario.Text = "Asignar usuario";
             this.btnAsignarUsuario.UseVisualStyleBackColor = true;
+            this.btnAsignarUsuario.Click += new System.EventHandler(this.btnAsignarUsuario_Click);
             // 
             // btnDesasignarUsuario
             // 
@@ -200,6 +201,7 @@
             this.btnDesasignarUsuario.TabIndex = 20;
             this.btnDesasignarUsuario.Text = "Desasignar usuario";
             this.btnDesasignarUsuario.UseVisualStyleBackColor = true;
+            this.btnDesasignarUsuario.Click += new System.EventHandler(this.btnDesasignarUsuario_Click);
             // 
             // label6
             // 
