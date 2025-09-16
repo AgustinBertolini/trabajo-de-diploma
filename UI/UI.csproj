@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAgregarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAgregarCliente.Designer.cs">
+      <DependentUpon>FormAgregarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAgregarIdioma.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,12 @@
     </Compile>
     <Compile Include="FormBitacora.Designer.cs">
       <DependentUpon>FormBitacora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormClientes.Designer.cs">
+      <DependentUpon>FormClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="FormEditarIdioma.cs">
       <SubType>Form</SubType>
@@ -156,6 +168,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAgregarCliente.resx">
+      <DependentUpon>FormAgregarCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAgregarIdioma.resx">
       <DependentUpon>FormAgregarIdioma.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBitacora.resx">
       <DependentUpon>FormBitacora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormClientes.resx">
+      <DependentUpon>FormClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditarIdioma.resx">
       <DependentUpon>FormEditarIdioma.cs</DependentUpon>

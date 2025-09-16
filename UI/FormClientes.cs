@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using BLL;
+using Entidades;
+
+namespace UI
+{
+    public partial class FormClientes : Form
+    {
+        public FormClientes()
+        {
+            InitializeComponent();
+        }
+
+        private void CargarClientes()
+        {
+            ClienteBLL clienteBLL = new ClienteBLL();
+            List<Cliente> clientes = clienteBLL.GetClientes();
+            dataGridView1.DataSource = clientes;
+
+          
+        }
+
+        private void FormClientes_Load(object sender, EventArgs e)
+        {
+            CargarClientes();
+        }
+    }
+}
