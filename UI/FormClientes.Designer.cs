@@ -48,7 +48,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 49);
+            this.dataGridView1.Location = new System.Drawing.Point(21, 59);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -58,7 +58,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 30);
+            this.label1.Location = new System.Drawing.Point(18, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 16);
             this.label1.TabIndex = 1;
@@ -67,7 +67,7 @@
             // 
             // btnAgregarCliente
             // 
-            this.btnAgregarCliente.Location = new System.Drawing.Point(609, 49);
+            this.btnAgregarCliente.Location = new System.Drawing.Point(609, 59);
             this.btnAgregarCliente.Name = "btnAgregarCliente";
             this.btnAgregarCliente.Size = new System.Drawing.Size(143, 23);
             this.btnAgregarCliente.TabIndex = 2;
@@ -78,7 +78,7 @@
             // 
             // btnEditarCliente
             // 
-            this.btnEditarCliente.Location = new System.Drawing.Point(609, 173);
+            this.btnEditarCliente.Location = new System.Drawing.Point(609, 187);
             this.btnEditarCliente.Name = "btnEditarCliente";
             this.btnEditarCliente.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnEditarCliente.Size = new System.Drawing.Size(143, 23);
@@ -90,7 +90,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(609, 306);
+            this.button1.Location = new System.Drawing.Point(609, 316);
             this.button1.Name = "button1";
             this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.button1.Size = new System.Drawing.Size(143, 23);

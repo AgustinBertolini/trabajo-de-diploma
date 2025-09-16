@@ -71,11 +71,22 @@ namespace UI
 
         private void FormClientes_Load(object sender, EventArgs e)
         {
+            if (!(SessionManager.TienePermiso("Clientes")))
+            {
+                MessageBox.Show("No tenes permisos suficientes para acceder a la pantalla");
+                return;
+            }
             CargarClientes();
         }
 
         private void btnEditarCliente_Click(object sender, EventArgs e)
         {
+            if (!(SessionManager.TienePermiso("Editar Cliente")))
+            {
+                MessageBox.Show("No tenes permisos suficientes para acceder a la pantalla");
+                return;
+
+            }
             if (dataGridView1.CurrentRow == null || dataGridView1.CurrentRow.DataBoundItem == null)
             {
                 MessageBox.Show("Seleccione un cliente para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -97,6 +108,12 @@ namespace UI
 
         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
+            if (!(SessionManager.TienePermiso("Agregar Cliente")))
+            {
+                MessageBox.Show("No tenes permisos suficientes para acceder a la pantalla");
+                return;
+            }
+
             FormAgregarCliente formAgregarCliente = new FormAgregarCliente();
             formAgregarCliente.Show();
 
@@ -105,6 +122,13 @@ namespace UI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (!(SessionManager.TienePermiso("Borrar Cliente")))
+            {
+                MessageBox.Show("No tenes permisos suficientes para acceder a la pantalla");
+                return;
+
+            }
+
             if (dataGridView1.CurrentRow == null || dataGridView1.CurrentRow.DataBoundItem == null)
             {
                 MessageBox.Show("Seleccione un cliente para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
