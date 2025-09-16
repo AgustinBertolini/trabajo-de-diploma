@@ -15,5 +15,6 @@ namespace Entidades
         public string Email { get; set; }
         public string Direccion { get; set; }
         public int TipoClienteId { get; set; }
+        public int UserId { get; set; }
     }
 }

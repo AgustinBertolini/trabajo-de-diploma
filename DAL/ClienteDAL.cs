@@ -31,7 +31,8 @@ namespace DAL
                                 Cuit = reader["cuit"].ToString(),
                                 Email = reader["email"].ToString(),
                                 Direccion = reader["direccion"].ToString(),
-                                TipoClienteId = Convert.ToInt32(reader["tipoClienteId"])
+                                TipoClienteId = Convert.ToInt32(reader["tipoClienteId"]),
+                                UserId = reader["UserId"] != DBNull.Value ? Convert.ToInt32(reader["UserId"]) : 0
                             });
                         }
                     }
@@ -55,6 +56,7 @@ namespace DAL
                     cmd.Parameters.AddWithValue("@Email", cliente.Email);
                     cmd.Parameters.AddWithValue("@Direccion", cliente.Direccion);
                     cmd.Parameters.AddWithValue("@TipoClienteId", cliente.TipoClienteId);
+                    cmd.Parameters.AddWithValue("@UserId", cliente.UserId);
                     object result = cmd.ExecuteScalar();
                     return Convert.ToInt32(result);
                 }
@@ -77,6 +79,7 @@ namespace DAL
                     cmd.Parameters.AddWithValue("@Email", cliente.Email);
                     cmd.Parameters.AddWithValue("@Direccion", cliente.Direccion);
                     cmd.Parameters.AddWithValue("@TipoClienteId", cliente.TipoClienteId);
+                    cmd.Parameters.AddWithValue("@UserId", cliente.UserId);
                     cmd.ExecuteNonQuery();
                     return true;
                 }

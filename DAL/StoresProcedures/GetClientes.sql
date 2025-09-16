@@ -1,5 +1,5 @@
-CREATE PROCEDURE GetClientes
+CREATE OR ALTER PROCEDURE GetClientes
 AS
 BEGIN
-    SELECT * FROM Cliente
+    SELECT * FROM Clientes
 END

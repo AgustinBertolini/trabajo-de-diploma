@@ -1,13 +1,15 @@
-CREATE PROCEDURE InsertCliente
-    @Nombre NVARCHAR(50),
-    @Apellido NVARCHAR(50),
-    @Cuit NVARCHAR(50),
-    @Email NVARCHAR(50),
-    @Direccion NVARCHAR(100),
-    @TipoClienteId INT
+ALTER PROCEDURE InsertCliente
+    @Nombre NVARCHAR(100),
+    @Apellido NVARCHAR(100),
+    @Cuit NVARCHAR(20),
+    @Email NVARCHAR(100),
+    @Direccion NVARCHAR(200),
+    @TipoClienteId INT,
+    @UserId INT
 AS
 BEGIN
-    INSERT INTO Cliente (nombre, apellido, cuit, email, direccion, tipoClienteId)
-    VALUES (@Nombre, @Apellido, @Cuit, @Email, @Direccion, @TipoClienteId)
-    SELECT SCOPE_IDENTITY()
+    INSERT INTO Clientes (Nombre, Apellido, Cuit, Email, Direccion, TipoClienteId, UserId)
+    VALUES (@Nombre, @Apellido, @Cuit, @Email, @Direccion, @TipoClienteId, @UserId);
+
+    SELECT SCOPE_IDENTITY();
 END

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using Entidades;
+using Servicios;
 
 namespace UI
 {
@@ -23,7 +24,7 @@ namespace UI
         {
             ClienteBLL clienteBLL = new ClienteBLL();
             List<Cliente> clientes = clienteBLL.GetClientes();
-            dataGridView1.DataSource = clientes;
+            dataGridView1.DataSource = clientes.Where(x=>x.UserId == SessionManager.GetInstance.Usuario.Id).ToList();
 
           
         }
