@@ -68,8 +68,18 @@ namespace UI
             if(login)
             {
                 Bitacoras.AltaBitacora("Nuevo inicio de sesión", TipoEvento.Message, SessionManager.GetInstance.Usuario.Id);
-                FormUsuarios formUsuarios = new FormUsuarios();
-                formUsuarios.Show();
+
+                if (SessionManager.GetInstance.Usuario.Rol.Nombre == "VENDEDOR")
+                {
+                    FormClientes form = new FormClientes();
+                    form.Show();
+                }
+                else
+                {
+                    FormUsuarios formUsuarios = new FormUsuarios();
+                    formUsuarios.Show();
+                }
+                    
 
                 this.Hide();
             }

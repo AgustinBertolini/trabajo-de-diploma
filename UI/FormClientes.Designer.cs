@@ -41,6 +41,7 @@
             this.cambiarIdiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.presupuestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -109,7 +110,8 @@
             this.permisosToolStripMenuItem,
             this.cambiarIdiomaToolStripMenuItem,
             this.bitacoraToolStripMenuItem,
-            this.productosToolStripMenuItem});
+            this.productosToolStripMenuItem,
+            this.presupuestosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(786, 28);
@@ -138,6 +140,7 @@
             this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
             this.usuariosToolStripMenuItem.Tag = "label_usuarios";
             this.usuariosToolStripMenuItem.Text = "Usuarios";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // permisosToolStripMenuItem
             // 
@@ -145,6 +148,7 @@
             this.permisosToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.permisosToolStripMenuItem.Tag = "label_permisos";
             this.permisosToolStripMenuItem.Text = "Permisos";
+            this.permisosToolStripMenuItem.Click += new System.EventHandler(this.permisosToolStripMenuItem_Click);
             // 
             // cambiarIdiomaToolStripMenuItem
             // 
@@ -152,6 +156,7 @@
             this.cambiarIdiomaToolStripMenuItem.Size = new System.Drawing.Size(109, 24);
             this.cambiarIdiomaToolStripMenuItem.Tag = "label_traducciones";
             this.cambiarIdiomaToolStripMenuItem.Text = "Traducciones";
+            this.cambiarIdiomaToolStripMenuItem.Click += new System.EventHandler(this.cambiarIdiomaToolStripMenuItem_Click);
             // 
             // bitacoraToolStripMenuItem
             // 
@@ -159,6 +164,7 @@
             this.bitacoraToolStripMenuItem.Size = new System.Drawing.Size(78, 24);
             this.bitacoraToolStripMenuItem.Tag = "label_bitacora";
             this.bitacoraToolStripMenuItem.Text = "Bitacora";
+            this.bitacoraToolStripMenuItem.Click += new System.EventHandler(this.bitacoraToolStripMenuItem_Click);
             // 
             // productosToolStripMenuItem
             // 
@@ -166,6 +172,15 @@
             this.productosToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
             this.productosToolStripMenuItem.Tag = "label_productos";
             this.productosToolStripMenuItem.Text = "Productos";
+            this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click);
+            // 
+            // presupuestosToolStripMenuItem
+            // 
+            this.presupuestosToolStripMenuItem.Name = "presupuestosToolStripMenuItem";
+            this.presupuestosToolStripMenuItem.Size = new System.Drawing.Size(109, 26);
+            this.presupuestosToolStripMenuItem.Tag = "label_presupuestos";
+            this.presupuestosToolStripMenuItem.Text = "Presupuestos";
+            this.presupuestosToolStripMenuItem.Click += new System.EventHandler(this.presupuestosToolStripMenuItem_Click);
             // 
             // FormClientes
             // 
@@ -204,5 +219,6 @@
         private System.Windows.Forms.ToolStripMenuItem cambiarIdiomaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bitacoraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem presupuestosToolStripMenuItem;
     }
 }

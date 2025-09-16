@@ -32,7 +32,9 @@ namespace UI
                 { "label_permisos", "Permisos" },
                 { "label_traducciones", "Traducciones" },
                 { "label_bitacora", "Bitacora" },
-                { "label_clientes", "Clientes" }
+                { "label_clientes", "Clientes" },
+                { "label_presupuestos", "Presupuestos" }
+
             };
 
             foreach (var item in items)
@@ -71,6 +73,7 @@ namespace UI
 
         private void FormClientes_Load(object sender, EventArgs e)
         {
+
             if (!(SessionManager.TienePermiso("Clientes")))
             {
                 MessageBox.Show("No tenes permisos suficientes para acceder a la pantalla");
@@ -146,6 +149,66 @@ namespace UI
             clienteBLL.BorrarCliente(clienteSeleccionado.Id);
             MessageBox.Show("Cliente eliminado correctamente.");
             CargarClientes();
+        }
+
+        private void presupuestosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPresupuesto form = new FormPresupuesto();
+            form.Show();
+
+            this.Hide();
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormUsuarios form = new FormUsuarios();
+            form.Show();
+
+            this.Hide();
+        }
+
+        private void permisosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPermisos form= new FormPermisos();
+            form.Show();
+
+            this.Hide();
+        }
+
+        private void cambiarIdiomaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormTraducciones form = new FormTraducciones();
+            form.Show();
+
+            this.Hide();
+        }
+
+        private void bitacoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormBitacora form = new FormBitacora(); 
+            form.Show();
+
+            this.Hide();
+        }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormProductos form = new FormProductos();
+            form.Show();
+
+            this.Hide();
+        }
+
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UsuarioBLL usuarioBLL = new UsuarioBLL();
+
+            usuarioBLL.Logout();
+
+            FormLogin formLogin = new FormLogin();
+            formLogin.Show();
+
+            this.Hide();
         }
     }
 }

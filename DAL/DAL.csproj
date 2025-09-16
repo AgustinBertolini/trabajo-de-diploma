@@ -72,6 +72,7 @@
     <Content Include="StoresProcedures\DeleteCliente.sql" />
     <Content Include="StoresProcedures\EditCliente.sql" />
     <Content Include="StoresProcedures\GetClientes.sql" />
+    <Content Include="StoresProcedures\GetTiposCliente.sql" />
     <Content Include="StoresProcedures\InsertCliente.sql" />
     <Content Include="StoresProcedures\GetProductoVendedores.sql" />
     <Content Include="StoresProcedures\GuardarPrecioHistorico.sql" />

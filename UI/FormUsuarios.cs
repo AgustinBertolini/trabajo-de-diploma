@@ -239,7 +239,10 @@ namespace UI
 
             UsuarioBLL usuarioBLL = new UsuarioBLL();
 
-            Usuario usuario = (Usuario)dataGridView1.CurrentRow.DataBoundItem;
+            string email = dataGridView1.SelectedRows[0].Cells["email"].Value.ToString();
+
+
+            Usuario usuario = usuarioBLL.GetUsuario(email);
 
 
             FormAsignarPermiso form = new FormAsignarPermiso(usuario.Nombre + " " + usuario.Apellido, usuario.Id);
@@ -314,7 +317,8 @@ namespace UI
                 { "label_permisos", "Permisos" },
                 { "label_traducciones", "Traducciones" },
                 { "label_bitacora", "Bitacora" },
-                { "label_clientes", "Clientes" }
+                { "label_clientes", "Clientes" },
+                { "label_presupuestos", "Presupuestos" }
             };
 
             foreach (var item in items)
@@ -340,6 +344,22 @@ namespace UI
                     }
                 }
             }
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormClientes form = new FormClientes();
+            form.Show();
+
+            this.Hide();
+        }
+
+        private void presupuestosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPresupuesto form = new FormPresupuesto();
+            form.Show();
+
+            this.Hide();
         }
     }
 }

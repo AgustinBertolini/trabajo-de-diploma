@@ -238,7 +238,9 @@ namespace UI
                 { "label_productos", "Productos"},
                 { "label_permisos", "Permisos" },
                 { "label_traducciones", "Traducciones" },
-                { "label_bitacora", "Bitacora" }
+                { "label_bitacora", "Bitacora" },
+                { "label_clientes", "Clientes" },
+                { "label_presupuestos", "Presupuestos" }
             };
 
             foreach (var item in items)

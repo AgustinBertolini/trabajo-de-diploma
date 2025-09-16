@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using Entidades;
 using BLL;
+using Servicios;
 
 namespace UI
 {
@@ -27,7 +28,6 @@ namespace UI
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            // Validación de campos obligatorios
             if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
                 string.IsNullOrWhiteSpace(txtApellido.Text) ||
                 string.IsNullOrWhiteSpace(txtCuit.Text) ||
@@ -49,12 +49,17 @@ namespace UI
                 Cuit = txtCuit.Text,
                 Email = txtEmail.Text,
                 Direccion = txtDireccion.Text,
-                TipoClienteId = tipoClienteId
+                TipoClienteId = tipoClienteId,
+                UserId = SessionManager.GetInstance.Usuario.Id
             };
 
             ClienteBLL clienteBLL = new ClienteBLL();
             clienteBLL.AltaCliente(cliente);
             MessageBox.Show("Cliente agregado correctamente.");
+
+            FormClientes formClientes = new FormClientes();
+            formClientes.Show();
+
             this.Close();
         }
 
