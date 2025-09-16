@@ -41,6 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
+            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +54,8 @@
             this.permisosToolStripMenuItem,
             this.productosToolStripMenuItem,
             this.usuariosToolStripMenuItem,
-            this.traduccionesToolStripMenuItem});
+            this.traduccionesToolStripMenuItem,
+            this.clientesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1097, 28);
@@ -66,7 +68,7 @@
             this.sesiónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cerrarSesiónToolStripMenuItem});
             this.sesiónToolStripMenuItem.Name = "sesiónToolStripMenuItem";
-            this.sesiónToolStripMenuItem.Size = new System.Drawing.Size(66, 26);
+            this.sesiónToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
             this.sesiónToolStripMenuItem.Tag = "label_sesion";
             this.sesiónToolStripMenuItem.Text = "Sesión";
             // 
@@ -81,7 +83,7 @@
             // permisosToolStripMenuItem
             // 
             this.permisosToolStripMenuItem.Name = "permisosToolStripMenuItem";
-            this.permisosToolStripMenuItem.Size = new System.Drawing.Size(81, 26);
+            this.permisosToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.permisosToolStripMenuItem.Tag = "label_permisos";
             this.permisosToolStripMenuItem.Text = "Permisos";
             this.permisosToolStripMenuItem.Click += new System.EventHandler(this.permisosToolStripMenuItem_Click_1);
@@ -89,7 +91,7 @@
             // productosToolStripMenuItem
             // 
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(89, 26);
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
             this.productosToolStripMenuItem.Tag = "label_productos";
             this.productosToolStripMenuItem.Text = "Productos";
             this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click_1);
@@ -97,7 +99,7 @@
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(79, 26);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
             this.usuariosToolStripMenuItem.Tag = "label_usuarios";
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
@@ -105,7 +107,7 @@
             // traduccionesToolStripMenuItem
             // 
             this.traduccionesToolStripMenuItem.Name = "traduccionesToolStripMenuItem";
-            this.traduccionesToolStripMenuItem.Size = new System.Drawing.Size(109, 26);
+            this.traduccionesToolStripMenuItem.Size = new System.Drawing.Size(109, 24);
             this.traduccionesToolStripMenuItem.Tag = "label_traducciones";
             this.traduccionesToolStripMenuItem.Text = "Traducciones";
             this.traduccionesToolStripMenuItem.Click += new System.EventHandler(this.traduccionesToolStripMenuItem_Click);
@@ -170,6 +172,13 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // clientesToolStripMenuItem
+            // 
+            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.clientesToolStripMenuItem.Tag = "label_clientes";
+            this.clientesToolStripMenuItem.Text = "Clientes";
+            // 
             // FormBitacora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -208,5 +217,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
     }
 }
