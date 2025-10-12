@@ -343,7 +343,8 @@ namespace UI
                 { "label_traducciones", "Traducciones" },
                 { "label_bitacora", "Bitacora" },
                 { "label_clientes", "Clientes" },
-                { "label_presupuestos", "Presupuestos" }
+                { "label_presupuestos", "Presupuestos" },
+                { "label_ventas", "Ventas" }
             };
 
             foreach (var item in items)
@@ -369,6 +370,14 @@ namespace UI
                     }
                 }
             }
+        }
+
+        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormVentas form = new FormVentas();
+            form.Show();
+
+            this.Hide();
         }
     }
 }

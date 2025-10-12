@@ -1,0 +1,5 @@
+CREATE OR ALTER PROCEDURE GetPresupuestos
+AS
+BEGIN
+    SELECT * FROM Presupuestos
+END;

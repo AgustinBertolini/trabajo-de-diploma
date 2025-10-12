@@ -1,0 +1,6 @@
+CREATE OR ALTER PROCEDURE GetVentaById
+  @Id int
+AS
+BEGIN
+    SELECT * FROM Ventas WHERE id = @Id
+END;

@@ -1,0 +1,6 @@
+CREATE TABLE Envios (
+    id INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    direccion NVARCHAR(200) NOT NULL,
+    estado NVARCHAR(30) NOT NULL,
+    fechaCreacion DATETIME NOT NULL,
+);

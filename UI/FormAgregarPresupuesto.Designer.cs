@@ -31,6 +31,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.colProductoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.comboProductos = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -71,17 +76,58 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colProductoId,
+            this.colNombre,
+            this.colPrecio,
+            this.colCantidad,
+            this.colSubTotal});
             this.dataGridView1.Location = new System.Drawing.Point(30, 123);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(369, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(572, 240);
             this.dataGridView1.TabIndex = 2;
+            // 
+            // colProductoId
+            // 
+            this.colProductoId.HeaderText = "Id";
+            this.colProductoId.MinimumWidth = 6;
+            this.colProductoId.Name = "colProductoId";
+            this.colProductoId.Width = 50;
+            // 
+            // colNombre
+            // 
+            this.colNombre.HeaderText = "Nombre";
+            this.colNombre.MinimumWidth = 6;
+            this.colNombre.Name = "colNombre";
+            this.colNombre.Width = 120;
+            // 
+            // colPrecio
+            // 
+            this.colPrecio.HeaderText = "Precio";
+            this.colPrecio.MinimumWidth = 6;
+            this.colPrecio.Name = "colPrecio";
+            this.colPrecio.Width = 80;
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.HeaderText = "Cantidad";
+            this.colCantidad.MinimumWidth = 6;
+            this.colCantidad.Name = "colCantidad";
+            this.colCantidad.Width = 80;
+            // 
+            // colSubTotal
+            // 
+            this.colSubTotal.HeaderText = "Subtotal";
+            this.colSubTotal.MinimumWidth = 6;
+            this.colSubTotal.Name = "colSubTotal";
+            this.colSubTotal.Width = 90;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(424, 123);
+            this.label3.Location = new System.Drawing.Point(629, 123);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 16);
             this.label3.TabIndex = 3;
@@ -91,15 +137,15 @@
             // comboProductos
             // 
             this.comboProductos.FormattingEnabled = true;
-            this.comboProductos.Location = new System.Drawing.Point(427, 143);
+            this.comboProductos.Location = new System.Drawing.Point(632, 143);
             this.comboProductos.Name = "comboProductos";
-            this.comboProductos.Size = new System.Drawing.Size(173, 24);
+            this.comboProductos.Size = new System.Drawing.Size(169, 24);
             this.comboProductos.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(424, 178);
+            this.label4.Location = new System.Drawing.Point(629, 178);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 16);
             this.label4.TabIndex = 5;
@@ -108,31 +154,33 @@
             // 
             // numericCantidad
             // 
-            this.numericCantidad.Location = new System.Drawing.Point(427, 197);
+            this.numericCantidad.Location = new System.Drawing.Point(632, 197);
             this.numericCantidad.Maximum = new decimal(new int[] {
             1215752191,
             23,
             0,
             0});
             this.numericCantidad.Name = "numericCantidad";
-            this.numericCantidad.Size = new System.Drawing.Size(173, 22);
+            this.numericCantidad.Size = new System.Drawing.Size(169, 22);
             this.numericCantidad.TabIndex = 6;
+            this.numericCantidad.ValueChanged += new System.EventHandler(this.numericCantidad_ValueChanged);
             // 
             // btnAñadirProducto
             // 
-            this.btnAñadirProducto.Location = new System.Drawing.Point(467, 292);
+            this.btnAñadirProducto.Location = new System.Drawing.Point(672, 292);
             this.btnAñadirProducto.Name = "btnAñadirProducto";
-            this.btnAñadirProducto.Size = new System.Drawing.Size(75, 23);
+            this.btnAñadirProducto.Size = new System.Drawing.Size(71, 23);
             this.btnAñadirProducto.TabIndex = 7;
             this.btnAñadirProducto.Tag = "label_agregar";
             this.btnAñadirProducto.Text = "Agregar";
             this.btnAñadirProducto.UseVisualStyleBackColor = true;
+            this.btnAñadirProducto.Click += new System.EventHandler(this.btnAñadirProducto_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(30, 346);
+            this.btnCancelar.Location = new System.Drawing.Point(30, 420);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(91, 23);
             this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Tag = "label_cancelar";
             this.btnCancelar.Text = "Cancelar";
@@ -141,18 +189,19 @@
             // 
             // btnCrearPresupuesto
             // 
-            this.btnCrearPresupuesto.Location = new System.Drawing.Point(450, 346);
+            this.btnCrearPresupuesto.Location = new System.Drawing.Point(632, 420);
             this.btnCrearPresupuesto.Name = "btnCrearPresupuesto";
-            this.btnCrearPresupuesto.Size = new System.Drawing.Size(150, 23);
+            this.btnCrearPresupuesto.Size = new System.Drawing.Size(161, 23);
             this.btnCrearPresupuesto.TabIndex = 9;
             this.btnCrearPresupuesto.Tag = "label_crear_presupuesto";
             this.btnCrearPresupuesto.Text = "Crear presupuesto";
             this.btnCrearPresupuesto.UseVisualStyleBackColor = true;
+            this.btnCrearPresupuesto.Click += new System.EventHandler(this.btnCrearPresupuesto_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(31, 299);
+            this.label5.Location = new System.Drawing.Point(31, 391);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 16);
             this.label5.TabIndex = 10;
@@ -161,7 +210,7 @@
             // labelTotal
             // 
             this.labelTotal.AutoSize = true;
-            this.labelTotal.Location = new System.Drawing.Point(74, 300);
+            this.labelTotal.Location = new System.Drawing.Point(74, 392);
             this.labelTotal.Name = "labelTotal";
             this.labelTotal.Size = new System.Drawing.Size(11, 16);
             this.labelTotal.TabIndex = 11;
@@ -178,7 +227,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(424, 232);
+            this.label6.Location = new System.Drawing.Point(629, 232);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 16);
             this.label6.TabIndex = 13;
@@ -186,21 +235,21 @@
             // 
             // numericSubTotal
             // 
-            this.numericSubTotal.Location = new System.Drawing.Point(427, 251);
+            this.numericSubTotal.Location = new System.Drawing.Point(632, 251);
             this.numericSubTotal.Maximum = new decimal(new int[] {
             1569325055,
             23283064,
             0,
             0});
             this.numericSubTotal.Name = "numericSubTotal";
-            this.numericSubTotal.Size = new System.Drawing.Size(173, 22);
+            this.numericSubTotal.Size = new System.Drawing.Size(169, 22);
             this.numericSubTotal.TabIndex = 14;
             // 
             // FormAgregarPresupuesto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 389);
+            this.ClientSize = new System.Drawing.Size(830, 465);
             this.Controls.Add(this.numericSubTotal);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.comboClientes);
@@ -244,5 +293,10 @@
         private System.Windows.Forms.ComboBox comboClientes;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown numericSubTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProductoId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSubTotal;
     }
 }

@@ -50,12 +50,14 @@
     <Compile Include="DigitoVerificadorDAL.cs" />
     <Compile Include="IdiomaDAL.cs" />
     <Compile Include="PermisoDAL.cs" />
+    <Compile Include="PresupuestoDAL.cs" />
     <Compile Include="ProductoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RolDAL.cs" />
     <Compile Include="TraduccionHistoricoDAL.cs" />
     <Compile Include="TraductorDAL.cs" />
     <Compile Include="UsuarioDAL.cs" />
+    <Compile Include="VentaDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
@@ -66,13 +68,25 @@
   <ItemGroup>
     <Content Include="Scripts\AgregoUsuariosDV.sql" />
     <Content Include="Scripts\CreateTableCliente.sql" />
+    <Content Include="Scripts\CreateTableEnvios.sql" />
+    <Content Include="Scripts\CreateTablePresupuesto.sql" />
+    <Content Include="Scripts\CreateTablePresupuestoItem.sql" />
     <Content Include="Scripts\CreateTableTipoCliente.sql" />
+    <Content Include="Scripts\CreateTableVentaItem.sql" />
     <Content Include="Scripts\DeleteCliente.sql" />
     <Content Include="Scripts\GetClientes.sql" />
     <Content Include="StoresProcedures\DeleteCliente.sql" />
+    <Content Include="StoresProcedures\DeletePresupuesto.sql" />
+    <Content Include="StoresProcedures\DeleteVenta.sql" />
     <Content Include="StoresProcedures\EditCliente.sql" />
     <Content Include="StoresProcedures\GetClientes.sql" />
+    <Content Include="StoresProcedures\GetPresupuestoById.sql" />
+    <Content Include="StoresProcedures\GetPresupuestoItemsByPresupuestoId.sql" />
+    <Content Include="StoresProcedures\GetPresupuestos.sql" />
     <Content Include="StoresProcedures\GetTiposCliente.sql" />
+    <Content Include="StoresProcedures\GetVentaById.sql" />
+    <Content Include="StoresProcedures\GetVentaItemsByVentaId.sql" />
+    <Content Include="StoresProcedures\GetVentas.sql" />
     <Content Include="StoresProcedures\InsertCliente.sql" />
     <Content Include="StoresProcedures\GetProductoVendedores.sql" />
     <Content Include="StoresProcedures\GuardarPrecioHistorico.sql" />
@@ -127,13 +141,18 @@
     <Content Include="StoresProcedures\InsertDigitoVerificadorHorizontal.sql" />
     <Content Include="StoresProcedures\InsertIdioma.sql" />
     <Content Include="StoresProcedures\InsertPermiso.sql" />
+    <Content Include="StoresProcedures\InsertPresupuesto.sql" />
+    <Content Include="StoresProcedures\InsertPresupuestoItem.sql" />
     <Content Include="StoresProcedures\InsertProducto.sql" />
     <Content Include="StoresProcedures\InsertTraduccionHistorico.sql" />
     <Content Include="StoresProcedures\InsertUsuario.sql" />
+    <Content Include="StoresProcedures\InsertVenta.sql" />
+    <Content Include="StoresProcedures\InsertVentaItem.sql" />
     <Content Include="StoresProcedures\VincularPermisos.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Scripts\CreateTableVentas.sql" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Backups\" />

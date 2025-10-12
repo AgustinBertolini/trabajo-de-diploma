@@ -82,6 +82,12 @@
     <Compile Include="FormAgregarUsuario.Designer.cs">
       <DependentUpon>FormAgregarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAgregarVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAgregarVenta.Designer.cs">
+      <DependentUpon>FormAgregarVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAsignarPermiso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,12 @@
     </Compile>
     <Compile Include="FormClientes.Designer.cs">
       <DependentUpon>FormClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetallePresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetallePresupuesto.Designer.cs">
+      <DependentUpon>FormDetallePresupuesto.cs</DependentUpon>
     </Compile>
     <Compile Include="FormEditarCliente.cs">
       <SubType>Form</SubType>
@@ -178,6 +190,12 @@
     <Compile Include="FormUsuarios.Designer.cs">
       <DependentUpon>FormUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVentas.Designer.cs">
+      <DependentUpon>FormVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormVincularPermisos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +222,9 @@
     <EmbeddedResource Include="FormAgregarUsuario.resx">
       <DependentUpon>FormAgregarUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAgregarVenta.resx">
+      <DependentUpon>FormAgregarVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAsignarPermiso.resx">
       <DependentUpon>FormAsignarPermiso.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormClientes.resx">
       <DependentUpon>FormClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDetallePresupuesto.resx">
+      <DependentUpon>FormDetallePresupuesto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditarCliente.resx">
       <DependentUpon>FormEditarCliente.cs</DependentUpon>
@@ -251,6 +275,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormUsuarios.resx">
       <DependentUpon>FormUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVentas.resx">
+      <DependentUpon>FormVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormVincularPermisos.resx">
       <DependentUpon>FormVincularPermisos.cs</DependentUpon>

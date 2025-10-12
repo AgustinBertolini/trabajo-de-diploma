@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class FormPresupuesto
+    partial class FormVentas
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnCrearPresupuesto = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.sesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,41 +38,15 @@
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnVerPresupuesto = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.presupuestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnCrearVenta = new System.Windows.Forms.Button();
+            this.btnVerVenta = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 61);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 288);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Tag = "label_presupuesto";
-            this.label1.Text = "Presupuesto";
-            // 
-            // btnCrearPresupuesto
-            // 
-            this.btnCrearPresupuesto.Location = new System.Drawing.Point(15, 377);
-            this.btnCrearPresupuesto.Name = "btnCrearPresupuesto";
-            this.btnCrearPresupuesto.Size = new System.Drawing.Size(146, 23);
-            this.btnCrearPresupuesto.TabIndex = 2;
-            this.btnCrearPresupuesto.Tag = "label_crear_presupuesto";
-            this.btnCrearPresupuesto.Text = "Crear presupuesto";
-            this.btnCrearPresupuesto.UseVisualStyleBackColor = true;
-            this.btnCrearPresupuesto.Click += new System.EventHandler(this.btnCrearPresupuesto_Click);
             // 
             // menuStrip1
             // 
@@ -88,11 +59,13 @@
             this.bitacoraToolStripMenuItem,
             this.productosToolStripMenuItem,
             this.clientesToolStripMenuItem,
-            this.ventasToolStripMenuItem});
+            this.ventasToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.presupuestosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
-            this.menuStrip1.TabIndex = 14;
+            this.menuStrip1.TabIndex = 15;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
@@ -118,7 +91,6 @@
             this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
             this.usuariosToolStripMenuItem.Tag = "label_usuarios";
             this.usuariosToolStripMenuItem.Text = "Usuarios";
-            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // permisosToolStripMenuItem
             // 
@@ -154,43 +126,78 @@
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
             this.clientesToolStripMenuItem.Tag = "label_clientes";
             this.clientesToolStripMenuItem.Text = "Clientes";
-            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem
             // 
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
             this.ventasToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
-            this.ventasToolStripMenuItem.Tag = "label_ventas";
             this.ventasToolStripMenuItem.Text = "Ventas";
-            this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
-            // btnVerPresupuesto
+            // toolStripMenuItem1
             // 
-            this.btnVerPresupuesto.Location = new System.Drawing.Point(657, 377);
-            this.btnVerPresupuesto.Name = "btnVerPresupuesto";
-            this.btnVerPresupuesto.Size = new System.Drawing.Size(131, 23);
-            this.btnVerPresupuesto.TabIndex = 15;
-            this.btnVerPresupuesto.Tag = "label_ver_presupuesto";
-            this.btnVerPresupuesto.Text = "Ver presupuesto";
-            this.btnVerPresupuesto.UseVisualStyleBackColor = true;
-            this.btnVerPresupuesto.Click += new System.EventHandler(this.btnVerPresupuesto_Click);
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(14, 24);
             // 
-            // FormPresupuesto
+            // presupuestosToolStripMenuItem
+            // 
+            this.presupuestosToolStripMenuItem.Name = "presupuestosToolStripMenuItem";
+            this.presupuestosToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
+            this.presupuestosToolStripMenuItem.Text = "Presupuesto";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 16);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Ventas";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(15, 61);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(739, 279);
+            this.dataGridView1.TabIndex = 17;
+            // 
+            // btnCrearVenta
+            // 
+            this.btnCrearVenta.Location = new System.Drawing.Point(15, 380);
+            this.btnCrearVenta.Name = "btnCrearVenta";
+            this.btnCrearVenta.Size = new System.Drawing.Size(118, 23);
+            this.btnCrearVenta.TabIndex = 18;
+            this.btnCrearVenta.Text = "Crear venta";
+            this.btnCrearVenta.UseVisualStyleBackColor = true;
+            this.btnCrearVenta.Click += new System.EventHandler(this.btnCrearVenta_Click);
+            // 
+            // btnVerVenta
+            // 
+            this.btnVerVenta.Location = new System.Drawing.Point(659, 380);
+            this.btnVerVenta.Name = "btnVerVenta";
+            this.btnVerVenta.Size = new System.Drawing.Size(95, 23);
+            this.btnVerVenta.TabIndex = 19;
+            this.btnVerVenta.Text = "Ver venta";
+            this.btnVerVenta.UseVisualStyleBackColor = true;
+            // 
+            // FormVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnVerPresupuesto);
-            this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.btnCrearPresupuesto);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnVerVenta);
+            this.Controls.Add(this.btnCrearVenta);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "FormPresupuesto";
-            this.Text = "FormPresupuesto";
-            this.Load += new System.EventHandler(this.FormPresupuesto_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.menuStrip1);
+            this.Name = "FormVentas";
+            this.Text = "FormVentas";
+            this.Load += new System.EventHandler(this.FormVentas_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,9 +205,6 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnCrearPresupuesto;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem sesiónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
@@ -210,7 +214,12 @@
         private System.Windows.Forms.ToolStripMenuItem bitacoraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
-        private System.Windows.Forms.Button btnVerPresupuesto;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem presupuestosToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnCrearVenta;
+        private System.Windows.Forms.Button btnVerVenta;
     }
 }
