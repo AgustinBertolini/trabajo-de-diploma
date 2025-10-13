@@ -96,7 +96,7 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.btnIniciarSesion);
             this.Name = "FormLogin";
-            this.Text = "Form1";
+            this.Text = "Iniciar sesión";
             this.Load += new System.EventHandler(this.FormLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

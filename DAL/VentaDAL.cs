@@ -209,5 +209,32 @@ namespace DAL
                 }
             }
         }
+
+        public void ActualizarEstadoEnvio(int id, string estadoEnvio)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                SqlTransaction tran = conn.BeginTransaction();
+
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand("ActualizarEstadoEnvio", conn, tran))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Id", id);
+                        cmd.Parameters.AddWithValue("@EstadoEnvio", estadoEnvio);
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    tran.Commit();
+                }
+                catch
+                {
+                    tran.Rollback();
+                    throw;
+                }
+            }
+        }
     }
 }

@@ -256,5 +256,29 @@ namespace UI
         {
            
         }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormClientes formClientes = new FormClientes();
+            formClientes.Show();
+
+            this.Hide();
+        }
+
+        private void presupuestosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPresupuesto presupuestos = new FormPresupuesto();
+            presupuestos.Show();
+
+            this.Hide();
+        }
+
+        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPresupuesto ventas = new FormPresupuesto();
+            ventas.Show();
+
+            this.Hide();
+        }
     }
 }

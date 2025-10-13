@@ -379,5 +379,13 @@ namespace UI
 
             this.Hide();
         }
+
+        private void presupuestosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPresupuesto formPresupuesto = new FormPresupuesto();
+            formPresupuesto.Show();
+
+            this.Hide();
+        }
     }
 }

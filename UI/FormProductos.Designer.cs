@@ -183,6 +183,7 @@
             this.presupuestosToolStripMenuItem.Size = new System.Drawing.Size(109, 24);
             this.presupuestosToolStripMenuItem.Tag = "label_presupuestos";
             this.presupuestosToolStripMenuItem.Text = "Presupuestos";
+            this.presupuestosToolStripMenuItem.Click += new System.EventHandler(this.presupuestosToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem
             // 

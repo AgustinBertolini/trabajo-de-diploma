@@ -59,6 +59,11 @@ namespace BLL
             return dal.BorrarVenta(id);
         }
 
+        public void ActualizarEstadoEnvio(int id, string estadoEnvio)
+        {
+            dal.ActualizarEstadoEnvio(id, estadoEnvio);
+        }
+
         private async void EnviarNotificacionCliente(
             string email,
             string nombreCliente,

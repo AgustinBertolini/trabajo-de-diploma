@@ -75,6 +75,7 @@
     <Content Include="Scripts\CreateTableVentaItem.sql" />
     <Content Include="Scripts\DeleteCliente.sql" />
     <Content Include="Scripts\GetClientes.sql" />
+    <Content Include="StoresProcedures\ActualizarEstadoEnvio.sql" />
     <Content Include="StoresProcedures\DeleteCliente.sql" />
     <Content Include="StoresProcedures\DeletePresupuesto.sql" />
     <Content Include="StoresProcedures\DeleteVenta.sql" />

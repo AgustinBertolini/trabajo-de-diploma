@@ -1,4 +1,5 @@
 ﻿using BLL;
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -55,6 +56,95 @@ namespace UI
         {
             FormAgregarVenta form = new FormAgregarVenta();
             form.Show();
+
+            this.Hide();
+        }
+
+        private void btnVerVenta_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("No hay una venta seleccionada");
+                return;
+            }
+
+            if (dataGridView1.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("Se tiene que seleccionar una unica venta");
+                return;
+            }
+
+
+            int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Id"].Value);
+            FormDetalleVenta form = new FormDetalleVenta(id);
+            form.Show();
+            this.Hide();
+        }
+
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UsuarioBLL usuarioBLL = new UsuarioBLL();
+
+            usuarioBLL.Logout();
+
+            FormLogin formLogin = new FormLogin();
+            formLogin.Show();
+
+            this.Hide();
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormUsuarios usuarios = new FormUsuarios();
+            usuarios.Show();
+
+            this.Hide();
+        }
+
+        private void permisosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPermisos formPermisos = new FormPermisos();
+            formPermisos.Show();
+
+            this.Hide();
+        }
+
+        private void cambiarIdiomaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormTraducciones formTraducciones = new FormTraducciones();
+            formTraducciones.Show();
+
+            this.Hide();
+        }
+
+        private void bitacoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormBitacora formBitacora = new FormBitacora();
+            formBitacora.Show();
+
+            this.Hide();
+        }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormProductos formProductos = new FormProductos();
+            formProductos.Show();
+
+            this.Hide();
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormClientes formClientes = new FormClientes();
+            formClientes.Show();
+
+            this.Hide();
+        }
+
+        private void presupuestosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPresupuesto formPresupuesto = new FormPresupuesto();
+            formPresupuesto.Show();
 
             this.Hide();
         }
