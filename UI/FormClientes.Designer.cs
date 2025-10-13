@@ -132,9 +132,10 @@
             // cerrarSesiónToolStripMenuItem
             // 
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.cerrarSesiónToolStripMenuItem.Tag = "label_cerrar_sesion";
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar sesión";
+            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click_1);
             // 
             // usuariosToolStripMenuItem
             // 

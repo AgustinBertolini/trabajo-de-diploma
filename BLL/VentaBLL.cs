@@ -37,6 +37,17 @@ namespace BLL
             var productoDAL = new ProductoDAL();
             List<Producto> productos = productoDAL.GetProductos();
 
+            foreach (var item in items)
+            {
+                var producto = productos.FirstOrDefault(p => p.Id == item.IdProducto);
+
+                if (producto.Stock < item.Cantidad)
+                {
+                    throw new Exception($"El producto '{producto.Nombre}' no tiene stock suficiente. " +
+                                        $"Stock disponible: {producto.Stock}, cantidad solicitada: {item.Cantidad}.");
+                }
+            }
+
             if (cliente != null && !string.IsNullOrEmpty(cliente.Email))
             {
                 EnviarNotificacionCliente(

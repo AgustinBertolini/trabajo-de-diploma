@@ -219,5 +219,17 @@ namespace UI
 
             this.Hide();
         }
+
+        private void cerrarSesiónToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            UsuarioBLL usuarioBLL = new UsuarioBLL();
+
+            usuarioBLL.Logout();
+
+            FormLogin formLogin = new FormLogin();
+            formLogin.Show();
+
+            this.Hide();
+        }
     }
 }

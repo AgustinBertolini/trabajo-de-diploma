@@ -266,7 +266,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormAgregarVenta";
-            this.Text = "FormAgregarVenta";
+            this.Text = "Agregar venta";
             this.Load += new System.EventHandler(this.FormAgregarVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericSubTotal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericCantidad)).EndInit();
