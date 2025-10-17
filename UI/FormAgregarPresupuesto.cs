@@ -94,7 +94,7 @@ namespace UI
         {
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ReadOnly = true;
-            dataGridView1.Columns["colProductoId"].Visible = false;
+            //dataGridView1.Columns["colProductoId"].Visible = false;
 
 
             CargarProductosEnComboBox();

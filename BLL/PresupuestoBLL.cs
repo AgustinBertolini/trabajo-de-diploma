@@ -31,11 +31,11 @@ namespace BLL
             if (items == null || items.Count == 0)
                 throw new ArgumentException("Debe incluir al menos un item en el presupuesto.");
 
-            List<Cliente> clientes = new ClienteDAL().GetClientes();
+            List<Cliente> clientes = new ClienteBLL().GetClientes();
 
             Cliente cliente = clientes.Find(c => c.Id == presupuesto.IdCliente);
 
-            List<Producto> productos = new ProductoDAL().GetProductos();
+            List<Producto> productos = new ProductoBLL().GetProductos();
 
             this.EnviarNotificacionCliente(cliente.Email, cliente.Nombre + " " + cliente.Apellido, 
                 items.ConvertAll(i => (productos.FirstOrDefault(x=>x.Id == i.IdProducto).Nombre, i.PrecioUnitario, i.Cantidad)), 

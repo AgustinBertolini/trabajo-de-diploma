@@ -31,11 +31,11 @@ namespace BLL
 
             venta.FechaCreacion = DateTime.Now;
 
-            var clienteDAL = new ClienteDAL();
-            Cliente cliente = clienteDAL.GetClientes().FirstOrDefault(c => c.Id == venta.IdCliente);
+            var clienteBLL = new ClienteBLL();
+            Cliente cliente = clienteBLL.GetClientes().FirstOrDefault(c => c.Id == venta.IdCliente);
 
-            var productoDAL = new ProductoDAL();
-            List<Producto> productos = productoDAL.GetProductos();
+            var productoBLL = new ProductoBLL();
+            List<Producto> productos = productoBLL.GetProductos();
 
             foreach (var item in items)
             {

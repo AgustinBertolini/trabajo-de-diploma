@@ -152,11 +152,10 @@
     <Content Include="StoresProcedures\VincularPermisos.sql" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Backups\ProyectoIntegrador.bak" />
     <None Include="packages.config" />
     <Content Include="Scripts\CreateTableVentas.sql" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Backups\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
