@@ -124,8 +124,6 @@ namespace Servicios
 
                 <p style='text-align:center; margin-bottom: 30px;'>
                     <strong>RaiseApp S.R.L.</strong><br>
-                    CUIT: 30-71234567-8<br>
-                    IVA Responsable Inscripto<br>
                     Fecha de emisión: {fecha}<br>
                     N° de comprobante: <strong>0001-{nroComprobante}</strong>
                 </p>
@@ -164,14 +162,12 @@ namespace Servicios
                 </table>
 
                 <div style='margin-top: 20px; text-align: right;'>
-                    <p><strong>Subtotal:</strong> ${total:N2}</p>
-                    <p><strong>IVA (21%):</strong> ${iva:N2}</p>
-                    <h3 style='color: #1570EE;'>Total Final: ${totalConIva:N2}</h3>
+                    <h3 style='color: #1570EE;'>Total Final - IVA Incluido: ${total}</h3>
                 </div>
 
                 <hr style='margin-top: 30px; margin-bottom: 20px;'>
                 <p style='font-size: 12px; color: #666; text-align: center;'>
-                    Este comprobante fue emitido de manera electrónica y tiene validez legal.<br>
+                    Este comprobante fue emitido de manera electrónica y tiene validez ante posibles reclamos.<br>
                     Gracias por tu compra.<br>
                     <strong>RaiseApp</strong>
                 </p>

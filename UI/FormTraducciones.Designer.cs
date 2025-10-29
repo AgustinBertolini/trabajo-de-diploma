@@ -69,7 +69,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(796, 28);
-            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
@@ -149,7 +149,7 @@
             this.agregarIdiomaBtn.Location = new System.Drawing.Point(296, 55);
             this.agregarIdiomaBtn.Name = "agregarIdiomaBtn";
             this.agregarIdiomaBtn.Size = new System.Drawing.Size(161, 23);
-            this.agregarIdiomaBtn.TabIndex = 7;
+            this.agregarIdiomaBtn.TabIndex = 0;
             this.agregarIdiomaBtn.Tag = "label_agregar_idioma";
             this.agregarIdiomaBtn.Text = "Agregar Idioma";
             this.agregarIdiomaBtn.UseVisualStyleBackColor = true;
@@ -160,7 +160,7 @@
             this.editarIdiomaBtn.Location = new System.Drawing.Point(296, 96);
             this.editarIdiomaBtn.Name = "editarIdiomaBtn";
             this.editarIdiomaBtn.Size = new System.Drawing.Size(161, 23);
-            this.editarIdiomaBtn.TabIndex = 8;
+            this.editarIdiomaBtn.TabIndex = 1;
             this.editarIdiomaBtn.Tag = "label_editar_idioma";
             this.editarIdiomaBtn.Text = "Editar Idioma";
             this.editarIdiomaBtn.UseVisualStyleBackColor = true;
@@ -171,7 +171,7 @@
             this.borrarIdiomaBtn.Location = new System.Drawing.Point(296, 142);
             this.borrarIdiomaBtn.Name = "borrarIdiomaBtn";
             this.borrarIdiomaBtn.Size = new System.Drawing.Size(161, 23);
-            this.borrarIdiomaBtn.TabIndex = 9;
+            this.borrarIdiomaBtn.TabIndex = 2;
             this.borrarIdiomaBtn.Tag = "label_borrar_idioma";
             this.borrarIdiomaBtn.Text = "Borrar Idioma";
             this.borrarIdiomaBtn.UseVisualStyleBackColor = true;
@@ -191,18 +191,21 @@
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(29, 254);
+            this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(522, 268);
-            this.dataGridView2.TabIndex = 11;
+            this.dataGridView2.TabIndex = 7;
             // 
             // btnEditarTraduccion
             // 
             this.btnEditarTraduccion.Location = new System.Drawing.Point(591, 338);
             this.btnEditarTraduccion.Name = "btnEditarTraduccion";
             this.btnEditarTraduccion.Size = new System.Drawing.Size(161, 23);
-            this.btnEditarTraduccion.TabIndex = 13;
+            this.btnEditarTraduccion.TabIndex = 5;
             this.btnEditarTraduccion.Tag = "label_editar_traduccion";
             this.btnEditarTraduccion.Text = "Editar traducción";
             this.btnEditarTraduccion.UseVisualStyleBackColor = true;
@@ -214,7 +217,7 @@
             this.label2.Location = new System.Drawing.Point(29, 232);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(241, 16);
-            this.label2.TabIndex = 15;
+            this.label2.TabIndex = 8;
             this.label2.Tag = "label_traducciones_idioma";
             this.label2.Text = "Traducciones del idioma seleccionado";
             // 
@@ -224,7 +227,7 @@
             this.label3.Location = new System.Drawing.Point(588, 55);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(123, 16);
-            this.label3.TabIndex = 16;
+            this.label3.TabIndex = 3;
             this.label3.Tag = "label_seleccionar_idioma";
             this.label3.Text = "Seleccionar idioma";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -235,18 +238,21 @@
             this.comboBox1.Location = new System.Drawing.Point(591, 74);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(126, 24);
-            this.comboBox1.TabIndex = 17;
+            this.comboBox1.TabIndex = 4;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(29, 51);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(261, 156);
-            this.dataGridView1.TabIndex = 18;
+            this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // button1
@@ -254,7 +260,7 @@
             this.button1.Location = new System.Drawing.Point(591, 421);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(161, 27);
-            this.button1.TabIndex = 19;
+            this.button1.TabIndex = 6;
             this.button1.Tag = "label_historico";
             this.button1.Text = "Historico";
             this.button1.UseVisualStyleBackColor = true;

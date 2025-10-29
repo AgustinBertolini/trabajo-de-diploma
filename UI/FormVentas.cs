@@ -191,5 +191,10 @@ namespace UI
 
             this.Hide();
         }
+
+        private void sesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

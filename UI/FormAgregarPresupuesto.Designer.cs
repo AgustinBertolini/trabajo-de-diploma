@@ -64,7 +64,7 @@
             this.label2.Location = new System.Drawing.Point(27, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 16);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 2;
             this.label2.Tag = "label_productos";
             this.label2.Text = "Productos";
             // 
@@ -72,11 +72,14 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(30, 123);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(369, 150);
-            this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.TabIndex = 12;
             // 
             // label3
             // 
@@ -90,6 +93,7 @@
             // 
             // comboProductos
             // 
+            this.comboProductos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboProductos.FormattingEnabled = true;
             this.comboProductos.Location = new System.Drawing.Point(427, 143);
             this.comboProductos.Name = "comboProductos";
@@ -124,7 +128,7 @@
             this.btnAñadirProducto.Location = new System.Drawing.Point(467, 292);
             this.btnAñadirProducto.Name = "btnAñadirProducto";
             this.btnAñadirProducto.Size = new System.Drawing.Size(75, 23);
-            this.btnAñadirProducto.TabIndex = 7;
+            this.btnAñadirProducto.TabIndex = 9;
             this.btnAñadirProducto.Tag = "label_agregar";
             this.btnAñadirProducto.Text = "Agregar";
             this.btnAñadirProducto.UseVisualStyleBackColor = true;
@@ -135,7 +139,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(30, 346);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Tag = "label_cancelar";
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -146,10 +150,11 @@
             this.btnCrearPresupuesto.Location = new System.Drawing.Point(450, 346);
             this.btnCrearPresupuesto.Name = "btnCrearPresupuesto";
             this.btnCrearPresupuesto.Size = new System.Drawing.Size(150, 23);
-            this.btnCrearPresupuesto.TabIndex = 9;
+            this.btnCrearPresupuesto.TabIndex = 11;
             this.btnCrearPresupuesto.Tag = "label_crear_presupuesto";
             this.btnCrearPresupuesto.Text = "Crear presupuesto";
             this.btnCrearPresupuesto.UseVisualStyleBackColor = true;
+            this.btnCrearPresupuesto.Click += new System.EventHandler(this.btnCrearPresupuesto_Click_1);
             // 
             // label5
             // 
@@ -157,7 +162,7 @@
             this.label5.Location = new System.Drawing.Point(31, 299);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 16);
-            this.label5.TabIndex = 10;
+            this.label5.TabIndex = 13;
             this.label5.Text = "Total:";
             // 
             // labelTotal
@@ -166,16 +171,19 @@
             this.labelTotal.Location = new System.Drawing.Point(74, 300);
             this.labelTotal.Name = "labelTotal";
             this.labelTotal.Size = new System.Drawing.Size(11, 16);
-            this.labelTotal.TabIndex = 11;
+            this.labelTotal.TabIndex = 14;
             this.labelTotal.Text = "-";
             // 
             // comboClientes
             // 
+            this.comboClientes.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboClientes.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboClientes.FormattingEnabled = true;
             this.comboClientes.Location = new System.Drawing.Point(30, 39);
             this.comboClientes.Name = "comboClientes";
             this.comboClientes.Size = new System.Drawing.Size(201, 24);
-            this.comboClientes.TabIndex = 12;
+            this.comboClientes.TabIndex = 1;
+            this.comboClientes.SelectedIndexChanged += new System.EventHandler(this.comboClientes_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -183,7 +191,7 @@
             this.label6.Location = new System.Drawing.Point(424, 232);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 16);
-            this.label6.TabIndex = 13;
+            this.label6.TabIndex = 7;
             this.label6.Text = "Subtotal";
             // 
             // numericSubTotal
@@ -196,7 +204,7 @@
             0});
             this.numericSubTotal.Name = "numericSubTotal";
             this.numericSubTotal.Size = new System.Drawing.Size(173, 22);
-            this.numericSubTotal.TabIndex = 14;
+            this.numericSubTotal.TabIndex = 8;
             // 
             // FormAgregarPresupuesto
             // 

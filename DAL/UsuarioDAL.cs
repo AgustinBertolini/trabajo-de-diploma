@@ -22,11 +22,10 @@ namespace DAL
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    SqlTransaction transaction = conn.BeginTransaction();
 
                     try
                     {
-                        using (SqlCommand cmd = new SqlCommand("GetUsuario", conn, transaction))
+                        using (SqlCommand cmd = new SqlCommand("GetUsuario", conn))
                         {
                             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -53,13 +52,10 @@ namespace DAL
                                     };
                                 }
                             }
-
-                            transaction.Commit();
-                    }
+                        }
                     }
                     catch (Exception ex)
                     {
-                        transaction.Rollback();
                         throw ex;
                     }
                     

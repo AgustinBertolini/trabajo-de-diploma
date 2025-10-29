@@ -78,6 +78,14 @@ namespace UI
 
         }
 
+        private void FormDetallePresupuesto_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormPresupuesto form = new FormPresupuesto();
+            form.Show();
+
+            this.Hide();
+        }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 

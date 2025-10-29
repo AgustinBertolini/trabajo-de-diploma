@@ -39,6 +39,14 @@ namespace UI
 
         }
 
+        private void FormEditarTraduccion_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormTraducciones form = new FormTraducciones();
+            form.Show();
+
+            this.Hide();
+        }
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             FormTraducciones form = new FormTraducciones();

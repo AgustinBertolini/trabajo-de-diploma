@@ -91,7 +91,20 @@ namespace UI
 
         private void FormEditarProducto_Load(object sender, EventArgs e)
         {
+            numericStock.Maximum = 9999999;
+            numericUpDown1.Maximum = 9999999;
 
+            comboUsuarios.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            comboUsuarios.AutoCompleteSource = AutoCompleteSource.ListItems;
+            comboUsuarios.DropDownStyle = ComboBoxStyle.DropDown;
+        }
+
+        private void FormEditarProducto_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormProductos form = new FormProductos();
+            form.Show();
+
+            this.Hide();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

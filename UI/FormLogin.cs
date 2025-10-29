@@ -20,8 +20,8 @@ namespace UI
         {
             InitializeComponent();
         }
+        private Point initialPosition;
 
-       
 
         private void D_Click(object sender, EventArgs e)
         {
@@ -71,7 +71,7 @@ namespace UI
 
                 if (SessionManager.GetInstance.Usuario.Rol.Nombre == "VENDEDOR")
                 {
-                    FormClientes form = new FormClientes();
+                    FormInicioVendedor form = new FormInicioVendedor();
                     form.Show();
                 }
                 else
@@ -90,8 +90,20 @@ namespace UI
             }
         }
 
+        private void Form1_LocationChanged(object sender, EventArgs e)
+        {
+            if (this.Location != initialPosition)
+                this.Location = initialPosition;
+        }
+
         private void FormLogin_Load(object sender, EventArgs e)
         {
+            initialPosition = this.Location;
+
+            this.LocationChanged += Form1_LocationChanged;
+
+            this.AcceptButton = btnIniciarSesion;
+
             UsuarioBLL usuarioBLL = new UsuarioBLL();
             var usuarios = usuarioBLL.GetUsuarios();
 
@@ -113,6 +125,16 @@ namespace UI
             //        Application.Exit();
             //    }
             //}
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

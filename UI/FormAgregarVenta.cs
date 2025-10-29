@@ -36,6 +36,10 @@ namespace UI
             comboClientes.DataSource = clientes;
             comboClientes.DisplayMember = "Nombre";
             comboClientes.ValueMember = "Id";
+
+            comboClientes.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            comboClientes.AutoCompleteSource = AutoCompleteSource.ListItems;
+            comboClientes.DropDownStyle = ComboBoxStyle.DropDown;
         }
 
         private void CalcularSubTotal()
@@ -101,9 +105,26 @@ namespace UI
             dataGridView1.ReadOnly = true;
             dataGridView1.Columns["colProductoId"].Visible = false;
 
+            numericCantidad.Maximum = 99999999;
+
+            comboClientes.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            comboClientes.AutoCompleteSource = AutoCompleteSource.ListItems;
+            comboClientes.DropDownStyle = ComboBoxStyle.DropDown;
+
+            comboProductos.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            comboProductos.AutoCompleteSource = AutoCompleteSource.ListItems;
+            comboProductos.DropDownStyle = ComboBoxStyle.DropDown;
 
             CargarProductosEnComboBox();
             CargarClientesEnComboBox();
+        }
+
+        private void FormAgregarVenta_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormVentas form = new FormVentas();
+            form.Show();
+
+            this.Hide();
         }
 
         private void btnAñadirProducto_Click(object sender, EventArgs e)

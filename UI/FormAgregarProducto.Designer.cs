@@ -45,7 +45,7 @@
             this.inputNombre.Location = new System.Drawing.Point(21, 43);
             this.inputNombre.Name = "inputNombre";
             this.inputNombre.Size = new System.Drawing.Size(319, 22);
-            this.inputNombre.TabIndex = 0;
+            this.inputNombre.TabIndex = 1;
             this.inputNombre.TextChanged += new System.EventHandler(this.inputNombre_TextChanged);
             // 
             // label1
@@ -54,7 +54,7 @@
             this.label1.Location = new System.Drawing.Point(18, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 16);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 0;
             this.label1.Tag = "label_nombre";
             this.label1.Text = "Nombre";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -83,7 +83,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(19, 203);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(84, 32);
-            this.btnCancelar.TabIndex = 4;
+            this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Tag = "label_cancelar";
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -94,7 +94,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(266, 203);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(74, 32);
-            this.btnAceptar.TabIndex = 5;
+            this.btnAceptar.TabIndex = 7;
             this.btnAceptar.Tag = "label_aceptar";
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -107,7 +107,7 @@
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label3.Size = new System.Drawing.Size(41, 16);
-            this.label3.TabIndex = 6;
+            this.label3.TabIndex = 4;
             this.label3.Tag = "label_stock";
             this.label3.Text = "Stock";
             // 
@@ -116,7 +116,7 @@
             this.numericStock.Location = new System.Drawing.Point(21, 165);
             this.numericStock.Name = "numericStock";
             this.numericStock.Size = new System.Drawing.Size(319, 22);
-            this.numericStock.TabIndex = 7;
+            this.numericStock.TabIndex = 5;
             // 
             // FormAgregarProducto
             // 

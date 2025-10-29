@@ -51,7 +51,7 @@
             this.label2.Location = new System.Drawing.Point(35, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 16);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Permiso hijo";
             // 
             // comboPadre
@@ -60,7 +60,7 @@
             this.comboPadre.Location = new System.Drawing.Point(35, 45);
             this.comboPadre.Name = "comboPadre";
             this.comboPadre.Size = new System.Drawing.Size(220, 24);
-            this.comboPadre.TabIndex = 2;
+            this.comboPadre.TabIndex = 1;
             // 
             // comboHijo
             // 

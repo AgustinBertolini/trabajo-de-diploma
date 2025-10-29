@@ -39,6 +39,14 @@ namespace UI
             }
         }
 
+        private void FormVincularPermisos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormPermisos form = new FormPermisos();
+            form.Show();
+
+            this.Hide();
+        }
+
         private void FormVincularPermisos_Load(object sender, EventArgs e)
         {
             List<Permiso> permisos = new List<Permiso> ();
@@ -52,6 +60,14 @@ namespace UI
 
             comboHijo.DataSource = permisos.ToList();
             comboHijo.DisplayMember = "Nombre";
+
+            comboPadre.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            comboPadre.AutoCompleteSource = AutoCompleteSource.ListItems;
+            comboPadre.DropDownStyle = ComboBoxStyle.DropDown;
+
+            comboHijo.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            comboHijo.AutoCompleteSource = AutoCompleteSource.ListItems;
+            comboHijo.DropDownStyle = ComboBoxStyle.DropDown;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

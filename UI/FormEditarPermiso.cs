@@ -53,6 +53,14 @@ namespace UI
             txtIdHidden.Hide();
         }
 
+        private void FormEditarPermiso_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormPermisos form = new FormPermisos();
+            form.Show();
+
+            this.Hide();
+        }
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             FormPermisos form = new FormPermisos();

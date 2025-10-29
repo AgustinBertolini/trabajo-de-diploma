@@ -70,7 +70,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(41, 141);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 23);
-            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Tag = "label_cancelar";
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -81,7 +81,7 @@
             this.txtIdHidden.Location = new System.Drawing.Point(41, 94);
             this.txtIdHidden.Name = "txtIdHidden";
             this.txtIdHidden.Size = new System.Drawing.Size(100, 22);
-            this.txtIdHidden.TabIndex = 6;
+            this.txtIdHidden.TabIndex = 2;
             this.txtIdHidden.TextChanged += new System.EventHandler(this.txtIdHidden_TextChanged);
             // 
             // FormEditarPermiso

@@ -61,7 +61,7 @@
             this.label2.Location = new System.Drawing.Point(200, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 16);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Direccion:";
             // 
             // label3
@@ -70,7 +70,7 @@
             this.label3.Location = new System.Drawing.Point(38, 78);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 16);
-            this.label3.TabIndex = 2;
+            this.label3.TabIndex = 6;
             this.label3.Text = "Correo:";
             // 
             // labelCliente
@@ -79,7 +79,7 @@
             this.labelCliente.Location = new System.Drawing.Point(38, 58);
             this.labelCliente.Name = "labelCliente";
             this.labelCliente.Size = new System.Drawing.Size(11, 16);
-            this.labelCliente.TabIndex = 3;
+            this.labelCliente.TabIndex = 1;
             this.labelCliente.Text = "-";
             // 
             // labelCorreo
@@ -88,7 +88,7 @@
             this.labelCorreo.Location = new System.Drawing.Point(38, 97);
             this.labelCorreo.Name = "labelCorreo";
             this.labelCorreo.Size = new System.Drawing.Size(11, 16);
-            this.labelCorreo.TabIndex = 4;
+            this.labelCorreo.TabIndex = 7;
             this.labelCorreo.Text = "-";
             // 
             // labelDireccion
@@ -97,18 +97,21 @@
             this.labelDireccion.Location = new System.Drawing.Point(200, 58);
             this.labelDireccion.Name = "labelDireccion";
             this.labelDireccion.Size = new System.Drawing.Size(11, 16);
-            this.labelDireccion.TabIndex = 5;
+            this.labelDireccion.TabIndex = 3;
             this.labelDireccion.Text = "-";
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(41, 143);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(627, 241);
-            this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label4
@@ -117,7 +120,7 @@
             this.label4.Location = new System.Drawing.Point(38, 124);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 16);
-            this.label4.TabIndex = 7;
+            this.label4.TabIndex = 8;
             this.label4.Text = "Productos";
             // 
             // btnVolver
@@ -125,7 +128,7 @@
             this.btnVolver.Location = new System.Drawing.Point(41, 438);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(81, 23);
-            this.btnVolver.TabIndex = 8;
+            this.btnVolver.TabIndex = 12;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
@@ -135,7 +138,7 @@
             this.button1.Location = new System.Drawing.Point(532, 438);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 23);
-            this.button1.TabIndex = 9;
+            this.button1.TabIndex = 13;
             this.button1.Text = "Convertir en venta";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -146,7 +149,7 @@
             this.label5.Location = new System.Drawing.Point(327, 39);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(123, 16);
-            this.label5.TabIndex = 10;
+            this.label5.TabIndex = 4;
             this.label5.Text = "Fecha presupuesto";
             // 
             // labelFecha
@@ -155,7 +158,7 @@
             this.labelFecha.Location = new System.Drawing.Point(327, 58);
             this.labelFecha.Name = "labelFecha";
             this.labelFecha.Size = new System.Drawing.Size(11, 16);
-            this.labelFecha.TabIndex = 11;
+            this.labelFecha.TabIndex = 5;
             this.labelFecha.Text = "-";
             // 
             // label6
@@ -164,7 +167,7 @@
             this.label6.Location = new System.Drawing.Point(38, 398);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 16);
-            this.label6.TabIndex = 12;
+            this.label6.TabIndex = 10;
             this.label6.Text = "Total:";
             // 
             // labelTotal
@@ -173,7 +176,7 @@
             this.labelTotal.Location = new System.Drawing.Point(78, 398);
             this.labelTotal.Name = "labelTotal";
             this.labelTotal.Size = new System.Drawing.Size(11, 16);
-            this.labelTotal.TabIndex = 13;
+            this.labelTotal.TabIndex = 11;
             this.labelTotal.Text = "-";
             // 
             // FormDetallePresupuesto

@@ -70,5 +70,13 @@ namespace UI
         {
 
         }
+
+        private void FormAgregarIdioma_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormTraducciones form= new FormTraducciones();
+            form.Show();
+
+            this.Hide();
+        }
     }
 }

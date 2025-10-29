@@ -52,7 +52,7 @@
             0});
             this.numericDni.Name = "numericDni";
             this.numericDni.Size = new System.Drawing.Size(314, 22);
-            this.numericDni.TabIndex = 24;
+            this.numericDni.TabIndex = 5;
             // 
             // label3
             // 
@@ -60,7 +60,7 @@
             this.label3.Location = new System.Drawing.Point(64, 187);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 16);
-            this.label3.TabIndex = 21;
+            this.label3.TabIndex = 6;
             this.label3.Tag = "label_email";
             this.label3.Text = "Email";
             // 
@@ -69,7 +69,7 @@
             this.txtEmail.Location = new System.Drawing.Point(64, 204);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(317, 22);
-            this.txtEmail.TabIndex = 20;
+            this.txtEmail.TabIndex = 7;
             // 
             // label4
             // 
@@ -77,7 +77,7 @@
             this.label4.Location = new System.Drawing.Point(67, 135);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(30, 16);
-            this.label4.TabIndex = 19;
+            this.label4.TabIndex = 4;
             this.label4.Tag = "label_dni";
             this.label4.Text = "DNI";
             // 
@@ -87,7 +87,7 @@
             this.label2.Location = new System.Drawing.Point(64, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 16);
-            this.label2.TabIndex = 18;
+            this.label2.TabIndex = 2;
             this.label2.Tag = "label_apellido";
             this.label2.Text = "Apellido";
             // 
@@ -96,7 +96,7 @@
             this.txtApellido.Location = new System.Drawing.Point(64, 101);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(317, 22);
-            this.txtApellido.TabIndex = 17;
+            this.txtApellido.TabIndex = 3;
             // 
             // label1
             // 
@@ -104,7 +104,7 @@
             this.label1.Location = new System.Drawing.Point(67, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 16);
-            this.label1.TabIndex = 16;
+            this.label1.TabIndex = 0;
             this.label1.Tag = "label_nombre";
             this.label1.Text = "Nombre";
             // 
@@ -113,14 +113,14 @@
             this.txtNombre.Location = new System.Drawing.Point(67, 49);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(317, 22);
-            this.txtNombre.TabIndex = 15;
+            this.txtNombre.TabIndex = 1;
             // 
             // btnAceptar
             // 
             this.btnAceptar.Location = new System.Drawing.Point(283, 268);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(98, 23);
-            this.btnAceptar.TabIndex = 14;
+            this.btnAceptar.TabIndex = 10;
             this.btnAceptar.Tag = "label_aceptar";
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -131,7 +131,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(64, 268);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(98, 23);
-            this.btnCancelar.TabIndex = 13;
+            this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Tag = "label_cancelar";
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -142,7 +142,7 @@
             this.txtIdHidden.Location = new System.Drawing.Point(64, 233);
             this.txtIdHidden.Name = "txtIdHidden";
             this.txtIdHidden.Size = new System.Drawing.Size(100, 22);
-            this.txtIdHidden.TabIndex = 25;
+            this.txtIdHidden.TabIndex = 8;
             this.txtIdHidden.TextChanged += new System.EventHandler(this.txtIdHidden_TextChanged);
             // 
             // FormEditarUsuario

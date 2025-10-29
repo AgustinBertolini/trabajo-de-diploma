@@ -112,6 +112,10 @@ namespace UI
         private void FormBitacora_Load(object sender, EventArgs e)
         {
             SessionManager.GetInstance.SuscribirObservador(this);
+
+            comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDown;
         }
         
         private void FormBitacora_FormClosing(object sender, EventArgs e)

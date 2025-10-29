@@ -50,6 +50,14 @@ namespace UI
 
         }
 
+        private void FormEditarIdioma_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormTraducciones form = new FormTraducciones();
+            form.Show();
+
+            this.Hide();
+        }
+
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtNombre.Text))

@@ -61,7 +61,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
-            this.menuStrip1.TabIndex = 15;
+            this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
@@ -73,11 +73,12 @@
             this.sesiónToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
             this.sesiónToolStripMenuItem.Tag = "label_sesion";
             this.sesiónToolStripMenuItem.Text = "Sesión";
+            this.sesiónToolStripMenuItem.Click += new System.EventHandler(this.sesiónToolStripMenuItem_Click);
             // 
             // cerrarSesiónToolStripMenuItem
             // 
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
             this.cerrarSesiónToolStripMenuItem.Tag = "label_cerrar_sesion";
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar sesión";
             this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
@@ -143,25 +144,28 @@
             this.label1.Location = new System.Drawing.Point(12, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 16);
-            this.label1.TabIndex = 16;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Ventas";
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(15, 61);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(739, 279);
-            this.dataGridView1.TabIndex = 17;
+            this.dataGridView1.TabIndex = 1;
             // 
             // btnCrearVenta
             // 
             this.btnCrearVenta.Location = new System.Drawing.Point(15, 380);
             this.btnCrearVenta.Name = "btnCrearVenta";
             this.btnCrearVenta.Size = new System.Drawing.Size(118, 23);
-            this.btnCrearVenta.TabIndex = 18;
+            this.btnCrearVenta.TabIndex = 2;
             this.btnCrearVenta.Text = "Crear venta";
             this.btnCrearVenta.UseVisualStyleBackColor = true;
             this.btnCrearVenta.Click += new System.EventHandler(this.btnCrearVenta_Click);
@@ -171,7 +175,7 @@
             this.btnVerVenta.Location = new System.Drawing.Point(659, 380);
             this.btnVerVenta.Name = "btnVerVenta";
             this.btnVerVenta.Size = new System.Drawing.Size(95, 23);
-            this.btnVerVenta.TabIndex = 19;
+            this.btnVerVenta.TabIndex = 3;
             this.btnVerVenta.Text = "Ver venta";
             this.btnVerVenta.UseVisualStyleBackColor = true;
             this.btnVerVenta.Click += new System.EventHandler(this.btnVerVenta_Click);

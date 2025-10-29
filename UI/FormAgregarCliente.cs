@@ -1,9 +1,10 @@
+using BLL;
+using Entidades;
+using Servicios;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
-using Entidades;
-using BLL;
-using Servicios;
 
 namespace UI
 {
@@ -26,6 +27,21 @@ namespace UI
             comboTipoCliente.ValueMember = "Id";
         }
 
+        private bool ValidarCuit(string cuit)
+        {
+            if (string.IsNullOrWhiteSpace(cuit))
+                return false;
+
+
+            if (cuit.Length != 11 || !cuit.All(char.IsDigit))
+                return false;
+
+            string[] prefijos = { "20", "23", "24", "27", "30", "33", "34" };
+            string prefijo = cuit.Substring(0, 2);
+
+            return prefijos.Contains(prefijo);
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
@@ -36,6 +52,12 @@ namespace UI
                 comboTipoCliente.SelectedItem == null)
             {
                 MessageBox.Show("Por favor, complete todos los campos antes de guardar.", "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (ValidarCuit(txtCuit.Text) == false)
+            {
+                MessageBox.Show("El CUIT ingresado no es válido.", "CUIT inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -73,7 +95,14 @@ namespace UI
 
         private void FormAgregarCliente_Load_1(object sender, EventArgs e)
         {
+        }
 
+        private void FormAgregarCliente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormClientes formClientes = new FormClientes();
+            formClientes.Show();
+
+            this.Hide();
         }
     }
 }

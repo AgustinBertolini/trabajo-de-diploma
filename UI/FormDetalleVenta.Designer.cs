@@ -53,7 +53,7 @@
             this.labelTotal.Location = new System.Drawing.Point(70, 376);
             this.labelTotal.Name = "labelTotal";
             this.labelTotal.Size = new System.Drawing.Size(11, 16);
-            this.labelTotal.TabIndex = 27;
+            this.labelTotal.TabIndex = 13;
             this.labelTotal.Text = "-";
             // 
             // label6
@@ -62,7 +62,7 @@
             this.label6.Location = new System.Drawing.Point(30, 376);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 16);
-            this.label6.TabIndex = 26;
+            this.label6.TabIndex = 12;
             this.label6.Text = "Total:";
             // 
             // labelFecha
@@ -71,7 +71,7 @@
             this.labelFecha.Location = new System.Drawing.Point(204, 36);
             this.labelFecha.Name = "labelFecha";
             this.labelFecha.Size = new System.Drawing.Size(11, 16);
-            this.labelFecha.TabIndex = 25;
+            this.labelFecha.TabIndex = 3;
             this.labelFecha.Text = "-";
             // 
             // label5
@@ -80,7 +80,7 @@
             this.label5.Location = new System.Drawing.Point(204, 17);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(123, 16);
-            this.label5.TabIndex = 24;
+            this.label5.TabIndex = 2;
             this.label5.Text = "Fecha presupuesto";
             // 
             // btnVolver
@@ -88,7 +88,7 @@
             this.btnVolver.Location = new System.Drawing.Point(33, 416);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(81, 23);
-            this.btnVolver.TabIndex = 22;
+            this.btnVolver.TabIndex = 14;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
@@ -99,7 +99,7 @@
             this.label4.Location = new System.Drawing.Point(30, 102);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 16);
-            this.label4.TabIndex = 21;
+            this.label4.TabIndex = 10;
             this.label4.Text = "Productos";
             // 
             // dataGridView1
@@ -107,10 +107,11 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(33, 121);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(627, 241);
-            this.dataGridView1.TabIndex = 20;
+            this.dataGridView1.TabIndex = 15;
             // 
             // labelDireccion
             // 
@@ -126,7 +127,7 @@
             this.labelCorreo.Location = new System.Drawing.Point(30, 75);
             this.labelCorreo.Name = "labelCorreo";
             this.labelCorreo.Size = new System.Drawing.Size(11, 16);
-            this.labelCorreo.TabIndex = 18;
+            this.labelCorreo.TabIndex = 9;
             this.labelCorreo.Text = "-";
             // 
             // labelCliente
@@ -135,7 +136,7 @@
             this.labelCliente.Location = new System.Drawing.Point(30, 36);
             this.labelCliente.Name = "labelCliente";
             this.labelCliente.Size = new System.Drawing.Size(11, 16);
-            this.labelCliente.TabIndex = 17;
+            this.labelCliente.TabIndex = 1;
             this.labelCliente.Text = "-";
             // 
             // label3
@@ -144,7 +145,7 @@
             this.label3.Location = new System.Drawing.Point(30, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 16);
-            this.label3.TabIndex = 16;
+            this.label3.TabIndex = 8;
             this.label3.Text = "Correo:";
             // 
             // label2
@@ -153,7 +154,7 @@
             this.label2.Location = new System.Drawing.Point(552, 17);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 16);
-            this.label2.TabIndex = 15;
+            this.label2.TabIndex = 4;
             this.label2.Text = "Estado de envio:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
@@ -163,7 +164,7 @@
             this.label1.Location = new System.Drawing.Point(30, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 16);
-            this.label1.TabIndex = 14;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Cliente:";
             // 
             // radioBtnPreparacion
@@ -172,7 +173,7 @@
             this.radioBtnPreparacion.Location = new System.Drawing.Point(555, 36);
             this.radioBtnPreparacion.Name = "radioBtnPreparacion";
             this.radioBtnPreparacion.Size = new System.Drawing.Size(120, 20);
-            this.radioBtnPreparacion.TabIndex = 28;
+            this.radioBtnPreparacion.TabIndex = 5;
             this.radioBtnPreparacion.TabStop = true;
             this.radioBtnPreparacion.Text = "En preparación";
             this.radioBtnPreparacion.UseVisualStyleBackColor = true;
@@ -184,7 +185,7 @@
             this.radioBtnCamino.Location = new System.Drawing.Point(555, 62);
             this.radioBtnCamino.Name = "radioBtnCamino";
             this.radioBtnCamino.Size = new System.Drawing.Size(91, 20);
-            this.radioBtnCamino.TabIndex = 29;
+            this.radioBtnCamino.TabIndex = 6;
             this.radioBtnCamino.TabStop = true;
             this.radioBtnCamino.Text = "En camino";
             this.radioBtnCamino.UseVisualStyleBackColor = true;
@@ -196,7 +197,7 @@
             this.radioBtnEntregado.Location = new System.Drawing.Point(555, 88);
             this.radioBtnEntregado.Name = "radioBtnEntregado";
             this.radioBtnEntregado.Size = new System.Drawing.Size(91, 20);
-            this.radioBtnEntregado.TabIndex = 30;
+            this.radioBtnEntregado.TabIndex = 7;
             this.radioBtnEntregado.TabStop = true;
             this.radioBtnEntregado.Text = "Entregado";
             this.radioBtnEntregado.UseVisualStyleBackColor = true;

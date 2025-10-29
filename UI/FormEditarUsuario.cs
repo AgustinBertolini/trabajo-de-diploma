@@ -48,6 +48,16 @@ namespace UI
         private void FormEditarUsuario_Load(object sender, EventArgs e)
         {
             txtIdHidden.Hide();
+
+            numericDni.Maximum = 999999999;
+        }
+
+        private void FormEditarUsuario_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormUsuarios form = new FormUsuarios();
+            form.Show();
+
+            this.Hide();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

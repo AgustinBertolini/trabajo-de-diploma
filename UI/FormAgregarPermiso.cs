@@ -91,5 +91,13 @@ namespace UI
         {
 
         }
+
+        private void FormAgregarPermiso_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormPermisos form = new FormPermisos();
+            form.Show();
+
+            this.Hide();
+        }
     }
 }

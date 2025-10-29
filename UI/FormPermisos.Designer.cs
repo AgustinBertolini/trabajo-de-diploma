@@ -51,7 +51,7 @@
             this.btnDeletePermiso.Location = new System.Drawing.Point(715, 314);
             this.btnDeletePermiso.Name = "btnDeletePermiso";
             this.btnDeletePermiso.Size = new System.Drawing.Size(177, 23);
-            this.btnDeletePermiso.TabIndex = 10;
+            this.btnDeletePermiso.TabIndex = 4;
             this.btnDeletePermiso.Tag = "label_borrar_permiso";
             this.btnDeletePermiso.Text = "Borrar permiso";
             this.btnDeletePermiso.UseVisualStyleBackColor = true;
@@ -62,7 +62,7 @@
             this.btnEditPermiso.Location = new System.Drawing.Point(715, 161);
             this.btnEditPermiso.Name = "btnEditPermiso";
             this.btnEditPermiso.Size = new System.Drawing.Size(177, 23);
-            this.btnEditPermiso.TabIndex = 9;
+            this.btnEditPermiso.TabIndex = 2;
             this.btnEditPermiso.Tag = "label_editar_permiso";
             this.btnEditPermiso.Text = "Editar permiso";
             this.btnEditPermiso.UseVisualStyleBackColor = true;
@@ -73,7 +73,7 @@
             this.btnAddPermiso.Location = new System.Drawing.Point(715, 85);
             this.btnAddPermiso.Name = "btnAddPermiso";
             this.btnAddPermiso.Size = new System.Drawing.Size(177, 23);
-            this.btnAddPermiso.TabIndex = 8;
+            this.btnAddPermiso.TabIndex = 1;
             this.btnAddPermiso.Tag = "label_agregar_permiso";
             this.btnAddPermiso.Text = "Agregar permiso";
             this.btnAddPermiso.UseVisualStyleBackColor = true;
@@ -94,7 +94,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(942, 28);
-            this.menuStrip1.TabIndex = 11;
+            this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
@@ -177,7 +177,7 @@
             this.btnVincularPermisos.Location = new System.Drawing.Point(715, 240);
             this.btnVincularPermisos.Name = "btnVincularPermisos";
             this.btnVincularPermisos.Size = new System.Drawing.Size(177, 23);
-            this.btnVincularPermisos.TabIndex = 12;
+            this.btnVincularPermisos.TabIndex = 3;
             this.btnVincularPermisos.Tag = "label_vincular_permisos";
             this.btnVincularPermisos.Text = "Vincular permisos";
             this.btnVincularPermisos.UseVisualStyleBackColor = true;
@@ -188,7 +188,7 @@
             this.treeView1.Location = new System.Drawing.Point(28, 64);
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(649, 323);
-            this.treeView1.TabIndex = 13;
+            this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // FormPermisos

@@ -87,6 +87,14 @@ namespace UI
 
         }
 
+        private void FormDetalleVenta_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormVentas form = new FormVentas();
+            form.Show();
+
+            this.Hide();
+        }
+
         private void btnVolver_Click(object sender, EventArgs e)
         {
             FormVentas form = new FormVentas();
@@ -99,17 +107,55 @@ namespace UI
         {
             VentaBLL ventaBLL = new VentaBLL();
             ventaBLL.ActualizarEstadoEnvio(VentaId, "Entregado");
+
         }
 
         private void radioBtnCamino_CheckedChanged(object sender, EventArgs e)
         {
             VentaBLL ventaBLL = new VentaBLL();
+            Venta ventadetalle = ventaBLL.GetVentaById(VentaId);
+
+            if (ventadetalle == null)
+                return;
+
+            if (ventadetalle.EstadoEnvio == "En camino")
+                return;
+
+            if(ventadetalle.EstadoEnvio == "Entregado")
+            {
+                MessageBox.Show("No se puede cambiar el estado de 'Entregado' a 'En camino'.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CheckearRadioButtonSegunEstadoEnvio(ventadetalle.EstadoEnvio);
+                return;
+            }
+
             ventaBLL.ActualizarEstadoEnvio(VentaId, "En camino");
         }
 
         private void radioBtnPreparacion_CheckedChanged(object sender, EventArgs e)
         {
             VentaBLL ventaBLL = new VentaBLL();
+            Venta ventadetalle = ventaBLL.GetVentaById(VentaId);
+
+            if(ventadetalle == null)
+                return;
+
+            if (ventadetalle.EstadoEnvio == "En preparación")
+                return;
+
+            if(ventadetalle.EstadoEnvio == "Entregado")
+            {
+                MessageBox.Show("No se puede cambiar el estado de 'Entregado' a 'En preparación'.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CheckearRadioButtonSegunEstadoEnvio(ventadetalle.EstadoEnvio);
+                return;
+            }
+
+            if(ventadetalle.EstadoEnvio == "En camino")
+            {
+                MessageBox.Show("No se puede cambiar el estado de 'En camino' a 'En preparación'.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CheckearRadioButtonSegunEstadoEnvio(ventadetalle.EstadoEnvio);
+                return;
+            }
+
             ventaBLL.ActualizarEstadoEnvio(VentaId, "En preparación");
         }
     }

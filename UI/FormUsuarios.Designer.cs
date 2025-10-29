@@ -42,9 +42,9 @@
             this.bitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.presupuestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAsignarPermiso = new System.Windows.Forms.Button();
             this.btnDesasignarPermiso = new System.Windows.Forms.Button();
-            this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -53,11 +53,14 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 62);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(640, 252);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
@@ -66,7 +69,7 @@
             this.label1.Location = new System.Drawing.Point(12, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 16);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 6;
             this.label1.Tag = "label_usuarios";
             this.label1.Text = "Usuarios";
             // 
@@ -75,7 +78,7 @@
             this.btnAddUser.Location = new System.Drawing.Point(699, 62);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(177, 23);
-            this.btnAddUser.TabIndex = 2;
+            this.btnAddUser.TabIndex = 0;
             this.btnAddUser.Tag = "label_agregar_usuario";
             this.btnAddUser.Text = "Agregar usuario";
             this.btnAddUser.UseVisualStyleBackColor = true;
@@ -86,7 +89,7 @@
             this.btnEditUser.Location = new System.Drawing.Point(699, 136);
             this.btnEditUser.Name = "btnEditUser";
             this.btnEditUser.Size = new System.Drawing.Size(177, 23);
-            this.btnEditUser.TabIndex = 3;
+            this.btnEditUser.TabIndex = 1;
             this.btnEditUser.Tag = "label_editar_usuario";
             this.btnEditUser.Text = "Editar usuario";
             this.btnEditUser.UseVisualStyleBackColor = true;
@@ -118,7 +121,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(909, 28);
-            this.menuStrip1.TabIndex = 5;
+            this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
@@ -187,12 +190,20 @@
             this.presupuestosToolStripMenuItem.Text = "Presupuestos";
             this.presupuestosToolStripMenuItem.Click += new System.EventHandler(this.presupuestosToolStripMenuItem_Click);
             // 
+            // ventasToolStripMenuItem
+            // 
+            this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.ventasToolStripMenuItem.Tag = "label_ventas";
+            this.ventasToolStripMenuItem.Text = "Ventas";
+            this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
+            // 
             // btnAsignarPermiso
             // 
             this.btnAsignarPermiso.Location = new System.Drawing.Point(699, 186);
             this.btnAsignarPermiso.Name = "btnAsignarPermiso";
             this.btnAsignarPermiso.Size = new System.Drawing.Size(177, 23);
-            this.btnAsignarPermiso.TabIndex = 6;
+            this.btnAsignarPermiso.TabIndex = 2;
             this.btnAsignarPermiso.Tag = "label_asignar_permiso";
             this.btnAsignarPermiso.Text = "Asignar permiso";
             this.btnAsignarPermiso.UseVisualStyleBackColor = true;
@@ -203,19 +214,11 @@
             this.btnDesasignarPermiso.Location = new System.Drawing.Point(699, 241);
             this.btnDesasignarPermiso.Name = "btnDesasignarPermiso";
             this.btnDesasignarPermiso.Size = new System.Drawing.Size(177, 23);
-            this.btnDesasignarPermiso.TabIndex = 7;
+            this.btnDesasignarPermiso.TabIndex = 3;
             this.btnDesasignarPermiso.Tag = "label_desasignar_permiso";
             this.btnDesasignarPermiso.Text = "Desasignar permisos";
             this.btnDesasignarPermiso.UseVisualStyleBackColor = true;
             this.btnDesasignarPermiso.Click += new System.EventHandler(this.btnDesasignarPermiso_Click);
-            // 
-            // ventasToolStripMenuItem
-            // 
-            this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
-            this.ventasToolStripMenuItem.Tag = "label_ventas";
-            this.ventasToolStripMenuItem.Text = "Ventas";
-            this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
             // FormUsuarios
             // 

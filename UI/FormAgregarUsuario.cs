@@ -69,6 +69,14 @@ namespace UI
             
         }
 
+        private void FormAgregarUsuario_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormUsuarios form = new FormUsuarios();
+            form.Show();
+
+            this.Hide();
+        }
+
         private void label2_Click(object sender, EventArgs e)
         {
 

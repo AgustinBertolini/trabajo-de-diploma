@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -56,7 +56,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(208, 199);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(74, 32);
-            this.btnAceptar.TabIndex = 11;
+            this.btnAceptar.TabIndex = 7;
             this.btnAceptar.Tag = "label_aceptar";
             this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -67,7 +67,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(24, 199);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(84, 32);
-            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Tag = "label_cancelar";
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -78,7 +78,7 @@
             this.numericUpDown1.Location = new System.Drawing.Point(26, 107);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(256, 22);
-            this.numericUpDown1.TabIndex = 9;
+            this.numericUpDown1.TabIndex = 3;
             // 
             // label2
             // 
@@ -86,7 +86,7 @@
             this.label2.Location = new System.Drawing.Point(23, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 16);
-            this.label2.TabIndex = 8;
+            this.label2.TabIndex = 2;
             this.label2.Tag = "label_precio";
             this.label2.Text = "Precio";
             // 
@@ -96,7 +96,7 @@
             this.label1.Location = new System.Drawing.Point(23, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 16);
-            this.label1.TabIndex = 7;
+            this.label1.TabIndex = 0;
             this.label1.Tag = "label_nombre";
             this.label1.Text = "Nombre";
             // 
@@ -105,14 +105,14 @@
             this.inputNombre.Location = new System.Drawing.Point(26, 39);
             this.inputNombre.Name = "inputNombre";
             this.inputNombre.Size = new System.Drawing.Size(256, 22);
-            this.inputNombre.TabIndex = 6;
+            this.inputNombre.TabIndex = 1;
             // 
             // txtId
             // 
             this.txtId.Location = new System.Drawing.Point(560, 20);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(43, 22);
-            this.txtId.TabIndex = 12;
+            this.txtId.TabIndex = 15;
             // 
             // label3
             // 
@@ -120,7 +120,7 @@
             this.label3.Location = new System.Drawing.Point(23, 142);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 16);
-            this.label3.TabIndex = 13;
+            this.label3.TabIndex = 4;
             this.label3.Text = "Stock";
             // 
             // numericStock
@@ -128,33 +128,36 @@
             this.numericStock.Location = new System.Drawing.Point(26, 161);
             this.numericStock.Name = "numericStock";
             this.numericStock.Size = new System.Drawing.Size(256, 22);
-            this.numericStock.TabIndex = 14;
+            this.numericStock.TabIndex = 5;
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(12, 280);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(385, 150);
-            this.dataGridView1.TabIndex = 15;
+            this.dataGridView1.TabIndex = 9;
             // 
             // label4
             // 
@@ -162,7 +165,7 @@
             this.label4.Location = new System.Drawing.Point(9, 261);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(128, 16);
-            this.label4.TabIndex = 16;
+            this.label4.TabIndex = 8;
             this.label4.Text = "Usuarios asignados";
             // 
             // label5
@@ -171,7 +174,7 @@
             this.label5.Location = new System.Drawing.Point(424, 262);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(140, 16);
-            this.label5.TabIndex = 17;
+            this.label5.TabIndex = 10;
             this.label5.Text = "Seleccionar vendedor";
             // 
             // comboUsuarios
@@ -180,7 +183,7 @@
             this.comboUsuarios.Location = new System.Drawing.Point(427, 281);
             this.comboUsuarios.Name = "comboUsuarios";
             this.comboUsuarios.Size = new System.Drawing.Size(176, 24);
-            this.comboUsuarios.TabIndex = 18;
+            this.comboUsuarios.TabIndex = 11;
             this.comboUsuarios.SelectedIndexChanged += new System.EventHandler(this.comboUsuarios_SelectedIndexChanged);
             // 
             // btnAsignarUsuario
@@ -188,7 +191,7 @@
             this.btnAsignarUsuario.Location = new System.Drawing.Point(427, 345);
             this.btnAsignarUsuario.Name = "btnAsignarUsuario";
             this.btnAsignarUsuario.Size = new System.Drawing.Size(176, 23);
-            this.btnAsignarUsuario.TabIndex = 19;
+            this.btnAsignarUsuario.TabIndex = 12;
             this.btnAsignarUsuario.Text = "Asignar usuario";
             this.btnAsignarUsuario.UseVisualStyleBackColor = true;
             this.btnAsignarUsuario.Click += new System.EventHandler(this.btnAsignarUsuario_Click);
@@ -198,7 +201,7 @@
             this.btnDesasignarUsuario.Location = new System.Drawing.Point(427, 407);
             this.btnDesasignarUsuario.Name = "btnDesasignarUsuario";
             this.btnDesasignarUsuario.Size = new System.Drawing.Size(176, 23);
-            this.btnDesasignarUsuario.TabIndex = 20;
+            this.btnDesasignarUsuario.TabIndex = 13;
             this.btnDesasignarUsuario.Text = "Desasignar usuario";
             this.btnDesasignarUsuario.UseVisualStyleBackColor = true;
             this.btnDesasignarUsuario.Click += new System.EventHandler(this.btnDesasignarUsuario_Click);
@@ -209,7 +212,7 @@
             this.label6.Location = new System.Drawing.Point(352, 20);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(0, 16);
-            this.label6.TabIndex = 21;
+            this.label6.TabIndex = 14;
             // 
             // FormEditarProducto
             // 

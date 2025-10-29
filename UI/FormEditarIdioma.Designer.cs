@@ -40,14 +40,14 @@
             this.txtIdHidden.Location = new System.Drawing.Point(34, 88);
             this.txtIdHidden.Name = "txtIdHidden";
             this.txtIdHidden.Size = new System.Drawing.Size(100, 22);
-            this.txtIdHidden.TabIndex = 11;
+            this.txtIdHidden.TabIndex = 2;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(34, 135);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 23);
-            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Tag = "label_cancelar";
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -57,7 +57,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(218, 135);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 9;
+            this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Tag = "label_aceptar";
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -68,7 +68,7 @@
             this.txtNombre.Location = new System.Drawing.Point(34, 47);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(259, 22);
-            this.txtNombre.TabIndex = 8;
+            this.txtNombre.TabIndex = 1;
             // 
             // label1
             // 
@@ -76,7 +76,7 @@
             this.label1.Location = new System.Drawing.Point(31, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 16);
-            this.label1.TabIndex = 7;
+            this.label1.TabIndex = 0;
             this.label1.Tag = "label_nombre";
             this.label1.Text = "Nombre";
             // 

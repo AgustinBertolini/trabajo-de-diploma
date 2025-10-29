@@ -196,7 +196,7 @@ namespace DAL
 
                     try
                     {
-                        using (SqlCommand cmd = new SqlCommand("DeleteProducto", conn))
+                        using (SqlCommand cmd = new SqlCommand("DeleteProducto", conn,transaction))
                         {
                             cmd.CommandType = CommandType.StoredProcedure;
 

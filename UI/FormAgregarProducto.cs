@@ -108,7 +108,16 @@ namespace UI
 
         private void FormAgregarProducto_Load(object sender, EventArgs e)
         {
+            numericStock.Maximum = 9999999;
+            numericUpDown1.Maximum = 9999999;
+        }
 
+        private void FormAgregarProducto_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormProductos form = new FormProductos();
+            form.Show();
+
+            this.Hide();
         }
     }
 }
