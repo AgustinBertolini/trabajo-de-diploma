@@ -1,7 +1,7 @@
 CREATE OR ALTER PROCEDURE EditProducto
 	@Id INT,
     @Nombre NVARCHAR(50),
-    @Precio INT,
+    @Precio DECIMAL(18,2),
 	@Stock INT
 AS
 BEGIN

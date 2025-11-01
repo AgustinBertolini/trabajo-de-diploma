@@ -55,20 +55,24 @@
             // 
             // numericSubTotal
             // 
-            this.numericSubTotal.Location = new System.Drawing.Point(618, 245);
+            this.numericSubTotal.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.numericSubTotal.DecimalPlaces = 2;
+            this.numericSubTotal.Location = new System.Drawing.Point(699, 245);
             this.numericSubTotal.Maximum = new decimal(new int[] {
             1569325055,
             23283064,
             0,
             0});
             this.numericSubTotal.Name = "numericSubTotal";
+            this.numericSubTotal.ReadOnly = true;
             this.numericSubTotal.Size = new System.Drawing.Size(169, 22);
             this.numericSubTotal.TabIndex = 7;
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(615, 226);
+            this.label6.Location = new System.Drawing.Point(696, 226);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 16);
             this.label6.TabIndex = 6;
@@ -76,6 +80,7 @@
             // 
             // comboClientes
             // 
+            this.comboClientes.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboClientes.FormattingEnabled = true;
             this.comboClientes.Location = new System.Drawing.Point(16, 33);
             this.comboClientes.Name = "comboClientes";
@@ -84,8 +89,9 @@
             // 
             // labelTotal
             // 
+            this.labelTotal.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelTotal.AutoSize = true;
-            this.labelTotal.Location = new System.Drawing.Point(60, 386);
+            this.labelTotal.Location = new System.Drawing.Point(60, 376);
             this.labelTotal.Name = "labelTotal";
             this.labelTotal.Size = new System.Drawing.Size(11, 16);
             this.labelTotal.TabIndex = 12;
@@ -93,8 +99,9 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 385);
+            this.label5.Location = new System.Drawing.Point(17, 375);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 16);
             this.label5.TabIndex = 11;
@@ -102,40 +109,47 @@
             // 
             // btnCrearPresupuesto
             // 
-            this.btnCrearPresupuesto.Location = new System.Drawing.Point(618, 414);
+            this.btnCrearPresupuesto.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCrearPresupuesto.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnCrearPresupuesto.Location = new System.Drawing.Point(699, 386);
             this.btnCrearPresupuesto.Name = "btnCrearPresupuesto";
-            this.btnCrearPresupuesto.Size = new System.Drawing.Size(161, 23);
+            this.btnCrearPresupuesto.Size = new System.Drawing.Size(161, 51);
             this.btnCrearPresupuesto.TabIndex = 10;
             this.btnCrearPresupuesto.Tag = "label_crear_presupuesto";
             this.btnCrearPresupuesto.Text = "Crear venta";
-            this.btnCrearPresupuesto.UseVisualStyleBackColor = true;
+            this.btnCrearPresupuesto.UseVisualStyleBackColor = false;
             this.btnCrearPresupuesto.Click += new System.EventHandler(this.btnCrearPresupuesto_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(16, 414);
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnCancelar.Location = new System.Drawing.Point(16, 395);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(91, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(106, 42);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Tag = "label_cancelar";
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAñadirProducto
             // 
-            this.btnAñadirProducto.Location = new System.Drawing.Point(658, 286);
+            this.btnAñadirProducto.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAñadirProducto.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnAñadirProducto.Location = new System.Drawing.Point(734, 290);
             this.btnAñadirProducto.Name = "btnAñadirProducto";
-            this.btnAñadirProducto.Size = new System.Drawing.Size(71, 23);
+            this.btnAñadirProducto.Size = new System.Drawing.Size(83, 43);
             this.btnAñadirProducto.TabIndex = 8;
             this.btnAñadirProducto.Tag = "label_agregar";
             this.btnAñadirProducto.Text = "Agregar";
-            this.btnAñadirProducto.UseVisualStyleBackColor = true;
+            this.btnAñadirProducto.UseVisualStyleBackColor = false;
             this.btnAñadirProducto.Click += new System.EventHandler(this.btnAñadirProducto_Click);
             // 
             // numericCantidad
             // 
-            this.numericCantidad.Location = new System.Drawing.Point(618, 191);
+            this.numericCantidad.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.numericCantidad.Location = new System.Drawing.Point(699, 191);
             this.numericCantidad.Maximum = new decimal(new int[] {
             1215752191,
             23,
@@ -148,8 +162,9 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(615, 172);
+            this.label4.Location = new System.Drawing.Point(696, 172);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 16);
             this.label4.TabIndex = 4;
@@ -158,16 +173,18 @@
             // 
             // comboProductos
             // 
+            this.comboProductos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboProductos.FormattingEnabled = true;
-            this.comboProductos.Location = new System.Drawing.Point(618, 137);
+            this.comboProductos.Location = new System.Drawing.Point(699, 137);
             this.comboProductos.Name = "comboProductos";
             this.comboProductos.Size = new System.Drawing.Size(169, 24);
             this.comboProductos.TabIndex = 3;
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(615, 117);
+            this.label3.Location = new System.Drawing.Point(696, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 16);
             this.label3.TabIndex = 2;
@@ -176,6 +193,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colProductoId,
@@ -190,7 +208,7 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(572, 240);
+            this.dataGridView1.Size = new System.Drawing.Size(659, 240);
             this.dataGridView1.TabIndex = 14;
             // 
             // colProductoId
@@ -235,6 +253,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(13, 89);
             this.label2.Name = "label2";
@@ -245,6 +264,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 14);
             this.label1.Name = "label1";
@@ -257,7 +277,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ClientSize = new System.Drawing.Size(905, 450);
             this.Controls.Add(this.numericSubTotal);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.comboClientes);
@@ -274,6 +295,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormAgregarVenta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar venta";
             this.Load += new System.EventHandler(this.FormAgregarVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericSubTotal)).EndInit();

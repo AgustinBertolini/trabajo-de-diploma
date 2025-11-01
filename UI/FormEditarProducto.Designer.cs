@@ -53,28 +53,34 @@
             // 
             // btnAceptar
             // 
+            this.btnAceptar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAceptar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnAceptar.Location = new System.Drawing.Point(208, 199);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(74, 32);
+            this.btnAceptar.Size = new System.Drawing.Size(74, 42);
             this.btnAceptar.TabIndex = 7;
             this.btnAceptar.Tag = "label_aceptar";
             this.btnAceptar.Text = "Guardar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnCancelar.Location = new System.Drawing.Point(24, 199);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(84, 32);
+            this.btnCancelar.Size = new System.Drawing.Size(84, 42);
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Tag = "label_cancelar";
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // numericUpDown1
             // 
+            this.numericUpDown1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.numericUpDown1.DecimalPlaces = 2;
             this.numericUpDown1.Location = new System.Drawing.Point(26, 107);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(256, 22);
@@ -82,6 +88,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(23, 84);
             this.label2.Name = "label2";
@@ -92,6 +99,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(23, 20);
             this.label1.Name = "label1";
@@ -102,6 +110,7 @@
             // 
             // inputNombre
             // 
+            this.inputNombre.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.inputNombre.Location = new System.Drawing.Point(26, 39);
             this.inputNombre.Name = "inputNombre";
             this.inputNombre.Size = new System.Drawing.Size(256, 22);
@@ -109,6 +118,7 @@
             // 
             // txtId
             // 
+            this.txtId.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtId.Location = new System.Drawing.Point(560, 20);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(43, 22);
@@ -116,6 +126,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(23, 142);
             this.label3.Name = "label3";
@@ -125,6 +136,7 @@
             // 
             // numericStock
             // 
+            this.numericStock.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.numericStock.Location = new System.Drawing.Point(26, 161);
             this.numericStock.Name = "numericStock";
             this.numericStock.Size = new System.Drawing.Size(256, 22);
@@ -132,6 +144,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -161,6 +174,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(9, 261);
             this.label4.Name = "label4";
@@ -170,6 +184,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(424, 262);
             this.label5.Name = "label5";
@@ -179,6 +194,7 @@
             // 
             // comboUsuarios
             // 
+            this.comboUsuarios.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboUsuarios.FormattingEnabled = true;
             this.comboUsuarios.Location = new System.Drawing.Point(427, 281);
             this.comboUsuarios.Name = "comboUsuarios";
@@ -188,26 +204,31 @@
             // 
             // btnAsignarUsuario
             // 
-            this.btnAsignarUsuario.Location = new System.Drawing.Point(427, 345);
+            this.btnAsignarUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAsignarUsuario.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnAsignarUsuario.Location = new System.Drawing.Point(427, 326);
             this.btnAsignarUsuario.Name = "btnAsignarUsuario";
-            this.btnAsignarUsuario.Size = new System.Drawing.Size(176, 23);
+            this.btnAsignarUsuario.Size = new System.Drawing.Size(176, 42);
             this.btnAsignarUsuario.TabIndex = 12;
             this.btnAsignarUsuario.Text = "Asignar usuario";
-            this.btnAsignarUsuario.UseVisualStyleBackColor = true;
+            this.btnAsignarUsuario.UseVisualStyleBackColor = false;
             this.btnAsignarUsuario.Click += new System.EventHandler(this.btnAsignarUsuario_Click);
             // 
             // btnDesasignarUsuario
             // 
-            this.btnDesasignarUsuario.Location = new System.Drawing.Point(427, 407);
+            this.btnDesasignarUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDesasignarUsuario.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnDesasignarUsuario.Location = new System.Drawing.Point(427, 391);
             this.btnDesasignarUsuario.Name = "btnDesasignarUsuario";
-            this.btnDesasignarUsuario.Size = new System.Drawing.Size(176, 23);
+            this.btnDesasignarUsuario.Size = new System.Drawing.Size(176, 39);
             this.btnDesasignarUsuario.TabIndex = 13;
             this.btnDesasignarUsuario.Text = "Desasignar usuario";
-            this.btnDesasignarUsuario.UseVisualStyleBackColor = true;
+            this.btnDesasignarUsuario.UseVisualStyleBackColor = false;
             this.btnDesasignarUsuario.Click += new System.EventHandler(this.btnDesasignarUsuario_Click);
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(352, 20);
             this.label6.Name = "label6";
@@ -218,6 +239,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(625, 470);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnDesasignarUsuario);
@@ -236,6 +258,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.inputNombre);
             this.Name = "FormEditarProducto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar Producto";
             this.Load += new System.EventHandler(this.FormEditarProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();

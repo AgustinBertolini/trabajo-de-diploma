@@ -47,28 +47,33 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(63, 348);
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnCancelar.Location = new System.Drawing.Point(63, 339);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(98, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(121, 45);
             this.btnCancelar.TabIndex = 12;
             this.btnCancelar.Tag = "label_cancelar";
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(282, 348);
+            this.btnAceptar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAceptar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnAceptar.Location = new System.Drawing.Point(265, 339);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(98, 23);
+            this.btnAceptar.Size = new System.Drawing.Size(115, 45);
             this.btnAceptar.TabIndex = 13;
             this.btnAceptar.Tag = "label_aceptar";
             this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // txtNombre
             // 
+            this.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtNombre.Location = new System.Drawing.Point(63, 30);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(317, 22);
@@ -77,6 +82,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(63, 13);
             this.label1.Name = "label1";
@@ -87,6 +93,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(60, 65);
             this.label2.Name = "label2";
@@ -98,6 +105,7 @@
             // 
             // txtApellido
             // 
+            this.txtApellido.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtApellido.Location = new System.Drawing.Point(60, 82);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(317, 22);
@@ -105,6 +113,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(60, 168);
             this.label3.Name = "label3";
@@ -116,6 +125,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtEmail.Location = new System.Drawing.Point(60, 185);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(317, 22);
@@ -123,6 +133,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(63, 116);
             this.label4.Name = "label4";
@@ -133,6 +144,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(63, 223);
             this.label5.Name = "label5";
@@ -144,6 +156,7 @@
             // 
             // txtContraseña
             // 
+            this.txtContraseña.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtContraseña.Location = new System.Drawing.Point(63, 240);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(317, 22);
@@ -151,6 +164,7 @@
             // 
             // numericDni
             // 
+            this.numericDni.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.numericDni.Location = new System.Drawing.Point(66, 135);
             this.numericDni.Maximum = new decimal(new int[] {
             99999999,
@@ -163,6 +177,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(60, 277);
             this.label6.Name = "label6";
@@ -173,6 +188,7 @@
             // 
             // comboRoles
             // 
+            this.comboRoles.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboRoles.FormattingEnabled = true;
             this.comboRoles.Location = new System.Drawing.Point(63, 296);
@@ -184,6 +200,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(457, 396);
             this.Controls.Add(this.comboRoles);
             this.Controls.Add(this.label6);
@@ -200,6 +217,7 @@
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
             this.Name = "FormAgregarUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAgregarUsuario";
             this.Load += new System.EventHandler(this.FormAgregarUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericDni)).EndInit();

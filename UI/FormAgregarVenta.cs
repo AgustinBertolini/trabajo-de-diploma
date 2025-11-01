@@ -47,7 +47,7 @@ namespace UI
             if (comboProductos.SelectedItem is Entidades.Producto producto)
             {
                 int cantidad = (int)numericCantidad.Value;
-                int subTotal = producto.Precio * cantidad;
+                decimal subTotal = producto.Precio * cantidad;
                 numericSubTotal.Value = subTotal;
             }
         }
@@ -56,9 +56,30 @@ namespace UI
         {
             if (comboProductos.SelectedItem is Entidades.Producto producto)
             {
-                int cantidad = (int)numericCantidad.Value;
-                int subTotal = producto.Precio * cantidad;
-                dataGridView1.Rows.Add(producto.Id, producto.Nombre, producto.Precio, cantidad, subTotal);
+                int cantidadNueva = (int)numericCantidad.Value;
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (row.Cells["colProductoId"].Value != null &&
+                        Convert.ToInt32(row.Cells["colProductoId"].Value) == producto.Id)
+                    {
+                        int cantidadActual = Convert.ToInt32(row.Cells["colCantidad"].Value);
+                        int cantidadTotal = cantidadActual + cantidadNueva;
+
+                        row.Cells["colCantidad"].Value = cantidadTotal;
+                        row.Cells["colSubTotal"].Value = producto.Precio * cantidadTotal;
+
+                        CalcularLabelTotal();
+                        LimpiarSelecciones();
+                        return;
+                    }
+                }
+
+                decimal subTotal = producto.Precio * cantidadNueva;
+                dataGridView1.Rows.Add(producto.Id, producto.Nombre, producto.Precio, cantidadNueva, subTotal);
+
+                CalcularLabelTotal();
+                LimpiarSelecciones();
             }
             else
             {
@@ -66,21 +87,29 @@ namespace UI
             }
         }
 
+
         private void CalcularLabelTotal()
         {
-            int total = 0;
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            try
             {
-                if (row.Cells["colSubTotal"].Value != null)
+                int total = 0;
+                foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
-                    total += Convert.ToInt32(row.Cells["colSubTotal"].Value);
+                    if (row.Cells["colSubTotal"].Value != null)
+                    {
+                        total += Convert.ToInt32(row.Cells["colSubTotal"].Value);
+                    }
                 }
+                CultureInfo culturaArgentina = new CultureInfo("es-AR");
+
+                labelTotal.Text = total.ToString("C", culturaArgentina);
             }
-            CultureInfo culturaArgentina = new CultureInfo("es-AR");
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
 
-            labelTotal.Text = total.ToString("C", culturaArgentina);
+            }
         }
-
         private void LimpiarSelecciones()
         {
             comboProductos.SelectedIndex = -1;
@@ -105,7 +134,7 @@ namespace UI
             dataGridView1.ReadOnly = true;
             dataGridView1.Columns["colProductoId"].Visible = false;
 
-            numericCantidad.Maximum = 99999999;
+            numericCantidad.Maximum = 999999;
 
             comboClientes.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             comboClientes.AutoCompleteSource = AutoCompleteSource.ListItems;
@@ -150,46 +179,53 @@ namespace UI
 
         private void btnCrearPresupuesto_Click(object sender, EventArgs e)
         {
-            if(dataGridView1.Rows.Count == 0)
+            try
             {
-                MessageBox.Show("Agregue al menos un producto a la venta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            VentaBLL ventaBLL = new VentaBLL();
-            List<VentaItem> items = new List<VentaItem>();
-
-
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                if (row.Cells["colProductoId"].Value != null)
+                if (dataGridView1.Rows.Count == 0)
                 {
-                    int idProducto = Convert.ToInt32(row.Cells["colProductoId"].Value);
-                    int cantidad = Convert.ToInt32(row.Cells["colCantidad"].Value);
-                    decimal precioUnitario = Convert.ToDecimal(row.Cells["colPrecio"].Value);
-                    items.Add(new VentaItem
-                    {
-                        IdProducto = idProducto,
-                        Cantidad = cantidad,
-                        PrecioUnitario = precioUnitario
-                    });
+                    MessageBox.Show("Agregue al menos un producto a la venta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
-            }
+                VentaBLL ventaBLL = new VentaBLL();
+                List<VentaItem> items = new List<VentaItem>();
 
-            Venta venta = new Venta
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (row.Cells["colProductoId"].Value != null)
+                    {
+                        int idProducto = Convert.ToInt32(row.Cells["colProductoId"].Value);
+                        int cantidad = Convert.ToInt32(row.Cells["colCantidad"].Value);
+                        decimal precioUnitario = Convert.ToDecimal(row.Cells["colPrecio"].Value);
+                        items.Add(new VentaItem
+                        {
+                            IdProducto = idProducto,
+                            Cantidad = cantidad,
+                            PrecioUnitario = precioUnitario
+                        });
+                    }
+                }
+
+                Venta venta = new Venta
+                {
+                    FechaCreacion = DateTime.Now,
+                    IdCliente = (comboClientes.SelectedItem as Cliente)?.Id ?? 0,
+                    Items = items
+                };
+
+                ventaBLL.AltaVenta(venta, items);
+
+
+                MessageBox.Show("Venta creada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                FormVentas form = new FormVentas();
+                form.Show();
+                this.Hide();
+            } catch (Exception ex)
             {
-                FechaCreacion = DateTime.Now,
-                IdCliente = (comboClientes.SelectedItem as Cliente)?.Id ?? 0,
-                Items = items
-            };
-
-            ventaBLL.AltaVenta(venta, items);
-
-
-            MessageBox.Show("Venta creada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            FormVentas form = new FormVentas();
-            form.Show();
-            this.Hide();
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

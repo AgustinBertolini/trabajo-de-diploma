@@ -137,7 +137,7 @@ namespace UI
 
             ProductoBLL productoBLL = new ProductoBLL();
 
-            productoBLL.EditarProducto(Convert.ToInt32(txtId.Text), inputNombre.Text, (int)numericUpDown1.Value, (int)numericStock.Value);
+            productoBLL.EditarProducto(Convert.ToInt32(txtId.Text), inputNombre.Text, (decimal)numericUpDown1.Value, (int)numericStock.Value);
 
             FormProductos form = new FormProductos();
             form.Show();

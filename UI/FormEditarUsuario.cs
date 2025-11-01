@@ -70,52 +70,61 @@ namespace UI
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNombre.Text))
+            try
             {
-                MessageBox.Show("El campo nombre es obligatorio");
+                if (string.IsNullOrEmpty(txtNombre.Text))
+                {
+                    MessageBox.Show("El campo nombre es obligatorio");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(txtApellido.Text))
+                {
+                    MessageBox.Show("El campo apellido es obligatorio");
+                    return;
+                }
+
+                if (numericDni.Value <= 0)
+                {
+                    MessageBox.Show("El campo DNI es obligatorio");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(txtEmail.Text))
+                {
+                    MessageBox.Show("El campo email es obligatorio");
+                    return;
+                }
+
+                UsuarioBLL usuarioBLL = new UsuarioBLL();
+
+                bool editado = usuarioBLL.EditarUsuario(Convert.ToInt32(txtIdHidden.Text), txtNombre.Text, txtApellido.Text, txtEmail.Text, Convert.ToInt64(numericDni.Value));
+
+                if (editado)
+                {
+                    var usuariosObtenidos = usuarioBLL.GetUsuarios();
+
+                    string digitoVerificador = DigitoVerificador.CalcularDigitoVerificador(usuariosObtenidos.Cast<IVerificableEntity>().ToList(), true);
+
+                    DigitoVerificador.GuardarDigitoVerificador(digitoVerificador);
+
+                    FormUsuarios usuarios = new FormUsuarios();
+                    usuarios.Show();
+
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Ya existe un usuario con el mismo email");
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error: " + ex.Message);
                 return;
             }
-
-            if (string.IsNullOrEmpty(txtApellido.Text))
-            {
-                MessageBox.Show("El campo apellido es obligatorio");
-                return;
-            }
-
-            if (numericDni.Value <= 0)
-            {
-                MessageBox.Show("El campo DNI es obligatorio");
-                return;
-            }
-
-            if (string.IsNullOrEmpty(txtEmail.Text))
-            {
-                MessageBox.Show("El campo email es obligatorio");
-                return;
-            }
-
-            UsuarioBLL usuarioBLL = new UsuarioBLL();
-
-            bool editado = usuarioBLL.EditarUsuario(Convert.ToInt32(txtIdHidden.Text), txtNombre.Text, txtApellido.Text, txtEmail.Text, Convert.ToInt64(numericDni.Value));
-
-            if (editado)
-            {
-                var usuariosObtenidos = usuarioBLL.GetUsuarios();
-
-                string digitoVerificador = DigitoVerificador.CalcularDigitoVerificador(usuariosObtenidos.Cast<IVerificableEntity>().ToList(),true);
-
-                DigitoVerificador.GuardarDigitoVerificador(digitoVerificador);
-
-                FormUsuarios usuarios = new FormUsuarios();
-                usuarios.Show();
-
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Ya existe un usuario con el mismo email");
-
-            }
+            
 
             
         }

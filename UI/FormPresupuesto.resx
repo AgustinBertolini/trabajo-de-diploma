@@ -121,12 +121,6 @@
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 25</value>
   </data>
-  <data name="&gt;&gt;btnCrearPresupuesto.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnVerPresupuesto.Location" type="System.Drawing.Point, System.Drawing">
-    <value>657, 377</value>
-  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>800, 450</value>
   </data>
@@ -149,16 +143,13 @@
   <data name="&gt;&gt;btnCrearPresupuesto.Name" xml:space="preserve">
     <value>btnCrearPresupuesto</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnVerPresupuesto.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
-    <value>dataGridView1</value>
+  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>776, 288</value>
   </data>
   <data name="&gt;&gt;btnCrearPresupuesto.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="dataGridView1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -192,17 +183,17 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnVerPresupuesto.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;btnVerPresupuesto.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 16</value>
   </data>
-  <data name="btnVerPresupuesto.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 23</value>
-  </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="btnVerPresupuesto.Location" type="System.Drawing.Point, System.Drawing">
+    <value>657, 377</value>
   </data>
   <data name="dataGridView1.RowHeadersWidth" type="System.Int32, mscorlib">
     <value>51</value>
@@ -216,17 +207,26 @@
   <data name="btnCrearPresupuesto.Size" type="System.Drawing.Size, System.Drawing">
     <value>146, 23</value>
   </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
+    <value>dataGridView1</value>
+  </data>
   <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;btnVerPresupuesto.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;btnCrearPresupuesto.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnVerPresupuesto.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="btnCrearPresupuesto.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+  <data name="btnVerPresupuesto.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -234,8 +234,8 @@
   <data name="btnCrearPresupuesto.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>776, 288</value>
+  <data name="btnVerPresupuesto.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 23</value>
   </data>
   <data name="btnVerPresupuesto.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -243,8 +243,8 @@
   <data name="btnCrearPresupuesto.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 377</value>
   </data>
-  <data name="&gt;&gt;btnVerPresupuesto.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;btnVerPresupuesto.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>2</value>

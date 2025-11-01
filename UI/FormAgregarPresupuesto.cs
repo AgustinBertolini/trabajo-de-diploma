@@ -135,17 +135,17 @@ namespace UI
             _bs.DataSource = _items;
             dataGridView1.DataSource = _bs;
 
-            numericCantidad.Maximum = 9999999;
+            numericCantidad.Maximum = 999999;
 
             
 
+            comboClientes.DropDownStyle = ComboBoxStyle.DropDown;
             comboClientes.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             comboClientes.AutoCompleteSource = AutoCompleteSource.ListItems;
-            comboClientes.DropDownStyle = ComboBoxStyle.DropDown;
 
+            comboProductos.DropDownStyle = ComboBoxStyle.DropDown;
             comboProductos.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             comboProductos.AutoCompleteSource = AutoCompleteSource.ListItems;
-            comboProductos.DropDownStyle = ComboBoxStyle.DropDown;
 
             CargarProductosEnComboBox();
             CargarClientesEnComboBox();

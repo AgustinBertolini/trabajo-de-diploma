@@ -1,0 +1,2 @@
+ALTER TABLE productos
+ALTER COLUMN precio DECIMAL(18,2);

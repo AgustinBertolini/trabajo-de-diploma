@@ -40,7 +40,7 @@ namespace UI
             var clientes = clienteBLL.GetClientes();
 
             ProductoBLL productoBLL = new ProductoBLL();
-            var productos = productoBLL.GetProductos();
+            var productos = productoBLL.GetProductosSinFiltros();
 
             var cliente = clientes.Find(c => c.Id == venta.IdCliente);
 
@@ -49,17 +49,17 @@ namespace UI
             labelDireccion.Text = venta.EstadoEnvio;
             labelFecha.Text = venta.FechaCreacion.ToString("g");
 
-            dataGridView1.DataSource = productos
+            dataGridView1.DataSource = venta.Items
               .Select(x =>
               {
-                  var item = venta.Items.FirstOrDefault(i => i.IdProducto == x.Id);
+                  var item = productos.FirstOrDefault(i => i.Id == x.IdProducto);
 
                   return new
                   {
-                      Producto = x.Nombre,
-                      Precio = item?.PrecioUnitario ?? 0,
-                      Cantidad = item?.Cantidad ?? 0,
-                      SubTotal = (item?.PrecioUnitario ?? 0) * (item?.Cantidad ?? 0)
+                      Producto = item.Nombre,
+                      Precio = x?.PrecioUnitario ?? 0,
+                      Cantidad = x?.Cantidad ?? 0,
+                      SubTotal = (x?.PrecioUnitario ?? 0) * (x?.Cantidad ?? 0)
                   };
               })
               .ToList();

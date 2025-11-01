@@ -45,8 +45,25 @@ namespace BLL
                 throw ex;
             }
         }
+ 
+        public List<Producto> GetProductosSinFiltros()
+        {
+            try
+            {
+                ProductoDAL productoDAL = new ProductoDAL();
 
-        public int AltaProducto(string nombre, int precio, int stock)
+                List<Producto> productos = productoDAL.GetProductosSinFiltros();
+
+                return productos;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public int AltaProducto(string nombre, decimal precio, int stock)
         {
             try
             {
@@ -85,7 +102,7 @@ namespace BLL
             }
         }
 
-        public bool EditarProducto(int id, string nombre, int precio, int stock)
+        public bool EditarProducto(int id, string nombre, decimal precio, int stock)
         {
             try
             {

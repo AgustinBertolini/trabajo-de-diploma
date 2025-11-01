@@ -75,6 +75,7 @@
     <Content Include="Scripts\CreateTableVentaItem.sql" />
     <Content Include="Scripts\DeleteCliente.sql" />
     <Content Include="Scripts\GetClientes.sql" />
+    <Content Include="Scripts\UpdateProductPriceColumn.sql" />
     <Content Include="StoresProcedures\ActualizarEstadoEnvio.sql" />
     <Content Include="StoresProcedures\DeleteCliente.sql" />
     <Content Include="StoresProcedures\DeletePresupuesto.sql" />
@@ -84,6 +85,7 @@
     <Content Include="StoresProcedures\GetPresupuestoById.sql" />
     <Content Include="StoresProcedures\GetPresupuestoItemsByPresupuestoId.sql" />
     <Content Include="StoresProcedures\GetPresupuestos.sql" />
+    <Content Include="StoresProcedures\GetProductosSinFiltros.sql" />
     <Content Include="StoresProcedures\GetTiposCliente.sql" />
     <Content Include="StoresProcedures\GetVentaById.sql" />
     <Content Include="StoresProcedures\GetVentaItemsByVentaId.sql" />

@@ -142,6 +142,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(40, 137);
             this.dataGridView1.Name = "dataGridView1";
@@ -154,6 +155,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(645, 62);
             this.label1.Name = "label1";
@@ -165,6 +167,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(712, 59);
             this.comboBox1.Name = "comboBox1";
@@ -174,6 +177,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(112, 64);
             this.label2.Name = "label2";
@@ -184,6 +188,7 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateTimePicker1.Location = new System.Drawing.Point(163, 62);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
@@ -192,6 +197,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button1.Location = new System.Drawing.Point(456, 57);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(111, 23);
@@ -205,6 +211,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1097, 522);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dateTimePicker1);
@@ -214,7 +221,8 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "FormBitacora";
-            this.Text = "FormBitacora";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Bitacora";
             this.Load += new System.EventHandler(this.FormBitacora_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

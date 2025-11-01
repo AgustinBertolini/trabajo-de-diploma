@@ -56,17 +56,19 @@
             // btnCrearPresupuesto
             // 
             resources.ApplyResources(this.btnCrearPresupuesto, "btnCrearPresupuesto");
+            this.btnCrearPresupuesto.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnCrearPresupuesto.Name = "btnCrearPresupuesto";
             this.btnCrearPresupuesto.Tag = "label_crear_presupuesto";
-            this.btnCrearPresupuesto.UseVisualStyleBackColor = true;
+            this.btnCrearPresupuesto.UseVisualStyleBackColor = false;
             this.btnCrearPresupuesto.Click += new System.EventHandler(this.btnCrearPresupuesto_Click);
             // 
             // btnVerPresupuesto
             // 
             resources.ApplyResources(this.btnVerPresupuesto, "btnVerPresupuesto");
+            this.btnVerPresupuesto.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnVerPresupuesto.Name = "btnVerPresupuesto";
             this.btnVerPresupuesto.Tag = "label_ver_presupuesto";
-            this.btnVerPresupuesto.UseVisualStyleBackColor = true;
+            this.btnVerPresupuesto.UseVisualStyleBackColor = false;
             this.btnVerPresupuesto.Click += new System.EventHandler(this.btnVerPresupuesto_Click);
             // 
             // FormPresupuesto

@@ -32,7 +32,7 @@ namespace UI
             var clientes = clienteBLL.GetClientes();
 
             ProductoBLL productoBLL = new ProductoBLL();
-            var productos = productoBLL.GetProductos();
+            var productos = productoBLL.GetProductosSinFiltros();
 
             var cliente = clientes.Find(c => c.Id == presupuesto.IdCliente);
 
@@ -42,6 +42,7 @@ namespace UI
             labelFecha.Text = presupuesto.FechaCreacion.ToString("g");
 
             dataGridView1.DataSource = productos
+              .Where(p => presupuesto.Items.Any(i => i.IdProducto == p.Id))
               .Select(x =>
               {
                   var item = presupuesto.Items.FirstOrDefault(i => i.IdProducto == x.Id);
@@ -102,6 +103,8 @@ namespace UI
         private void button1_Click(object sender, EventArgs e)
         {
             PresupuestoBLL presupuestoBLL = new PresupuestoBLL();
+            ProductoBLL productoBLL = new ProductoBLL();
+
             var presupuesto = presupuestoBLL.GetPresupuestoById(PresupuestoId);
 
             if (presupuesto == null)
@@ -110,23 +113,64 @@ namespace UI
                 return;
             }
 
-            if(presupuesto.FechaCreacion < DateTime.Now.AddDays(-2))
+            if (presupuesto.FechaCreacion < DateTime.Now.AddDays(-2))
             {
-                MessageBox.Show("No se puede convertir este presupuesto en venta porque ya pasaron más de 48 horas desde su creación.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se puede convertir este presupuesto en venta porque ya pasaron más de 48 horas desde su creación.",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
+            var productosSinStock = new List<string>();
+            var itemsConStock = new List<VentaItem>();
+
+            foreach (var item in presupuesto.Items)
+            {
+                var producto = productoBLL.GetProducto(item.IdProducto);
+                if (producto == null)
+                    continue;
+
+                if ((producto.Stock - item.Cantidad) <= 0)
+                {
+                    productosSinStock.Add(producto.Nombre);
+                }
+                else
+                {
+                    itemsConStock.Add(new VentaItem
+                    {
+                        IdProducto = item.IdProducto,
+                        Cantidad = item.Cantidad,
+                        PrecioUnitario = item.PrecioUnitario
+                    });
+                }
+            }
+
+            if (productosSinStock.Any())
+            {
+                string lista = string.Join("\n• ", productosSinStock);
+                MessageBox.Show(
+                    "Algunos productos no tienen stock y no serán incluidos en la venta:\n\n• " + lista,
+                    "Productos sin stock",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+
+            if (!itemsConStock.Any())
+            {
+                MessageBox.Show("No se puede generar la venta porque ninguno de los productos tiene stock disponible.",
+                    "Sin productos disponibles",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Crear la venta solo con productos con stock
             Venta nuevaVenta = new Venta
             {
                 IdCliente = presupuesto.IdCliente,
                 FechaCreacion = DateTime.Now,
                 EstadoEnvio = "En preparación",
-                Items = presupuesto.Items.Select(i => new VentaItem
-                {
-                    IdProducto = i.IdProducto,
-                    Cantidad = i.Cantidad,
-                    PrecioUnitario = i.PrecioUnitario
-                }).ToList()
+                Items = itemsConStock
             };
 
             try
@@ -139,9 +183,10 @@ namespace UI
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al convertir presupuesto: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al convertir presupuesto: {ex.Message}",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
 
     }
-}
 }

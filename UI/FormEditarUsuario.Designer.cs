@@ -44,6 +44,7 @@
             // 
             // numericDni
             // 
+            this.numericDni.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.numericDni.Location = new System.Drawing.Point(70, 154);
             this.numericDni.Maximum = new decimal(new int[] {
             99999999,
@@ -56,6 +57,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(64, 187);
             this.label3.Name = "label3";
@@ -66,6 +68,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtEmail.Location = new System.Drawing.Point(64, 204);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(317, 22);
@@ -73,6 +76,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(67, 135);
             this.label4.Name = "label4";
@@ -83,6 +87,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(64, 84);
             this.label2.Name = "label2";
@@ -93,6 +98,7 @@
             // 
             // txtApellido
             // 
+            this.txtApellido.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtApellido.Location = new System.Drawing.Point(64, 101);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(317, 22);
@@ -100,6 +106,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(67, 32);
             this.label1.Name = "label1";
@@ -110,6 +117,7 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtNombre.Location = new System.Drawing.Point(67, 49);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(317, 22);
@@ -117,28 +125,33 @@
             // 
             // btnAceptar
             // 
+            this.btnAceptar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAceptar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnAceptar.Location = new System.Drawing.Point(283, 268);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(98, 23);
+            this.btnAceptar.Size = new System.Drawing.Size(98, 40);
             this.btnAceptar.TabIndex = 10;
             this.btnAceptar.Tag = "label_aceptar";
             this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnCancelar.Location = new System.Drawing.Point(64, 268);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(98, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(98, 40);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Tag = "label_cancelar";
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtIdHidden
             // 
+            this.txtIdHidden.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtIdHidden.Location = new System.Drawing.Point(64, 233);
             this.txtIdHidden.Name = "txtIdHidden";
             this.txtIdHidden.Size = new System.Drawing.Size(100, 22);
@@ -149,7 +162,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(454, 309);
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ClientSize = new System.Drawing.Size(454, 320);
             this.Controls.Add(this.txtIdHidden);
             this.Controls.Add(this.numericDni);
             this.Controls.Add(this.label3);
@@ -162,6 +176,7 @@
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
             this.Name = "FormEditarUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormEditarUsuario";
             this.Load += new System.EventHandler(this.FormEditarUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericDni)).EndInit();

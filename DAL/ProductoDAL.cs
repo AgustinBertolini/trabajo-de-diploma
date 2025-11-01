@@ -40,7 +40,7 @@ namespace DAL
                                     {
                                         Id = Convert.ToInt32(reader["id"]),
                                         Nombre = reader["nombre"].ToString(),
-                                        Precio = Convert.ToInt32(reader["precio"]),
+                                        Precio = Convert.ToDecimal(reader["precio"]),
                                         Stock = Convert.ToInt32(reader["stock"])
                                     };
                                 }
@@ -95,7 +95,64 @@ namespace DAL
                                     {
                                         Id = Convert.ToInt32(reader["id"]),
                                         Nombre = reader["nombre"].ToString(),
-                                        Precio = Convert.ToInt32(reader["precio"]),
+                                        Precio = Convert.ToDecimal(reader["precio"]),
+                                        Stock = Convert.ToInt32(reader["stock"]),
+                                        FechaCreacion = Convert.ToDateTime(reader["fechaCreacion"]),
+                                        FechaActualizacion = Convert.ToDateTime(reader["fechaActualizacion"]),
+                                    });
+                                }
+                            }
+                        }
+
+                        transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        throw ex;
+                    }
+
+                }
+
+                return productos;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<Producto> GetProductosSinFiltros()
+        {
+            List<Producto> productos = new List<Producto>();
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlTransaction transaction = conn.BeginTransaction();
+
+                    try
+                    {
+                        using (SqlCommand cmd = new SqlCommand("GetProductosSinFiltros", conn, transaction))
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+
+
+                            using (SqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    productos.Add(new Producto
+                                    {
+                                        Id = Convert.ToInt32(reader["id"]),
+                                        Nombre = reader["nombre"].ToString(),
+                                        Precio = Convert.ToDecimal(reader["precio"]),
                                         Stock = Convert.ToInt32(reader["stock"]),
                                         FechaCreacion = Convert.ToDateTime(reader["fechaCreacion"]),
                                         FechaActualizacion = Convert.ToDateTime(reader["fechaActualizacion"]),
@@ -354,7 +411,7 @@ namespace DAL
             }
         }
 
-        public void GuardarPrecioHistorico(int productId, int precio)
+        public void GuardarPrecioHistorico(int productId, decimal precio)
         {
             try
             {

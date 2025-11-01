@@ -78,7 +78,7 @@ namespace UI
 
             ProductoBLL productoBLL = new ProductoBLL();
 
-            int userId = productoBLL.AltaProducto(inputNombre.Text, (int)numericUpDown1.Value, (int)numericStock.Value);
+            int userId = productoBLL.AltaProducto(inputNombre.Text, (decimal)numericUpDown1.Value, (int)numericStock.Value);
 
             FormProductos form = new FormProductos();
             form.Show();

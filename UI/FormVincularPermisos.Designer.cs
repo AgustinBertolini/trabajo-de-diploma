@@ -38,6 +38,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(32, 25);
             this.label1.Name = "label1";
@@ -47,6 +48,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(35, 93);
             this.label2.Name = "label2";
@@ -56,6 +58,7 @@
             // 
             // comboPadre
             // 
+            this.comboPadre.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboPadre.FormattingEnabled = true;
             this.comboPadre.Location = new System.Drawing.Point(35, 45);
             this.comboPadre.Name = "comboPadre";
@@ -64,6 +67,7 @@
             // 
             // comboHijo
             // 
+            this.comboHijo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboHijo.FormattingEnabled = true;
             this.comboHijo.Location = new System.Drawing.Point(35, 112);
             this.comboHijo.Name = "comboHijo";
@@ -73,30 +77,35 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(38, 195);
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnCancelar.Location = new System.Drawing.Point(38, 181);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(90, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(90, 37);
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Tag = "label_cancelar";
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnVincular
             // 
-            this.btnVincular.Location = new System.Drawing.Point(156, 195);
+            this.btnVincular.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnVincular.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnVincular.Location = new System.Drawing.Point(156, 181);
             this.btnVincular.Name = "btnVincular";
-            this.btnVincular.Size = new System.Drawing.Size(90, 23);
+            this.btnVincular.Size = new System.Drawing.Size(90, 37);
             this.btnVincular.TabIndex = 5;
             this.btnVincular.Tag = "label_vincular";
             this.btnVincular.Text = "Vincular";
-            this.btnVincular.UseVisualStyleBackColor = true;
+            this.btnVincular.UseVisualStyleBackColor = false;
             this.btnVincular.Click += new System.EventHandler(this.btnVincular_Click);
             // 
             // FormVincularPermisos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(284, 245);
             this.Controls.Add(this.btnVincular);
             this.Controls.Add(this.btnCancelar);
@@ -105,7 +114,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormVincularPermisos";
-            this.Text = "FormVincularPermisos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Vincular permisos";
             this.Load += new System.EventHandler(this.FormVincularPermisos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

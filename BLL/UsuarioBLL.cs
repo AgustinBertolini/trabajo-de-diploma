@@ -63,6 +63,15 @@ namespace BLL
         {
             try
             {
+                List<Usuario> usuariosExistentes = GetUsuarios();
+                if (usuariosExistentes.Any(u => u.Email.Equals(email, StringComparison.OrdinalIgnoreCase)))
+                {
+                    throw new Exception("Ya existe un usuario con el email elegido.");
+                }
+                if (usuariosExistentes.Any(u => u.DNI == dni))
+                {
+                    throw new Exception("Ya existe un usuario con el DNI elegido.");
+                }
                 Usuario usuario = new Usuario();
                 usuario.Nombre = nombre;
                 usuario.Apellido = apellido;
@@ -111,6 +120,15 @@ namespace BLL
         {
             try
             {
+                List<Usuario> usuariosExistentes = GetUsuarios();
+                if (usuariosExistentes.Any(u => u.Email.Equals(email, StringComparison.OrdinalIgnoreCase)))
+                {
+                    throw new Exception("Ya existe un usuario con el email elegido.");
+                }
+                if (usuariosExistentes.Any(u => u.DNI == dni))
+                {
+                    throw new Exception("Ya existe un usuario con el DNI elegido.");
+                }
                 Usuario usuario = new Usuario();
                 usuario.Id = id;
                 usuario.Nombre = nombre;

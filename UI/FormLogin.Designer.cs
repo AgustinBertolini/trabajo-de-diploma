@@ -39,7 +39,7 @@
             // 
             // btnIniciarSesion
             // 
-            this.btnIniciarSesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIniciarSesion.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnIniciarSesion.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnIniciarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarSesion.ForeColor = System.Drawing.SystemColors.Control;
@@ -54,7 +54,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtEmail.Location = new System.Drawing.Point(286, 130);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(214, 22);
@@ -62,7 +62,7 @@
             // 
             // label_ingresar_email
             // 
-            this.label_ingresar_email.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_ingresar_email.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label_ingresar_email.AutoSize = true;
             this.label_ingresar_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_ingresar_email.Location = new System.Drawing.Point(283, 109);
@@ -75,7 +75,7 @@
             // 
             // label_ingresar_contraseña
             // 
-            this.label_ingresar_contraseña.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_ingresar_contraseña.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label_ingresar_contraseña.AutoSize = true;
             this.label_ingresar_contraseña.Location = new System.Drawing.Point(283, 200);
             this.label_ingresar_contraseña.Name = "label_ingresar_contraseña";
@@ -87,7 +87,7 @@
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtContraseña.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtContraseña.Location = new System.Drawing.Point(286, 219);
             this.txtContraseña.MaxLength = 8;
             this.txtContraseña.Name = "txtContraseña";
@@ -98,7 +98,7 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(331, 30);
@@ -110,7 +110,7 @@
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(282, 56);

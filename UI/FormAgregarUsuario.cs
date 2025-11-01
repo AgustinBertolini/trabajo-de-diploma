@@ -89,70 +89,78 @@ namespace UI
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNombre.Text))
+            try
             {
-                MessageBox.Show("El campo nombre es obligatorio");
-                return;
-            } 
-            
-            if (string.IsNullOrEmpty(txtApellido.Text))
+                if (string.IsNullOrEmpty(txtNombre.Text))
+                {
+                    MessageBox.Show("El campo nombre es obligatorio");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(txtApellido.Text))
+                {
+                    MessageBox.Show("El campo apellido es obligatorio");
+                    return;
+                }
+
+                if (numericDni.Value <= 0)
+                {
+                    MessageBox.Show("El campo DNI es obligatorio");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(txtEmail.Text))
+                {
+                    MessageBox.Show("El campo email es obligatorio");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(txtContraseña.Text))
+                {
+                    MessageBox.Show("El campo contraseña es obligatorio");
+                    return;
+                }
+
+                if (comboRoles.SelectedItem == null)
+                {
+                    MessageBox.Show("Debe seleccionar un rol");
+                    return;
+                }
+
+                UsuarioBLL usuarioBLL = new UsuarioBLL();
+
+                Rol rolSeleccionado = (Rol)comboRoles.SelectedItem;
+
+                int userId = usuarioBLL.AltaUsuario(txtNombre.Text, txtApellido.Text, txtEmail.Text, txtContraseña.Text, Convert.ToInt64(numericDni.Value), rolSeleccionado.Id);
+
+                if (userId != 0)
+                {
+                    Bitacoras.AltaBitacora("El usuario " + txtEmail.Text + " fue dado de alta", TipoEvento.Message, SessionManager.GetInstance.Usuario.Id);
+
+                    var usuariosObtenidos = usuarioBLL.GetUsuarios();
+
+                    string digitoVerificador = DigitoVerificador.CalcularDigitoVerificador(usuariosObtenidos.Cast<IVerificableEntity>().ToList(), true);
+
+                    DigitoVerificador.GuardarDigitoVerificador(digitoVerificador);
+
+                    FormUsuarios usuarios = new FormUsuarios();
+                    usuarios.Show();
+
+                    this.Hide();
+                }
+                else
+                {
+                    Bitacoras.AltaBitacora("Error al crear usuario: Ya existe un usuario con el mismo email", TipoEvento.Error, SessionManager.GetInstance.Usuario.Id);
+
+                    MessageBox.Show("Ya existe un usuario con el mismo email");
+
+                }
+            } catch (Exception ex)
             {
-                MessageBox.Show("El campo apellido es obligatorio");
-                return;
-            } 
-            
-            if (numericDni.Value <= 0)
-            {
-                MessageBox.Show("El campo DNI es obligatorio");
-                return;
-            } 
-            
-            if (string.IsNullOrEmpty(txtEmail.Text))
-            {
-                MessageBox.Show("El campo email es obligatorio");
-                return;
-            } 
-            
-            if (string.IsNullOrEmpty(txtContraseña.Text))
-            {
-                MessageBox.Show("El campo contraseña es obligatorio");
+                MessageBox.Show("Ocurrió un error al crear el usuario: " + ex.Message);
                 return;
             }
-
-            if (comboRoles.SelectedItem == null)
-            {
-                MessageBox.Show("Debe seleccionar un rol");
-                return;
-            }
-
-            UsuarioBLL usuarioBLL = new UsuarioBLL();
-
-            Rol rolSeleccionado = (Rol)comboRoles.SelectedItem;
-
-            int userId = usuarioBLL.AltaUsuario(txtNombre.Text,txtApellido.Text,txtEmail.Text,txtContraseña.Text, Convert.ToInt64(numericDni.Value), rolSeleccionado.Id);
-
-            if (userId != 0)
-            {
-                Bitacoras.AltaBitacora("El usuario " + txtEmail.Text + " fue dado de alta", TipoEvento.Message, SessionManager.GetInstance.Usuario.Id);
-
-                var usuariosObtenidos = usuarioBLL.GetUsuarios();
-
-                string digitoVerificador = DigitoVerificador.CalcularDigitoVerificador(usuariosObtenidos.Cast<IVerificableEntity>().ToList(),true);
-
-                DigitoVerificador.GuardarDigitoVerificador(digitoVerificador);
-
-                FormUsuarios usuarios = new FormUsuarios();
-                usuarios.Show();
-
-                this.Hide();
-            }
-            else
-            {
-                Bitacoras.AltaBitacora("Error al crear usuario: Ya existe un usuario con el mismo email", TipoEvento.Error, SessionManager.GetInstance.Usuario.Id);
-
-                MessageBox.Show("Ya existe un usuario con el mismo email");
-
-            }
+           
 
         }
 

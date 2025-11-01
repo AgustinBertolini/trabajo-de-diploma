@@ -49,6 +49,7 @@
             // 
             // labelTotal
             // 
+            this.labelTotal.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelTotal.AutoSize = true;
             this.labelTotal.Location = new System.Drawing.Point(70, 376);
             this.labelTotal.Name = "labelTotal";
@@ -58,6 +59,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(30, 376);
             this.label6.Name = "label6";
@@ -67,6 +69,7 @@
             // 
             // labelFecha
             // 
+            this.labelFecha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelFecha.AutoSize = true;
             this.labelFecha.Location = new System.Drawing.Point(204, 36);
             this.labelFecha.Name = "labelFecha";
@@ -76,6 +79,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(204, 17);
             this.label5.Name = "label5";
@@ -85,16 +89,19 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(33, 416);
+            this.btnVolver.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnVolver.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnVolver.Location = new System.Drawing.Point(33, 395);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(81, 23);
+            this.btnVolver.Size = new System.Drawing.Size(95, 44);
             this.btnVolver.TabIndex = 14;
             this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(30, 102);
             this.label4.Name = "label4";
@@ -104,6 +111,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(33, 121);
             this.dataGridView1.Name = "dataGridView1";
@@ -115,6 +123,7 @@
             // 
             // labelDireccion
             // 
+            this.labelDireccion.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelDireccion.AutoSize = true;
             this.labelDireccion.Location = new System.Drawing.Point(552, 36);
             this.labelDireccion.Name = "labelDireccion";
@@ -123,6 +132,7 @@
             // 
             // labelCorreo
             // 
+            this.labelCorreo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelCorreo.AutoSize = true;
             this.labelCorreo.Location = new System.Drawing.Point(30, 75);
             this.labelCorreo.Name = "labelCorreo";
@@ -132,6 +142,7 @@
             // 
             // labelCliente
             // 
+            this.labelCliente.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelCliente.AutoSize = true;
             this.labelCliente.Location = new System.Drawing.Point(30, 36);
             this.labelCliente.Name = "labelCliente";
@@ -141,6 +152,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(30, 56);
             this.label3.Name = "label3";
@@ -150,6 +162,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(552, 17);
             this.label2.Name = "label2";
@@ -160,6 +173,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(30, 17);
             this.label1.Name = "label1";
@@ -169,6 +183,7 @@
             // 
             // radioBtnPreparacion
             // 
+            this.radioBtnPreparacion.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.radioBtnPreparacion.AutoSize = true;
             this.radioBtnPreparacion.Location = new System.Drawing.Point(555, 36);
             this.radioBtnPreparacion.Name = "radioBtnPreparacion";
@@ -181,6 +196,7 @@
             // 
             // radioBtnCamino
             // 
+            this.radioBtnCamino.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.radioBtnCamino.AutoSize = true;
             this.radioBtnCamino.Location = new System.Drawing.Point(555, 62);
             this.radioBtnCamino.Name = "radioBtnCamino";
@@ -193,6 +209,7 @@
             // 
             // radioBtnEntregado
             // 
+            this.radioBtnEntregado.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.radioBtnEntregado.AutoSize = true;
             this.radioBtnEntregado.Location = new System.Drawing.Point(555, 88);
             this.radioBtnEntregado.Name = "radioBtnEntregado";
@@ -207,6 +224,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.radioBtnEntregado);
             this.Controls.Add(this.radioBtnCamino);
@@ -225,6 +243,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormDetalleVenta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalle de venta";
             this.Load += new System.EventHandler(this.FormDetalleVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

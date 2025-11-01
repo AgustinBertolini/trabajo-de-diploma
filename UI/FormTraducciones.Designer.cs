@@ -146,39 +146,46 @@
             // 
             // agregarIdiomaBtn
             // 
-            this.agregarIdiomaBtn.Location = new System.Drawing.Point(296, 55);
+            this.agregarIdiomaBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.agregarIdiomaBtn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.agregarIdiomaBtn.Location = new System.Drawing.Point(317, 51);
             this.agregarIdiomaBtn.Name = "agregarIdiomaBtn";
-            this.agregarIdiomaBtn.Size = new System.Drawing.Size(161, 23);
+            this.agregarIdiomaBtn.Size = new System.Drawing.Size(161, 32);
             this.agregarIdiomaBtn.TabIndex = 0;
             this.agregarIdiomaBtn.Tag = "label_agregar_idioma";
             this.agregarIdiomaBtn.Text = "Agregar Idioma";
-            this.agregarIdiomaBtn.UseVisualStyleBackColor = true;
+            this.agregarIdiomaBtn.UseVisualStyleBackColor = false;
             this.agregarIdiomaBtn.Click += new System.EventHandler(this.tag_Click);
             // 
             // editarIdiomaBtn
             // 
-            this.editarIdiomaBtn.Location = new System.Drawing.Point(296, 96);
+            this.editarIdiomaBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.editarIdiomaBtn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.editarIdiomaBtn.Location = new System.Drawing.Point(317, 114);
             this.editarIdiomaBtn.Name = "editarIdiomaBtn";
-            this.editarIdiomaBtn.Size = new System.Drawing.Size(161, 23);
+            this.editarIdiomaBtn.Size = new System.Drawing.Size(161, 34);
             this.editarIdiomaBtn.TabIndex = 1;
             this.editarIdiomaBtn.Tag = "label_editar_idioma";
             this.editarIdiomaBtn.Text = "Editar Idioma";
-            this.editarIdiomaBtn.UseVisualStyleBackColor = true;
+            this.editarIdiomaBtn.UseVisualStyleBackColor = false;
             this.editarIdiomaBtn.Click += new System.EventHandler(this.editarIdiomaBtn_Click);
             // 
             // borrarIdiomaBtn
             // 
-            this.borrarIdiomaBtn.Location = new System.Drawing.Point(296, 142);
+            this.borrarIdiomaBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.borrarIdiomaBtn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.borrarIdiomaBtn.Location = new System.Drawing.Point(317, 174);
             this.borrarIdiomaBtn.Name = "borrarIdiomaBtn";
-            this.borrarIdiomaBtn.Size = new System.Drawing.Size(161, 23);
+            this.borrarIdiomaBtn.Size = new System.Drawing.Size(161, 33);
             this.borrarIdiomaBtn.TabIndex = 2;
             this.borrarIdiomaBtn.Tag = "label_borrar_idioma";
             this.borrarIdiomaBtn.Text = "Borrar Idioma";
-            this.borrarIdiomaBtn.UseVisualStyleBackColor = true;
+            this.borrarIdiomaBtn.UseVisualStyleBackColor = false;
             this.borrarIdiomaBtn.Click += new System.EventHandler(this.borrarIdiomaBtn_Click);
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(29, 32);
             this.label1.Name = "label1";
@@ -189,6 +196,7 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(29, 254);
             this.dataGridView2.MultiSelect = false;
@@ -197,22 +205,25 @@
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(522, 268);
+            this.dataGridView2.Size = new System.Drawing.Size(592, 268);
             this.dataGridView2.TabIndex = 7;
             // 
             // btnEditarTraduccion
             // 
-            this.btnEditarTraduccion.Location = new System.Drawing.Point(591, 338);
+            this.btnEditarTraduccion.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnEditarTraduccion.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnEditarTraduccion.Location = new System.Drawing.Point(627, 254);
             this.btnEditarTraduccion.Name = "btnEditarTraduccion";
-            this.btnEditarTraduccion.Size = new System.Drawing.Size(161, 23);
+            this.btnEditarTraduccion.Size = new System.Drawing.Size(161, 42);
             this.btnEditarTraduccion.TabIndex = 5;
             this.btnEditarTraduccion.Tag = "label_editar_traduccion";
             this.btnEditarTraduccion.Text = "Editar traducción";
-            this.btnEditarTraduccion.UseVisualStyleBackColor = true;
+            this.btnEditarTraduccion.UseVisualStyleBackColor = false;
             this.btnEditarTraduccion.Click += new System.EventHandler(this.btnEditarTraduccion_Click);
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(29, 232);
             this.label2.Name = "label2";
@@ -223,6 +234,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(588, 55);
             this.label3.Name = "label3";
@@ -234,6 +246,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(591, 74);
             this.comboBox1.Name = "comboBox1";
@@ -243,6 +256,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(29, 51);
             this.dataGridView1.MultiSelect = false;
@@ -257,19 +271,22 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(591, 421);
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button1.Location = new System.Drawing.Point(627, 331);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 27);
+            this.button1.Size = new System.Drawing.Size(161, 46);
             this.button1.TabIndex = 6;
             this.button1.Tag = "label_historico";
             this.button1.Text = "Historico";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormTraducciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(796, 617);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
@@ -284,6 +301,7 @@
             this.Controls.Add(this.agregarIdiomaBtn);
             this.Controls.Add(this.menuStrip1);
             this.Name = "FormTraducciones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Traducciones";
             this.Load += new System.EventHandler(this.FormTraducciones_Load);
             this.menuStrip1.ResumeLayout(false);

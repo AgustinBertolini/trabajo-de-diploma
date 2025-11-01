@@ -1,6 +1,6 @@
 CREATE OR ALTER PROCEDURE InsertProducto
     @Nombre NVARCHAR(50),
-    @Precio INT,
+    @Precio DECIMAL(18,2),
     @Stock INT
 AS
 BEGIN

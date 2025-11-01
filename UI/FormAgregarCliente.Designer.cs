@@ -31,6 +31,7 @@ namespace UI
             // 
             // txtNombre
             // 
+            this.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtNombre.Location = new System.Drawing.Point(150, 30);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(200, 22);
@@ -38,6 +39,7 @@ namespace UI
             // 
             // txtApellido
             // 
+            this.txtApellido.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtApellido.Location = new System.Drawing.Point(150, 70);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(200, 22);
@@ -45,6 +47,7 @@ namespace UI
             // 
             // txtCuit
             // 
+            this.txtCuit.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtCuit.Location = new System.Drawing.Point(150, 110);
             this.txtCuit.Name = "txtCuit";
             this.txtCuit.Size = new System.Drawing.Size(200, 22);
@@ -52,6 +55,7 @@ namespace UI
             // 
             // txtEmail
             // 
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtEmail.Location = new System.Drawing.Point(150, 150);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(200, 22);
@@ -59,6 +63,7 @@ namespace UI
             // 
             // txtDireccion
             // 
+            this.txtDireccion.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtDireccion.Location = new System.Drawing.Point(150, 190);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(200, 22);
@@ -66,6 +71,7 @@ namespace UI
             // 
             // lblNombre
             // 
+            this.lblNombre.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblNombre.Location = new System.Drawing.Point(30, 30);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(100, 22);
@@ -74,6 +80,7 @@ namespace UI
             // 
             // lblApellido
             // 
+            this.lblApellido.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblApellido.Location = new System.Drawing.Point(30, 70);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(100, 22);
@@ -82,6 +89,7 @@ namespace UI
             // 
             // lblCuit
             // 
+            this.lblCuit.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblCuit.Location = new System.Drawing.Point(30, 110);
             this.lblCuit.Name = "lblCuit";
             this.lblCuit.Size = new System.Drawing.Size(100, 22);
@@ -90,6 +98,7 @@ namespace UI
             // 
             // lblEmail
             // 
+            this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblEmail.Location = new System.Drawing.Point(30, 150);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(100, 22);
@@ -98,6 +107,7 @@ namespace UI
             // 
             // lblDireccion
             // 
+            this.lblDireccion.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblDireccion.Location = new System.Drawing.Point(30, 190);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(100, 22);
@@ -106,6 +116,7 @@ namespace UI
             // 
             // lblTipoClienteId
             // 
+            this.lblTipoClienteId.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTipoClienteId.Location = new System.Drawing.Point(30, 230);
             this.lblTipoClienteId.Name = "lblTipoClienteId";
             this.lblTipoClienteId.Size = new System.Drawing.Size(100, 22);
@@ -114,26 +125,31 @@ namespace UI
             // 
             // btnGuardar
             // 
+            this.btnGuardar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnGuardar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnGuardar.Location = new System.Drawing.Point(249, 270);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(101, 30);
+            this.btnGuardar.Size = new System.Drawing.Size(101, 48);
             this.btnGuardar.TabIndex = 13;
             this.btnGuardar.Text = "Aceptar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnCancelar.Location = new System.Drawing.Point(33, 270);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(101, 30);
+            this.btnCancelar.Size = new System.Drawing.Size(97, 48);
             this.btnCancelar.TabIndex = 12;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // comboTipoCliente
             // 
+            this.comboTipoCliente.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboTipoCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboTipoCliente.Location = new System.Drawing.Point(150, 230);
             this.comboTipoCliente.Name = "comboTipoCliente";
@@ -142,6 +158,7 @@ namespace UI
             // 
             // FormAgregarCliente
             // 
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(400, 330);
             this.Controls.Add(this.comboTipoCliente);
             this.Controls.Add(this.btnCancelar);
@@ -158,6 +175,7 @@ namespace UI
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtNombre);
             this.Name = "FormAgregarCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Cliente";
             this.Load += new System.EventHandler(this.FormAgregarCliente_Load_1);
             this.ResumeLayout(false);
