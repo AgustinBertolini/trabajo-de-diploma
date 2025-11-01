@@ -38,7 +38,7 @@ namespace UI
             flowPanelConversaciones.Controls.Clear();
 
             int idUsuarioActual = SessionManager.GetInstance.Usuario.Id;
-            List<Conversacion> conversaciones = conversacionBLL.GetConversacionesByUsuario(idUsuarioActual);
+            List<Conversacion> conversaciones = conversacionBLL.GetConversaciones();
             List<Usuario> usuarios = usuarioBLL.GetUsuarios();
 
             foreach (var conv in conversaciones)
@@ -105,6 +105,11 @@ namespace UI
                 lblVacio.Dock = DockStyle.Top;
                 flowPanelConversaciones.Controls.Add(lblVacio);
             }
+        }
+
+        private void flowPanelConversaciones_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

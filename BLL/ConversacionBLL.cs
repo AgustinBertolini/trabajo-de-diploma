@@ -23,7 +23,7 @@ namespace BLL
                 return dal.CrearConversacion(SessionManager.GetInstance.Usuario.Id);
             }
 
-        public List<Conversacion> GetConversacionesByUsuario(int idUsuario)
+            public List<Conversacion> GetConversacionesByUsuario(int idUsuario)
             {
                 var conversaciones = dal.GetConversacionesByUsuario(idUsuario);
 
@@ -31,6 +31,13 @@ namespace BLL
                 {
                     c.Mensajes = dal.GetMensajesByConversacion(c.Id);
                 }
+
+                return conversaciones;
+            }
+
+            public List<Conversacion> GetConversaciones()
+            {
+                var conversaciones = dal.GetConversaciones();
 
                 return conversaciones;
             }

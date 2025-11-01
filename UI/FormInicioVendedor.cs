@@ -62,26 +62,30 @@ namespace UI
 
         private void label10_Click(object sender, EventArgs e)
         {
-            UsuarioBLL usuarioBLL = new UsuarioBLL();
+            Application.Exit();
 
-            usuarioBLL.Logout();
+            //UsuarioBLL usuarioBLL = new UsuarioBLL();
 
-            FormLogin formLogin = new FormLogin();
-            formLogin.Show();
+            //usuarioBLL.Logout();
 
-            this.Hide();
+            //FormLogin formLogin = new FormLogin();
+            //formLogin.Show();
+
+            //this.Hide();
         }
 
         private void panel5_Click(object sender, EventArgs e)
         {
-            UsuarioBLL usuarioBLL = new UsuarioBLL();
+            Application.Exit();
 
-            usuarioBLL.Logout();
+            //UsuarioBLL usuarioBLL = new UsuarioBLL();
 
-            FormLogin formLogin = new FormLogin();
-            formLogin.Show();
+            //usuarioBLL.Logout();
 
-            this.Hide();
+            //FormLogin formLogin = new FormLogin();
+            //formLogin.Show();
+
+            //this.Hide();
         }
 
         private void panel5_Paint(object sender, PaintEventArgs e)
@@ -233,14 +237,16 @@ namespace UI
 
         private void label11_Click(object sender, EventArgs e)
         {
-            UsuarioBLL usuarioBLL = new UsuarioBLL();
+            Application.Exit();
 
-            usuarioBLL.Logout();
+            //UsuarioBLL usuarioBLL = new UsuarioBLL();
 
-            FormLogin formLogin = new FormLogin();
-            formLogin.Show();
+            //usuarioBLL.Logout();
 
-            this.Hide();
+            //FormLogin formLogin = new FormLogin();
+            //formLogin.Show();
+
+            //this.Hide();
         }
     }
 }

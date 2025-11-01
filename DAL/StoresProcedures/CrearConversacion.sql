@@ -3,4 +3,7 @@ CREATE OR ALTER PROCEDURE CrearConversacion
 AS
 BEGIN
 	INSERT INTO Conversaciones (idUsuario) VALUES (@IdUsuario);
+
+    SELECT SCOPE_IDENTITY() AS IdConversacion;
+
 END;

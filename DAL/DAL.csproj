@@ -86,6 +86,7 @@
     <Content Include="StoresProcedures\DeleteVenta.sql" />
     <Content Include="StoresProcedures\EditCliente.sql" />
     <Content Include="StoresProcedures\GetClientes.sql" />
+    <Content Include="StoresProcedures\GetConversaciones.sql" />
     <Content Include="StoresProcedures\GetConversacionesByUsuario.sql" />
     <Content Include="StoresProcedures\GetMensajesByConversacion.sql" />
     <Content Include="StoresProcedures\GetPresupuestoById.sql" />

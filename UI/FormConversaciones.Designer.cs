@@ -41,6 +41,7 @@
             this.flowPanelConversaciones.Size = new System.Drawing.Size(800, 450);
             this.flowPanelConversaciones.TabIndex = 0;
             this.flowPanelConversaciones.WrapContents = false;
+            this.flowPanelConversaciones.Paint += new System.Windows.Forms.PaintEventHandler(this.flowPanelConversaciones_Paint);
             // 
             // FormConversaciones
             // 

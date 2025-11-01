@@ -35,7 +35,7 @@ namespace DAL
                 }
         }   
 
-        public List<Conversacion> GetConversacionesByUsuario(int idUsuario)
+            public List<Conversacion> GetConversacionesByUsuario(int idUsuario)
             {
                 var conversaciones = new List<Conversacion>();
 
@@ -46,6 +46,34 @@ namespace DAL
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                conversaciones.Add(new Conversacion
+                                {
+                                    Id = Convert.ToInt32(reader["id"]),
+                                    IdUsuario = Convert.ToInt32(reader["idUsuario"]),
+                                });
+                            }
+                        }
+                    }
+                }
+
+                return conversaciones;
+            }
+
+            public List<Conversacion> GetConversaciones()
+            {
+                var conversaciones = new List<Conversacion>();
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("GetConversaciones", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
 
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
