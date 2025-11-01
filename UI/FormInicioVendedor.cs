@@ -1,4 +1,6 @@
 ﻿using BLL;
+using Entidades;
+using Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,17 +50,26 @@ namespace UI
 
         private void label3_Click(object sender, EventArgs e)
         {
-
+            FormClientes form = new FormClientes();
+            form.Show();
         }
 
         private void label5_Click(object sender, EventArgs e)
         {
-
+            FormProductos form = new FormProductos();
+            form.Show();
         }
 
         private void label10_Click(object sender, EventArgs e)
         {
+            UsuarioBLL usuarioBLL = new UsuarioBLL();
 
+            usuarioBLL.Logout();
+
+            FormLogin formLogin = new FormLogin();
+            formLogin.Show();
+
+            this.Hide();
         }
 
         private void panel5_Click(object sender, EventArgs e)
@@ -101,6 +112,135 @@ namespace UI
         {
             FormClientes form = new FormClientes();
             form.Show();
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+            ConversacionBLL conversacionBLL = new ConversacionBLL();
+
+            Conversacion conversacion = conversacionBLL.GetConversacionesByUsuario(SessionManager.GetInstance.Usuario.Id).FirstOrDefault();
+            int? id = null;
+
+            if (conversacion != null)
+            {
+                id = conversacion.Id;
+            }
+            ;
+
+            if (id != null)
+            {
+                FormConversacion form = new FormConversacion(id);
+                form.Show();
+            }
+            else
+            {
+                id = conversacionBLL.CrearConversacion();
+
+                FormConversacion form = new FormConversacion(id);
+                form.Show();
+            }
+        }
+
+        private void panel6_Click(object sender, EventArgs e)
+        {
+            ConversacionBLL conversacionBLL = new ConversacionBLL();
+
+            Conversacion conversacion = conversacionBLL.GetConversacionesByUsuario(SessionManager.GetInstance.Usuario.Id).FirstOrDefault();
+            int? id = null;
+            
+            if(conversacion != null)
+            {
+                id = conversacion.Id;
+            }
+            ;
+
+            if(id != null)
+            {
+                FormConversacion form = new FormConversacion(id);
+                form.Show();
+            }
+            else
+            {
+                id = conversacionBLL.CrearConversacion();
+
+                FormConversacion form = new FormConversacion(id);
+                form.Show();
+            }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            FormProductos form = new FormProductos();
+            form.Show();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            FormClientes form = new FormClientes();
+            form.Show();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            FormPresupuesto form= new FormPresupuesto();
+            form.Show();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            FormVentas form = new FormVentas();
+            form.Show();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            FormPresupuesto form = new FormPresupuesto();
+            form.Show();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            FormVentas form = new FormVentas();
+            form.Show();
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            ConversacionBLL conversacionBLL = new ConversacionBLL();
+
+            Conversacion conversacion = conversacionBLL.GetConversacionesByUsuario(SessionManager.GetInstance.Usuario.Id).FirstOrDefault();
+            int? id = null;
+
+            if (conversacion != null)
+            {
+                id = conversacion.Id;
+            }
+            ;
+
+            if (id != null)
+            {
+                FormConversacion form = new FormConversacion(id);
+                form.Show();
+            }
+            else
+            {
+                id = conversacionBLL.CrearConversacion();
+
+                FormConversacion form = new FormConversacion(id);
+                form.Show();
+            }
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+            UsuarioBLL usuarioBLL = new UsuarioBLL();
+
+            usuarioBLL.Logout();
+
+            FormLogin formLogin = new FormLogin();
+            formLogin.Show();
+
+            this.Hide();
         }
     }
 }

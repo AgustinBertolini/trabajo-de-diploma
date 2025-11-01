@@ -76,8 +76,8 @@ namespace UI
                 }
                 else
                 {
-                    FormUsuarios formUsuarios = new FormUsuarios();
-                    formUsuarios.Show();
+                    FormInicioAdmin form= new FormInicioAdmin();
+                    form.Show();
                 }
                     
 

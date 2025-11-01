@@ -131,7 +131,18 @@ namespace UI
 
                 Rol rolSeleccionado = (Rol)comboRoles.SelectedItem;
 
-                int userId = usuarioBLL.AltaUsuario(txtNombre.Text, txtApellido.Text, txtEmail.Text, txtContraseña.Text, Convert.ToInt64(numericDni.Value), rolSeleccionado.Id);
+
+                Usuario usuario = new Usuario();
+                usuario.Nombre = txtNombre.Text;
+                usuario.Apellido = txtApellido.Text;
+                usuario.Email = txtEmail.Text;
+                usuario.Contraseña = txtContraseña.Text;
+                usuario.DNI = Convert.ToInt64(numericDni.Value);
+                usuario.Rol = rolSeleccionado;
+
+
+
+                int userId = usuarioBLL.AltaUsuario(usuario);
 
                 if (userId != 0)
                 {

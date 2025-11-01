@@ -44,10 +44,12 @@
     <Compile Include="Bitacora.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Container.cs" />
+    <Compile Include="Conversacion.cs" />
     <Compile Include="Idioma.cs" />
     <Compile Include="IIdioma.cs" />
     <Compile Include="IIdiomaObserver.cs" />
     <Compile Include="IObservador.cs" />
+    <Compile Include="Mensaje.cs" />
     <Compile Include="Permiso.cs" />
     <Compile Include="Presupuesto.cs" />
     <Compile Include="PresupuestoItem.cs" />

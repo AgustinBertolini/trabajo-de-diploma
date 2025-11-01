@@ -218,7 +218,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Name = "FormAgregarUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormAgregarUsuario";
+            this.Text = "Agregar Usuario";
             this.Load += new System.EventHandler(this.FormAgregarUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericDni)).EndInit();
             this.ResumeLayout(false);

@@ -24,7 +24,6 @@ namespace UI
             comboBox1.DataSource = usuario.GetUsuarios();
             comboBox1.DisplayMember = "Email";
             dataGridView1.ReadOnly = true;
-            MostrarItemsSegunPermisos();
         }
 
         public void CargarBitacora(int? idUsuario,DateTime? date)
@@ -78,28 +77,6 @@ namespace UI
                     var traduccion = traducciones.FirstOrDefault(x => x.Tag == tag);
                     if (traduccion != null)
                         control.Text = traduccion.Valor;
-                }
-            }
-
-            foreach (ToolStripItem item in menuStrip1.Items)
-            {
-                if (item.Tag != null)
-                {
-                    var tag = item.Tag.ToString();
-                    var traduccion = traducciones.FirstOrDefault(x => x.Tag == tag);
-                    if (traduccion != null)
-                        item.Text = traduccion.Valor;
-                }
-
-                if (item is ToolStripMenuItem menuItem && menuItem.HasDropDownItems)
-                {
-                    foreach (ToolStripItem subItem in menuItem.DropDownItems)
-                    {
-                        var tag = item.Tag.ToString();
-                        var traduccion = traducciones.FirstOrDefault(x => x.Tag == tag);
-                        if (traduccion != null)
-                            item.Text = traduccion.Valor;
-                    }
                 }
             }
         }
@@ -214,48 +191,6 @@ namespace UI
 
             CargarBitacora(null, null);
         }
-
-        private void MostrarItemsSegunPermisos()
-        {
-            var items = menuStrip1.Items;
-
-            var permisosMap = new Dictionary<string, string>
-            {
-                { "label_usuarios", "Usuarios"},
-                { "label_productos", "Productos"},
-                { "label_permisos", "Permisos" },
-                { "label_traducciones", "Traducciones" },
-                { "label_bitacora", "Bitacora" },
-                { "label_clientes", "Clientes" },
-                { "label_presupuestos", "Presupuestos" },
-                { "label_ventas", "Ventas" } 
-            };
-
-            foreach (var item in items)
-            {
-                if (item is ToolStripMenuItem menuItem)
-                {
-                    if (menuItem.Tag != null)
-                    {
-                        var tag = menuItem.Tag.ToString();
-                        if (tag == "label_sesion")
-                        {
-                            menuItem.Visible = true;
-                            continue;
-                        }
-                        if (SessionManager.TienePermiso(permisosMap[tag]))
-                        {
-                            menuItem.Visible = true;
-                        }
-                        else
-                        {
-                            menuItem.Visible = false;
-                        }
-                    }
-                }
-            }
-        }
-
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
            

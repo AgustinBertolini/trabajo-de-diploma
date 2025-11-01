@@ -106,6 +106,18 @@
     <Compile Include="FormClientes.Designer.cs">
       <DependentUpon>FormClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormConversacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConversacion.Designer.cs">
+      <DependentUpon>FormConversacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConversaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConversaciones.Designer.cs">
+      <DependentUpon>FormConversaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDetallePresupuesto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +171,12 @@
     </Compile>
     <Compile Include="FormHistorico.Designer.cs">
       <DependentUpon>FormHistorico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInicioAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInicioAdmin.Designer.cs">
+      <DependentUpon>FormInicioAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="FormInicioVendedor.cs">
       <SubType>Form</SubType>
@@ -246,6 +264,12 @@
     <EmbeddedResource Include="FormClientes.resx">
       <DependentUpon>FormClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormConversacion.resx">
+      <DependentUpon>FormConversacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConversaciones.resx">
+      <DependentUpon>FormConversaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDetallePresupuesto.resx">
       <DependentUpon>FormDetallePresupuesto.cs</DependentUpon>
     </EmbeddedResource>
@@ -272,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormHistorico.resx">
       <DependentUpon>FormHistorico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInicioAdmin.resx">
+      <DependentUpon>FormInicioAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInicioVendedor.resx">
       <DependentUpon>FormInicioVendedor.cs</DependentUpon>

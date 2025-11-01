@@ -177,7 +177,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Name = "FormEditarUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormEditarUsuario";
+            this.Text = "Editar usuario";
             this.Load += new System.EventHandler(this.FormEditarUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericDni)).EndInit();
             this.ResumeLayout(false);

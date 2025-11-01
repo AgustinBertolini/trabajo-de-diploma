@@ -4,6 +4,6 @@ CREATE OR ALTER PROCEDURE ActualizarEstadoEnvio
 AS
 BEGIN
     UPDATE Ventas
-    SET estadoEnvio = @EstadoEnvio
+    SET idEnvio = (SELECT id from Envios where nombre = @EstadoEnvio)
     WHERE id = @Id;
 END;

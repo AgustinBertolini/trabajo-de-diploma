@@ -59,26 +59,20 @@ namespace BLL
             }
         }
         
-        public int AltaUsuario(string nombre, string apellido, string email, string contraseña, long dni, int rolId)
+        public int AltaUsuario(Usuario usuario)
         {
             try
             {
                 List<Usuario> usuariosExistentes = GetUsuarios();
-                if (usuariosExistentes.Any(u => u.Email.Equals(email, StringComparison.OrdinalIgnoreCase)))
+                if (usuariosExistentes.Any(u => u.Email.Equals(usuario.Email, StringComparison.OrdinalIgnoreCase)))
                 {
                     throw new Exception("Ya existe un usuario con el email elegido.");
                 }
-                if (usuariosExistentes.Any(u => u.DNI == dni))
+                if (usuariosExistentes.Any(u => u.DNI == usuario.DNI))
                 {
                     throw new Exception("Ya existe un usuario con el DNI elegido.");
                 }
-                Usuario usuario = new Usuario();
-                usuario.Nombre = nombre;
-                usuario.Apellido = apellido;
-                usuario.Email = email;
-                usuario.Contraseña = contraseña;
-                usuario.DNI = dni;
-                usuario.Rol = new Rol { Id = rolId };
+                
 
                 UsuarioDAL usuarioDAL = new UsuarioDAL();
                 Usuario usuarioWithPass = new Usuario();
@@ -116,26 +110,21 @@ namespace BLL
             }
         }
 
-        public bool EditarUsuario(int id, string nombre, string apellido, string email, long dni)
+        public bool EditarUsuario(Usuario usuario)
         {
             try
             {
                 List<Usuario> usuariosExistentes = GetUsuarios();
-                if (usuariosExistentes.Any(u => u.Email.Equals(email, StringComparison.OrdinalIgnoreCase)))
+                var tieneMismoEmail = usuariosExistentes.Any(u => u.Email.Equals(usuario.Email, StringComparison.OrdinalIgnoreCase) && u.Id != usuario.Id);
+                if (tieneMismoEmail)
                 {
                     throw new Exception("Ya existe un usuario con el email elegido.");
                 }
-                if (usuariosExistentes.Any(u => u.DNI == dni))
+                if (usuariosExistentes.Any(u => u.DNI == usuario.DNI && u.Id != usuario.Id))
                 {
                     throw new Exception("Ya existe un usuario con el DNI elegido.");
                 }
-                Usuario usuario = new Usuario();
-                usuario.Id = id;
-                usuario.Nombre = nombre;
-                usuario.Apellido = apellido;
-                usuario.Email = email;
-                usuario.Contraseña = "";
-                usuario.DNI = dni;
+             
 
                 UsuarioDAL usuarioDAL = new UsuarioDAL();
                 return usuarioDAL.EditarUsuario(usuario);

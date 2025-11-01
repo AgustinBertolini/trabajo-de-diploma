@@ -39,7 +39,7 @@
             // 
             this.labelTitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelTitulo.AutoSize = true;
-            this.labelTitulo.Location = new System.Drawing.Point(12, 24);
+            this.labelTitulo.Location = new System.Drawing.Point(12, 31);
             this.labelTitulo.Name = "labelTitulo";
             this.labelTitulo.Size = new System.Drawing.Size(0, 16);
             this.labelTitulo.TabIndex = 0;
@@ -48,7 +48,7 @@
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 32);
+            this.comboBox1.Location = new System.Drawing.Point(12, 64);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(276, 24);
             this.comboBox1.TabIndex = 1;
@@ -57,7 +57,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 13);
+            this.label1.Location = new System.Drawing.Point(9, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 16);
             this.label1.TabIndex = 2;

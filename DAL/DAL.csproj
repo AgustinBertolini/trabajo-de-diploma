@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="BitacoraDAL.cs" />
     <Compile Include="ClienteDAL.cs" />
+    <Compile Include="ConversacionDAL.cs" />
     <Compile Include="DigitoVerificadorDAL.cs" />
     <Compile Include="IdiomaDAL.cs" />
     <Compile Include="PermisoDAL.cs" />
@@ -68,6 +69,8 @@
   <ItemGroup>
     <Content Include="Scripts\AgregoUsuariosDV.sql" />
     <Content Include="Scripts\CreateTableCliente.sql" />
+    <Content Include="Scripts\CreateTableConversaciones_Mensajes.sql" />
+    <Content Include="Scripts\CreateTableConversaciones.sql" />
     <Content Include="Scripts\CreateTableEnvios.sql" />
     <Content Include="Scripts\CreateTablePresupuesto.sql" />
     <Content Include="Scripts\CreateTablePresupuestoItem.sql" />
@@ -77,14 +80,18 @@
     <Content Include="Scripts\GetClientes.sql" />
     <Content Include="Scripts\UpdateProductPriceColumn.sql" />
     <Content Include="StoresProcedures\ActualizarEstadoEnvio.sql" />
+    <Content Include="StoresProcedures\CrearConversacion.sql" />
     <Content Include="StoresProcedures\DeleteCliente.sql" />
     <Content Include="StoresProcedures\DeletePresupuesto.sql" />
     <Content Include="StoresProcedures\DeleteVenta.sql" />
     <Content Include="StoresProcedures\EditCliente.sql" />
     <Content Include="StoresProcedures\GetClientes.sql" />
+    <Content Include="StoresProcedures\GetConversacionesByUsuario.sql" />
+    <Content Include="StoresProcedures\GetMensajesByConversacion.sql" />
     <Content Include="StoresProcedures\GetPresupuestoById.sql" />
     <Content Include="StoresProcedures\GetPresupuestoItemsByPresupuestoId.sql" />
     <Content Include="StoresProcedures\GetPresupuestos.sql" />
+    <Content Include="StoresProcedures\GetProductosByUserId.sql" />
     <Content Include="StoresProcedures\GetProductosSinFiltros.sql" />
     <Content Include="StoresProcedures\GetTiposCliente.sql" />
     <Content Include="StoresProcedures\GetVentaById.sql" />
@@ -143,6 +150,7 @@
     <Content Include="StoresProcedures\InsertDigitoVerificador.sql" />
     <Content Include="StoresProcedures\InsertDigitoVerificadorHorizontal.sql" />
     <Content Include="StoresProcedures\InsertIdioma.sql" />
+    <Content Include="StoresProcedures\InsertMensaje.sql" />
     <Content Include="StoresProcedures\InsertPermiso.sql" />
     <Content Include="StoresProcedures\InsertPresupuesto.sql" />
     <Content Include="StoresProcedures\InsertPresupuestoItem.sql" />

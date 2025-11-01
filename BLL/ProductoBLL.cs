@@ -45,7 +45,24 @@ namespace BLL
                 throw ex;
             }
         }
- 
+
+        public List<Producto> GetProductosByUserId(int id)
+        {
+            try
+            {
+                ProductoDAL productoDAL = new ProductoDAL();
+
+                List<Producto> productos = productoDAL.GetProductosByUserId(id);
+
+                return productos;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public List<Producto> GetProductosSinFiltros()
         {
             try

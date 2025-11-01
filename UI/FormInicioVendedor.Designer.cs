@@ -44,11 +44,15 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -94,6 +98,7 @@
             this.label2.Size = new System.Drawing.Size(78, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Clientes";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel2
             // 
@@ -115,6 +120,7 @@
             this.label4.Size = new System.Drawing.Size(161, 43);
             this.label4.TabIndex = 2;
             this.label4.Text = "Administra el catalogo de tus productos";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -147,6 +153,7 @@
             this.label6.Size = new System.Drawing.Size(161, 43);
             this.label6.TabIndex = 2;
             this.label6.Text = "Crea y gestiona presupuestos.";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -157,6 +164,7 @@
             this.label7.Size = new System.Drawing.Size(124, 20);
             this.label7.TabIndex = 2;
             this.label7.Text = "Presupuestos";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // panel4
             // 
@@ -165,9 +173,9 @@
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel4.Location = new System.Drawing.Point(184, 275);
+            this.panel4.Location = new System.Drawing.Point(68, 275);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(198, 90);
+            this.panel4.Size = new System.Drawing.Size(197, 90);
             this.panel4.TabIndex = 4;
             // 
             // label8
@@ -178,6 +186,7 @@
             this.label8.Size = new System.Drawing.Size(179, 43);
             this.label8.TabIndex = 2;
             this.label8.Text = "Crea y consulta el historial de ventas.";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
@@ -188,6 +197,7 @@
             this.label9.Size = new System.Drawing.Size(67, 20);
             this.label9.TabIndex = 2;
             this.label9.Text = "Ventas";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label11
             // 
@@ -198,6 +208,7 @@
             this.label11.Size = new System.Drawing.Size(124, 20);
             this.label11.TabIndex = 2;
             this.label11.Text = "Cerrar sesión";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label10
             // 
@@ -216,11 +227,44 @@
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.label11);
             this.panel5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel5.Location = new System.Drawing.Point(412, 275);
+            this.panel5.Location = new System.Drawing.Point(298, 275);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(198, 90);
             this.panel5.TabIndex = 5;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
+            // 
+            // panel6
+            // 
+            this.panel6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel6.Controls.Add(this.label12);
+            this.panel6.Controls.Add(this.label13);
+            this.panel6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel6.Location = new System.Drawing.Point(522, 275);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(198, 90);
+            this.panel6.TabIndex = 6;
+            // 
+            // label12
+            // 
+            this.label12.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label12.Location = new System.Drawing.Point(16, 39);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(161, 43);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Conversá con el administrador.";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(15, 16);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(48, 20);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "Chat";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // FormInicioVendedor
             // 
@@ -228,6 +272,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -248,6 +293,8 @@
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,5 +323,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }

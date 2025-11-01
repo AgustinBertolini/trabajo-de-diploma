@@ -98,7 +98,17 @@ namespace UI
 
                 UsuarioBLL usuarioBLL = new UsuarioBLL();
 
-                bool editado = usuarioBLL.EditarUsuario(Convert.ToInt32(txtIdHidden.Text), txtNombre.Text, txtApellido.Text, txtEmail.Text, Convert.ToInt64(numericDni.Value));
+                Usuario usuario = new Usuario();
+                usuario.Id = Convert.ToInt32(txtIdHidden.Text);
+                usuario.Nombre = txtNombre.Text;
+                usuario.Apellido = txtApellido.Text;
+                usuario.Email = txtEmail.Text;
+                usuario.DNI = Convert.ToInt64(numericDni.Value);
+
+
+
+
+                bool editado = usuarioBLL.EditarUsuario(usuario);
 
                 if (editado)
                 {

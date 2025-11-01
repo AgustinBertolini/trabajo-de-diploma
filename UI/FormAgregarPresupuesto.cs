@@ -41,7 +41,7 @@ namespace UI
         private void CargarProductosEnComboBox()
         {
             ProductoBLL productoBLL = new ProductoBLL();
-            var productos = productoBLL.GetProductos();
+            var productos = productoBLL.GetProductosByUserId(SessionManager.GetInstance.Usuario.Id);
             comboProductos.DataSource = productos;
             comboProductos.DisplayMember = "Nombre";
             comboProductos.ValueMember = "Id";
