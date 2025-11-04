@@ -29,6 +29,12 @@ namespace UI
             ClienteBLL clienteBLL = new ClienteBLL();
             List<Cliente> clientes = clienteBLL.GetClientes();
 
+            if(SessionManager.GetInstance.Usuario.Rol.Nombre == "VENDEDOR")
+            {
+                clientes = clientes.Where(c => c.UserId == SessionManager.GetInstance.Usuario.Id).ToList();
+                presupuestos = presupuestos.Where(p => clientes.Any(c => c.Id == p.IdCliente)).ToList();
+            }
+
             foreach (var p in presupuestos)
             {
                 var cliente = clientes.FirstOrDefault(c => c.Id == p.IdCliente);

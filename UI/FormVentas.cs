@@ -27,7 +27,19 @@ namespace UI
             ClienteBLL clienteBLL = new ClienteBLL();
             var clientes = clienteBLL.GetClientes();
 
-            var datos = (from venta in ventaBLL.GetVentas()
+            if(SessionManager.GetInstance.Usuario.Rol.Nombre == "VENDEDOR")
+            {
+                clientes = clientes.Where(c => c.UserId == SessionManager.GetInstance.Usuario.Id).ToList();
+            }
+
+            var ventas = ventaBLL.GetVentas();
+
+            if(SessionManager.GetInstance.Usuario.Rol.Nombre == "VENDEDOR")
+            {
+                ventas = ventas.Where(v => clientes.Any(c => c.Id == v.IdCliente)).ToList();
+            }
+
+            var datos = (from venta in ventas
                         join cliente in clientes on venta.IdCliente equals cliente.Id
                         select new
                         {

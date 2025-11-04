@@ -3,8 +3,8 @@ CREATE OR ALTER PROCEDURE InsertVenta
     @FechaCreacion DATETIME
 AS
 BEGIN
-    INSERT INTO Ventas(idCliente, estadoEnvio, fechaCreacion)
-    VALUES (@IdCliente, 'En preparación', @FechaCreacion);
+    INSERT INTO Ventas(idCliente, idEnvio, fechaCreacion)
+    VALUES (@IdCliente, 1, @FechaCreacion);
 
     SELECT SCOPE_IDENTITY() AS IdVenta;
 END;
