@@ -53,6 +53,9 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -61,6 +64,7 @@
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel6
@@ -103,7 +107,7 @@
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.label11);
             this.panel5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel5.Location = new System.Drawing.Point(244, 431);
+            this.panel5.Location = new System.Drawing.Point(347, 431);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(198, 90);
             this.panel5.TabIndex = 12;
@@ -313,7 +317,7 @@
             this.panel8.Controls.Add(this.label16);
             this.panel8.Controls.Add(this.label17);
             this.panel8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel8.Location = new System.Drawing.Point(462, 431);
+            this.panel8.Location = new System.Drawing.Point(117, 431);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(198, 90);
             this.panel8.TabIndex = 15;
@@ -339,12 +343,47 @@
             this.label17.Text = "Permisos";
             this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
+            // panel9
+            // 
+            this.panel9.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel9.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel9.Controls.Add(this.label18);
+            this.panel9.Controls.Add(this.label19);
+            this.panel9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel9.Location = new System.Drawing.Point(571, 431);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(198, 90);
+            this.panel9.TabIndex = 16;
+            this.panel9.Click += this.panel9_Click;
+            // 
+            // label18
+            // 
+            this.label18.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label18.Location = new System.Drawing.Point(16, 38);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(161, 51);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "Conoce el estado del negocio a través de metricas.";
+            this.label18.Click += new System.EventHandler(this.label18_Click);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(15, 16);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(85, 20);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "Reportes";
+            this.label19.Click += new System.EventHandler(this.label19_Click);
+            // 
             // FormInicioAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(886, 580);
+            this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
@@ -372,6 +411,8 @@
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -404,5 +445,8 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
     }
 }

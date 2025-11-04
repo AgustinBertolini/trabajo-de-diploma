@@ -185,5 +185,23 @@ namespace UI
             FormPermisos formPermisos = new FormPermisos();
             formPermisos.Show();
         }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+            FormReportes formReportes = new FormReportes();
+            formReportes.Show();
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+            FormReportes formReportes = new FormReportes();
+            formReportes.Show();
+        }
+
+        private void panel9_Click(object sender, EventArgs e)
+        {
+            FormReportes formReportes = new FormReportes();
+            formReportes.Show();
+        }
     }
 }

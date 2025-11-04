@@ -24,7 +24,6 @@ namespace DAL
             {
                 conn.Open();
 
-                // 1️⃣ Obtener todas las ventas
                 using (SqlCommand cmd = new SqlCommand("GetVentas", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -44,7 +43,6 @@ namespace DAL
                     }
                 }
 
-                // 2️⃣ Cargar los ítems de cada venta
                 foreach (var venta in ventas)
                 {
                     if (venta != null)
