@@ -35,5 +35,12 @@ namespace BLL
             ClienteDAL dal = new ClienteDAL();
             return dal.GetTiposCliente();
         }
+
+        public bool DuplicarCartera(int idUsuarioOrigen, int idUsuarioDestino)
+        {
+            ClienteDAL clienteDAL = new ClienteDAL();   
+            
+            return clienteDAL.DuplicarCartera(idUsuarioOrigen,idUsuarioDestino);
+        }
     }
 }

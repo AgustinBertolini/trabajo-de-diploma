@@ -248,5 +248,23 @@ namespace UI
 
             //this.Hide();
         }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+            FormReportes form = new FormReportes();
+            form.Show();
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            FormReportes form = new FormReportes();
+            form.Show();
+        }
+
+        private void panel7_Click(object sender, EventArgs e)
+        {
+            FormReportes form = new FormReportes();
+            form.Show();
+        }
     }
 }

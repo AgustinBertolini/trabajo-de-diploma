@@ -79,6 +79,22 @@ namespace BLL
                 throw ex;
             }
         }
+        public List<Producto> GetProductosSinFiltrosByUserId(int id)
+        {
+            try
+            {
+                ProductoDAL productoDAL = new ProductoDAL();
+
+                List<Producto> productos = productoDAL.GetProductosSinFiltrosByUserId(id);
+
+                return productos;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
 
         public int AltaProducto(string nombre, decimal precio, int stock)
         {

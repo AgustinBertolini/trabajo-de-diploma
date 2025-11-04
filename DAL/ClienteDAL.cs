@@ -127,6 +127,24 @@ namespace DAL
             }
             return tipos;
         }
+
+        public bool DuplicarCartera(int idUsuarioOrigen, int idUsuarioDestino)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand("DuplicarCartera", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@IdUsuarioOrigen", idUsuarioOrigen);
+                    cmd.Parameters.AddWithValue("@IdUsuarioDestino", idUsuarioDestino);
+                    
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+            }
+        }
     }
 
  

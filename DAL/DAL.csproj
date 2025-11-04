@@ -139,6 +139,7 @@
     <Content Include="StoresProcedures\DeleteCliente.sql" />
     <Content Include="StoresProcedures\DeletePresupuesto.sql" />
     <Content Include="StoresProcedures\DeleteVenta.sql" />
+    <Content Include="StoresProcedures\DuplicarCartera.sql" />
     <Content Include="StoresProcedures\EditCliente.sql" />
     <Content Include="StoresProcedures\GetClientes.sql" />
     <Content Include="StoresProcedures\GetConversaciones.sql" />
@@ -149,6 +150,7 @@
     <Content Include="StoresProcedures\GetPresupuestos.sql" />
     <Content Include="StoresProcedures\GetProductosByUserId.sql" />
     <Content Include="StoresProcedures\GetProductosSinFiltros.sql" />
+    <Content Include="StoresProcedures\GetProductosSinFiltrosByUserId.sql" />
     <Content Include="StoresProcedures\GetTiposCliente.sql" />
     <Content Include="StoresProcedures\GetVentaById.sql" />
     <Content Include="StoresProcedures\GetVentaItemsByVentaId.sql" />

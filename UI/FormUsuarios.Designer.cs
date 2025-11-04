@@ -35,6 +35,7 @@
             this.btnDeleteUser = new System.Windows.Forms.Button();
             this.btnAsignarPermiso = new System.Windows.Forms.Button();
             this.btnDesasignarPermiso = new System.Windows.Forms.Button();
+            this.btnCopiarCartera = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +71,7 @@
             this.btnAddUser.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnAddUser.Location = new System.Drawing.Point(12, 331);
             this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(177, 37);
+            this.btnAddUser.Size = new System.Drawing.Size(129, 37);
             this.btnAddUser.TabIndex = 0;
             this.btnAddUser.Tag = "label_agregar_usuario";
             this.btnAddUser.Text = "Agregar usuario";
@@ -81,9 +82,9 @@
             // 
             this.btnEditUser.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnEditUser.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnEditUser.Location = new System.Drawing.Point(211, 331);
+            this.btnEditUser.Location = new System.Drawing.Point(147, 331);
             this.btnEditUser.Name = "btnEditUser";
-            this.btnEditUser.Size = new System.Drawing.Size(177, 37);
+            this.btnEditUser.Size = new System.Drawing.Size(128, 37);
             this.btnEditUser.TabIndex = 1;
             this.btnEditUser.Tag = "label_editar_usuario";
             this.btnEditUser.Text = "Editar usuario";
@@ -94,7 +95,7 @@
             // 
             this.btnDeleteUser.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnDeleteUser.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnDeleteUser.Location = new System.Drawing.Point(802, 331);
+            this.btnDeleteUser.Location = new System.Drawing.Point(597, 331);
             this.btnDeleteUser.Name = "btnDeleteUser";
             this.btnDeleteUser.Size = new System.Drawing.Size(177, 37);
             this.btnDeleteUser.TabIndex = 4;
@@ -107,9 +108,9 @@
             // 
             this.btnAsignarPermiso.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAsignarPermiso.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnAsignarPermiso.Location = new System.Drawing.Point(415, 331);
+            this.btnAsignarPermiso.Location = new System.Drawing.Point(281, 331);
             this.btnAsignarPermiso.Name = "btnAsignarPermiso";
-            this.btnAsignarPermiso.Size = new System.Drawing.Size(177, 37);
+            this.btnAsignarPermiso.Size = new System.Drawing.Size(139, 37);
             this.btnAsignarPermiso.TabIndex = 2;
             this.btnAsignarPermiso.Tag = "label_asignar_permiso";
             this.btnAsignarPermiso.Text = "Asignar permiso";
@@ -120,14 +121,27 @@
             // 
             this.btnDesasignarPermiso.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnDesasignarPermiso.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnDesasignarPermiso.Location = new System.Drawing.Point(615, 331);
+            this.btnDesasignarPermiso.Location = new System.Drawing.Point(426, 331);
             this.btnDesasignarPermiso.Name = "btnDesasignarPermiso";
-            this.btnDesasignarPermiso.Size = new System.Drawing.Size(177, 37);
+            this.btnDesasignarPermiso.Size = new System.Drawing.Size(165, 37);
             this.btnDesasignarPermiso.TabIndex = 3;
             this.btnDesasignarPermiso.Tag = "label_desasignar_permiso";
             this.btnDesasignarPermiso.Text = "Desasignar permisos";
             this.btnDesasignarPermiso.UseVisualStyleBackColor = false;
             this.btnDesasignarPermiso.Click += new System.EventHandler(this.btnDesasignarPermiso_Click);
+            // 
+            // btnCopiarCartera
+            // 
+            this.btnCopiarCartera.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCopiarCartera.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnCopiarCartera.Location = new System.Drawing.Point(780, 331);
+            this.btnCopiarCartera.Name = "btnCopiarCartera";
+            this.btnCopiarCartera.Size = new System.Drawing.Size(199, 37);
+            this.btnCopiarCartera.TabIndex = 7;
+            this.btnCopiarCartera.Tag = "label_copiar_cartera";
+            this.btnCopiarCartera.Text = "Copiar cartera de clientes";
+            this.btnCopiarCartera.UseVisualStyleBackColor = false;
+            this.btnCopiarCartera.Click += new System.EventHandler(this.btnCopiarCartera_Click);
             // 
             // FormUsuarios
             // 
@@ -135,6 +149,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(996, 380);
+            this.Controls.Add(this.btnCopiarCartera);
             this.Controls.Add(this.btnDesasignarPermiso);
             this.Controls.Add(this.btnAsignarPermiso);
             this.Controls.Add(this.btnDeleteUser);
@@ -160,5 +175,6 @@
         private System.Windows.Forms.Button btnDeleteUser;
         private System.Windows.Forms.Button btnAsignarPermiso;
         private System.Windows.Forms.Button btnDesasignarPermiso;
+        private System.Windows.Forms.Button btnCopiarCartera;
     }
 }

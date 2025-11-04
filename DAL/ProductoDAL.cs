@@ -241,6 +241,65 @@ namespace DAL
             }
         }
 
+        public List<Producto> GetProductosSinFiltrosByUserId(int id)
+        {
+            List<Producto> productos = new List<Producto>();
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlTransaction transaction = conn.BeginTransaction();
+
+                    try
+                    {
+                        using (SqlCommand cmd = new SqlCommand("GetProductosSinFiltrosByUserId", conn, transaction))
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+
+                            cmd.Parameters.AddWithValue("@Id", id);
+
+
+                            using (SqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    productos.Add(new Producto
+                                    {
+                                        Id = Convert.ToInt32(reader["id"]),
+                                        Nombre = reader["nombre"].ToString(),
+                                        Precio = Convert.ToDecimal(reader["precio"]),
+                                        Stock = Convert.ToInt32(reader["stock"]),
+                                        FechaCreacion = Convert.ToDateTime(reader["fechaCreacion"]),
+                                        FechaActualizacion = Convert.ToDateTime(reader["fechaActualizacion"]),
+                                    });
+                                }
+                            }
+                        }
+
+                        transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        throw ex;
+                    }
+
+                }
+
+                return productos;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public int AltaProducto(Producto producto)
         {
             try

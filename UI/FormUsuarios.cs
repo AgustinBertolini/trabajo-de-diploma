@@ -313,5 +313,40 @@ namespace UI
 
             this.Hide();
         }
+
+        private void btnCopiarCartera_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("No hay un usuario seleccionado");
+                return;
+            }
+
+            if (dataGridView1.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("Se tiene que seleccionar un unico usuario");
+                return;
+            }
+
+
+            UsuarioBLL usuarioBLL = new UsuarioBLL();
+            ClienteBLL clienteBLL = new ClienteBLL();
+
+            int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id"].Value);
+
+            string email = dataGridView1.SelectedRows[0].Cells["email"].Value.ToString();
+
+            Usuario usuario = usuarioBLL.GetUsuario(email);
+
+            if(usuario.Rol.Nombre != "VENDEDOR")
+            {
+                MessageBox.Show("Solo se puede copiar la cartera de clientes de un vendedor.");
+                return;
+            }
+
+            FormDuplicarCartera formDuplicarCartera = new FormDuplicarCartera(id);
+            formDuplicarCartera.Show();
+
+        }
     }
 }

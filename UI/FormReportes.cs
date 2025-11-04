@@ -30,10 +30,34 @@ namespace UI
 
         private void CargarInformacionParaCharts()
         {
+            var userRol = SessionManager.GetInstance.Usuario.Rol;
             var ventas = ventaBLL.GetVentas();
             var clientes = clienteBLL.GetClientes();
             var usuarios = usuarioBLL.GetUsuarios();
             var productos = productoBLL.GetProductosSinFiltros();
+
+            if(userRol.Nombre == "VENDEDOR")
+            {
+                ventas = (from venta in ventas
+                          join cliente in clientes
+                          on venta.IdCliente equals cliente.Id
+                          select new Venta
+                          {
+                              Id = venta.Id,
+                              IdCliente = venta.IdCliente,
+                              EstadoEnvio = venta.EstadoEnvio,
+                              FechaCreacion = venta.FechaCreacion,
+                              Cliente = cliente,
+                              Items = venta.Items
+                          }).ToList();
+
+                ventas = ventas.Count > 0 ? ventas.Where(v => v.Cliente.UserId == SessionManager.GetInstance.Usuario.Id).ToList() : new List<Venta>();
+
+                clientes = clientes.Count > 0 ? clientes.Where(c => c.UserId == SessionManager.GetInstance.Usuario.Id).ToList() : new List<Cliente>();
+
+
+                productos = productoBLL.GetProductosSinFiltrosByUserId(SessionManager.GetInstance.Usuario.Id);
+            }
 
             var ticketPromedio = ventas.Select(x => x.Items.Sum(i => i.PrecioUnitario * i.Cantidad)).DefaultIfEmpty(0).Average();
             labelTicketPromedio.Text = $"${ticketPromedio:F2}";
