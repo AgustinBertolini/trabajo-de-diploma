@@ -53,11 +53,11 @@ namespace BLL
                 EnviarNotificacionCliente(
                     cliente.Email,
                     $"{cliente.Nombre} {cliente.Apellido}",
-                    items.ConvertAll(i => (
-                        productos.FirstOrDefault(x => x.Id == i.IdProducto)?.Nombre ?? "Producto desconocido",
-                        i.PrecioUnitario,
-                        i.Cantidad
-                    )),
+                    items.ConvertAll(i => new EmailSender.ItemProducto {
+                        Producto = productos.FirstOrDefault(x => x.Id == i.IdProducto)?.Nombre ?? "Producto desconocido",
+                        Precio = i.PrecioUnitario,
+                        Cantidad = i.Cantidad
+                    }),
                     items.Sum(i => i.PrecioUnitario * i.Cantidad)
                 );
             }
@@ -75,10 +75,12 @@ namespace BLL
             dal.ActualizarEstadoEnvio(id, estadoEnvio);
         }
 
+
+
         private async void EnviarNotificacionCliente(
             string email,
             string nombreCliente,
-            List<(string Producto, decimal Precio, int Cantidad)> productos,
+            List<EmailSender.ItemProducto> productos,
             decimal total)
         {
             try

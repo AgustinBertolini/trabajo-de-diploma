@@ -21,6 +21,12 @@ namespace Servicios
         private readonly string smtpPassword;
         private readonly bool enableSsl;
 
+        public class ItemProducto
+        {
+            public string Producto { get; set; }
+            public decimal Precio { get; set; }
+            public int Cantidad { get; set; }
+        }
         public EmailSender()
         {
             this.smtpServer = "smtp.gmail.com";
@@ -57,10 +63,11 @@ namespace Servicios
             }
         }
 
+
         public async Task EnviarPresupuestoAsync(
             string destinatario,
             string nombreCliente,
-            List<(string Producto, decimal Precio, int Cantidad)> productos,
+            List<ItemProducto> productos,
             decimal total)
         {
             var sb = new StringBuilder();
@@ -114,7 +121,7 @@ namespace Servicios
         public async Task EnviarComprobanteVentaAsync(
     string destinatario,
     string nombreCliente,
-    List<(string Producto, decimal Precio, int Cantidad)> productos,
+    List<ItemProducto> productos,
     decimal total)
         {
             byte[] pdfBytes;

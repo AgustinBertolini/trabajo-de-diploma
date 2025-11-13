@@ -1,4 +1,6 @@
 ﻿using BLL;
+using Entidades;
+using Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,10 +10,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace UI
 {
-    public partial class FormInicioAdmin : Form
+    public partial class FormInicioAdmin : Form, IIdiomaObserver
     {
         public FormInicioAdmin()
         {
@@ -202,6 +205,70 @@ namespace UI
         {
             FormReportes formReportes = new FormReportes();
             formReportes.Show();
+        }
+
+        public void UpdateLanguage(IIdioma idioma)
+        {
+            Traducir();
+
+        }
+
+        public void Traducir()
+        {
+            var idioma = SessionManager.GetInstance.Usuario.Idioma;
+
+            var traducciones = Traductor.GetTraducciones(idioma.Id);
+
+
+            foreach (Control control in this.Controls)
+            {
+                if (control.Tag != null)
+                {
+                    var tag = control.Tag.ToString();
+                    var traduccion = traducciones.FirstOrDefault(x => x.Tag == tag);
+                    if (traduccion != null)
+                        control.Text = traduccion.Valor;
+                }
+            }
+
+
+        }
+
+        private void FormInicioAdmin_Load(object sender, EventArgs e)
+        {
+            SessionManager.GetInstance.SuscribirObservador(this);
+
+            Idioma idiomaSeleccionado = SessionManager.GetInstance.Usuario.Idioma;
+
+            IdiomaBLL idiomaBLL = new IdiomaBLL();
+
+            List<Idioma> idiomas = idiomaBLL.GetIdiomas();
+
+            comboBox1.SelectedIndexChanged -= comboBox1_SelectedIndexChanged;
+
+            comboBox1.DataSource = idiomas;
+            comboBox1.DisplayMember = "Nombre";
+            comboBox1.SelectedItem = idiomaSeleccionado;
+
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+        }
+
+        private void FormInicioAdmin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SessionManager.GetInstance.DesuscribirObservador(this);
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem == null)
+            {
+                MessageBox.Show("Debe seleccionar un idioma");
+                return;
+            }
+
+            Idioma idioma = (Idioma)comboBox1.SelectedItem;
+
+            SessionManager.CambiarIdioma(idioma);
         }
     }
 }

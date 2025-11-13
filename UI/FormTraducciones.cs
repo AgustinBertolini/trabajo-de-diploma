@@ -67,13 +67,7 @@ namespace UI
 
                 dataGridView1.Columns["Id"].Visible = false;
 
-                comboBox1.SelectedIndexChanged -= comboBox1_SelectedIndexChanged;
-
-                comboBox1.DataSource = idiomas;
-                comboBox1.DisplayMember = "Nombre";
-                comboBox1.SelectedItem = idiomaSeleccionado;
-
-                comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+               
             }
 
             dataGridView2.DataSource = Traductor.GetTraducciones(idiomaSeleccionado.Id);
@@ -193,21 +187,6 @@ namespace UI
             Idioma nuevoIdioma = Traductor.CambiarIdioma(idiomaSeleccionado.Id);
 
             SessionManager.CambiarIdioma(nuevoIdioma);
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBox1.SelectedItem == null)
-            {
-                MessageBox.Show("Debe seleccionar un idioma");
-                return;
-            }
-
-            Idioma idioma = (Idioma)comboBox1.SelectedItem;
-
-            SessionManager.CambiarIdioma(idioma);
-
-
         }
 
         private void productosToolStripMenuItem_Click(object sender, EventArgs e)

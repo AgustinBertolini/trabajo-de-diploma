@@ -56,6 +56,8 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -354,7 +356,6 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(198, 90);
             this.panel9.TabIndex = 16;
-            this.panel9.Click += this.panel9_Click;
             // 
             // label18
             // 
@@ -377,12 +378,35 @@
             this.label19.Text = "Reportes";
             this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(649, 43);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(126, 24);
+            this.comboBox1.TabIndex = 18;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label20
+            // 
+            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(646, 24);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(123, 16);
+            this.label20.TabIndex = 17;
+            this.label20.Tag = "label_seleccionar_idioma";
+            this.label20.Text = "Seleccionar idioma";
+            // 
             // FormInicioAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(886, 580);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label20);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);
@@ -395,6 +419,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormInicioAdmin";
             this.Text = "Inicio";
+            this.Load += new System.EventHandler(this.FormInicioAdmin_Load);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -448,5 +473,7 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label20;
     }
 }
