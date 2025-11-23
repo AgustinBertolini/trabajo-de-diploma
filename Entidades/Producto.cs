@@ -21,6 +21,8 @@ namespace Entidades
         
         public DateTime FechaActualizacion{ get; set; }
 
+        public bool Activo { get; set; }
+
         public List<Usuario> Usuarios { get; set; }
         
         public List<ProductoPrecio> Precios { get; set; }

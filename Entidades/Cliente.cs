@@ -16,5 +16,7 @@ namespace Entidades
         public string Direccion { get; set; }
         public int TipoClienteId { get; set; }
         public int UserId { get; set; }
-    }
+
+        public bool Activo { get; set; } = false;
+        }
 }

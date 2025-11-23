@@ -29,6 +29,14 @@ namespace UI
 
         private bool ValidarCuit(string cuit)
         {
+            ClienteBLL clienteBLL = new ClienteBLL();
+            var clientes = clienteBLL.GetClientes();
+
+            if(clientes.Any(c => c.Cuit == cuit && c.UserId == SessionManager.GetInstance.Usuario.Id))
+            {
+                return false;
+            }
+
             if (string.IsNullOrWhiteSpace(cuit))
                 return false;
 

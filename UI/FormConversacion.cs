@@ -31,6 +31,8 @@ namespace UI
             flowPanelMensajes.AutoScroll = true;
             flowPanelMensajes.BackColor = Color.WhiteSmoke;
 
+            textBox1.MaxLength = 240;
+
             CargarMensajesDeConversacion();
 
             mensajeTimer = new Timer();
@@ -134,6 +136,11 @@ namespace UI
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
 
         }

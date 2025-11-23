@@ -21,94 +21,96 @@ namespace UI
             InitializeComponent();
         }
 
+        private void AbrirFormulario<T>() where T : Form, new()
+        {
+            var formExistente = Application.OpenForms.OfType<T>().FirstOrDefault();
+
+            if (formExistente == null)
+            {
+                T form = new T();
+                form.Show();
+            }
+            else
+            {
+                formExistente.Focus();
+                formExistente.WindowState = FormWindowState.Normal;
+            }
+        }
+
+
         private void label2_Click(object sender, EventArgs e)
         {
-            FormUsuarios formUsuarios = new FormUsuarios();
-            formUsuarios.Show();
+            AbrirFormulario<FormUsuarios>();
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
-            FormUsuarios formUsuarios = new FormUsuarios();
-            formUsuarios.Show();
+            AbrirFormulario<FormUsuarios>();
         }
 
         private void panel1_Click(object sender, EventArgs e)
         {
-            FormUsuarios formUsuarios = new FormUsuarios();
-            formUsuarios.Show();
+            AbrirFormulario<FormUsuarios>();
         }
 
         private void label5_Click(object sender, EventArgs e)
         {
-            FormProductos formProductos = new FormProductos();
-            formProductos.Show();
+            AbrirFormulario<FormProductos>();
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
-            FormProductos formProductos = new FormProductos();
-            formProductos.Show();
+            AbrirFormulario<FormProductos>();
         }
 
         private void panel2_Click(object sender, EventArgs e)
         {
-            FormProductos formProductos = new FormProductos();
-            formProductos.Show();
+            AbrirFormulario<FormProductos>();
         }
 
         private void panel3_Click(object sender, EventArgs e)
         {
-            FormTraducciones formTraducciones= new FormTraducciones();
-            formTraducciones.Show();
+            AbrirFormulario<FormTraducciones>();
         }
 
         private void label7_Click(object sender, EventArgs e)
         {
-            FormTraducciones formTraducciones = new FormTraducciones();
-            formTraducciones.Show();
+            AbrirFormulario<FormTraducciones>();
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
-            FormTraducciones formTraducciones = new FormTraducciones();
-            formTraducciones.Show();
+            AbrirFormulario<FormTraducciones>();
         }
 
         private void panel4_Click(object sender, EventArgs e)
         {
-            FormVentas formVentas = new FormVentas();
-            formVentas.Show();
+            AbrirFormulario<FormVentas>();
         }
 
         private void label9_Click(object sender, EventArgs e)
         {
-            FormVentas formVentas = new FormVentas();
-            formVentas.Show();
+            AbrirFormulario<FormVentas>();
         }
 
         private void label8_Click(object sender, EventArgs e)
         {
-            FormVentas formVentas = new FormVentas();
-            formVentas.Show();
+            AbrirFormulario<FormVentas>();
         }
 
         private void panel7_Click(object sender, EventArgs e)
         {
-            FormBitacora formBitacora = new FormBitacora();
-            formBitacora.Show();
+            AbrirFormulario<FormBitacora>();
         }
 
         private void label15_Click(object sender, EventArgs e)
         {
-            FormBitacora formBitacora = new FormBitacora();
-            formBitacora.Show();
+            AbrirFormulario<FormBitacora>();
         }
 
         private void label14_Click(object sender, EventArgs e)
         {
-            FormBitacora formBitacora = new FormBitacora();
-            formBitacora.Show();
+            AbrirFormulario<FormBitacora>();
         }
 
         private void panel5_Click(object sender, EventArgs e)
@@ -155,56 +157,47 @@ namespace UI
 
         private void label12_Click(object sender, EventArgs e)
         {
-            FormConversaciones formConversaciones = new FormConversaciones();
-            formConversaciones.Show();
+            AbrirFormulario<FormConversaciones>();
         }
 
         private void label13_Click(object sender, EventArgs e)
         {
-            FormConversaciones formConversaciones = new FormConversaciones();
-            formConversaciones.Show();
+            AbrirFormulario<FormConversaciones>();
         }
 
         private void panel6_Click(object sender, EventArgs e)
         {
-            FormConversaciones formConversaciones = new FormConversaciones();
-            formConversaciones.Show();
+            AbrirFormulario<FormConversaciones>();
         }
 
         private void panel8_Click(object sender, EventArgs e)
         {
-            FormPermisos formPermisos = new FormPermisos();
-            formPermisos.Show();
+            AbrirFormulario<FormPermisos>();
         }
 
         private void label16_Click(object sender, EventArgs e)
         {
-            FormPermisos formPermisos = new FormPermisos();
-            formPermisos.Show();
+            AbrirFormulario<FormPermisos>();
         }
 
         private void label17_Click(object sender, EventArgs e)
         {
-            FormPermisos formPermisos = new FormPermisos();
-            formPermisos.Show();
+            AbrirFormulario<FormPermisos>();
         }
 
         private void label18_Click(object sender, EventArgs e)
         {
-            FormReportes formReportes = new FormReportes();
-            formReportes.Show();
+            AbrirFormulario<FormReportes>();
         }
 
         private void label19_Click(object sender, EventArgs e)
         {
-            FormReportes formReportes = new FormReportes();
-            formReportes.Show();
+            AbrirFormulario<FormReportes>();
         }
 
         private void panel9_Click(object sender, EventArgs e)
         {
-            FormReportes formReportes = new FormReportes();
-            formReportes.Show();
+            AbrirFormulario<FormReportes>();
         }
 
         public void UpdateLanguage(IIdioma idioma)

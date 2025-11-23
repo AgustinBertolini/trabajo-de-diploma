@@ -50,7 +50,7 @@ namespace UI
         private void CargarClientesEnComboBox()
         {
             ClienteBLL clienteBLL = new ClienteBLL();
-            var clientes = clienteBLL.GetClientes().Where(x => x.UserId == SessionManager.GetInstance.Usuario.Id).ToList();
+            var clientes = clienteBLL.GetClientes().Where(x => x.UserId == SessionManager.GetInstance.Usuario.Id && x.Activo == true).ToList();
             comboClientes.DataSource = clientes;
             comboClientes.DisplayMember = "Nombre";
             comboClientes.ValueMember = "Id";

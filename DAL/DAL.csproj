@@ -122,6 +122,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\AgregoActivoEnCliente.sql" />
     <Content Include="Scripts\AgregoUsuariosDV.sql" />
     <Content Include="Scripts\CreateTableCliente.sql" />
     <Content Include="Scripts\CreateTableConversaciones_Mensajes.sql" />

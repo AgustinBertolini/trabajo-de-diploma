@@ -32,7 +32,8 @@ namespace DAL
                                 Email = reader["email"].ToString(),
                                 Direccion = reader["direccion"].ToString(),
                                 TipoClienteId = Convert.ToInt32(reader["tipoClienteId"]),
-                                UserId = reader["UserId"] != DBNull.Value ? Convert.ToInt32(reader["UserId"]) : 0
+                                UserId = reader["UserId"] != DBNull.Value ? Convert.ToInt32(reader["UserId"]) : 0,
+                                Activo = Convert.ToBoolean(reader["activo"])
                             });
                         }
                     }

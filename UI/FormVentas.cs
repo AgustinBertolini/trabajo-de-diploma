@@ -96,7 +96,6 @@ namespace UI
             int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Id"].Value);
             FormDetalleVenta form = new FormDetalleVenta(id);
             form.Show();
-            this.Hide();
         }
 
         private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)

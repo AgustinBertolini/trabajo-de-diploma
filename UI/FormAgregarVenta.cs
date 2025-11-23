@@ -36,7 +36,7 @@ namespace UI
             var clientes = clienteBLL.GetClientes();
             if (SessionManager.GetInstance.Usuario.Rol.Nombre == "VENDEDOR")
             {
-                clientes = clientes.Where(c => c.UserId == SessionManager.GetInstance.Usuario.Id).ToList();
+                clientes = clientes.Where(c => c.UserId == SessionManager.GetInstance.Usuario.Id && c.Activo == true).ToList();
             }
             comboClientes.DataSource = clientes;
             comboClientes.DisplayMember = "Nombre";

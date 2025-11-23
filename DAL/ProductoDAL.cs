@@ -41,7 +41,8 @@ namespace DAL
                                         Id = Convert.ToInt32(reader["id"]),
                                         Nombre = reader["nombre"].ToString(),
                                         Precio = Convert.ToDecimal(reader["precio"]),
-                                        Stock = Convert.ToInt32(reader["stock"])
+                                        Stock = Convert.ToInt32(reader["stock"]),
+                                        Activo = Convert.ToBoolean(reader["active"]),
                                     };
                                 }
                             }

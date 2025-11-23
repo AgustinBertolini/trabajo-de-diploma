@@ -25,6 +25,22 @@ namespace UI
 
         }
 
+        private void AbrirFormulario<T>() where T : Form, new()
+        {
+            var formExistente = Application.OpenForms.OfType<T>().FirstOrDefault();
+
+            if (formExistente == null)
+            {
+                T form = new T();
+                form.Show();
+            }
+            else
+            {
+                formExistente.Focus();
+                formExistente.WindowState = FormWindowState.Normal;
+            }
+        }
+
         public void Traducir()
         {
             var idioma = SessionManager.GetInstance.Usuario.Idioma;
@@ -98,14 +114,12 @@ namespace UI
 
         private void label3_Click(object sender, EventArgs e)
         {
-            FormClientes form = new FormClientes();
-            form.Show();
+            AbrirFormulario<FormClientes>();
         }
 
         private void label5_Click(object sender, EventArgs e)
         {
-            FormProductos form = new FormProductos();
-            form.Show();
+            AbrirFormulario<FormProductos>();
         }
 
         private void label10_Click(object sender, EventArgs e)
@@ -143,27 +157,23 @@ namespace UI
 
         private void panel4_Click(object sender, EventArgs e)
         {
-            FormVentas form = new FormVentas();
-            form.Show();
+            AbrirFormulario<FormVentas>();
 
         }
 
         private void panel3_Click(object sender, EventArgs e)
         {
-            FormPresupuesto form = new FormPresupuesto();
-            form.Show();
+            AbrirFormulario<FormPresupuesto>();
         }
 
         private void panel2_Click(object sender, EventArgs e)
         {
-            FormProductos form = new FormProductos();
-            form.Show();
+            AbrirFormulario<FormProductos>();
         }
 
         private void panel1_Click(object sender, EventArgs e)
         {
-            FormClientes form = new FormClientes();
-            form.Show();
+            AbrirFormulario<FormClientes>();
         }
 
         private void label13_Click(object sender, EventArgs e)
@@ -222,38 +232,32 @@ namespace UI
 
         private void label4_Click(object sender, EventArgs e)
         {
-            FormProductos form = new FormProductos();
-            form.Show();
+            AbrirFormulario<FormProductos>();
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-            FormClientes form = new FormClientes();
-            form.Show();
+            AbrirFormulario<FormClientes>();
         }
 
         private void label7_Click(object sender, EventArgs e)
         {
-            FormPresupuesto form= new FormPresupuesto();
-            form.Show();
+            AbrirFormulario<FormPresupuesto>();
         }
 
         private void label9_Click(object sender, EventArgs e)
         {
-            FormVentas form = new FormVentas();
-            form.Show();
+            AbrirFormulario<FormVentas>();
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
-            FormPresupuesto form = new FormPresupuesto();
-            form.Show();
+            AbrirFormulario<FormPresupuesto>();
         }
 
         private void label8_Click(object sender, EventArgs e)
         {
-            FormVentas form = new FormVentas();
-            form.Show();
+            AbrirFormulario<FormVentas>();
         }
 
         private void label12_Click(object sender, EventArgs e)
@@ -299,20 +303,17 @@ namespace UI
 
         private void label15_Click(object sender, EventArgs e)
         {
-            FormReportes form = new FormReportes();
-            form.Show();
+            AbrirFormulario<FormReportes>();
         }
 
         private void label14_Click(object sender, EventArgs e)
         {
-            FormReportes form = new FormReportes();
-            form.Show();
+            AbrirFormulario<FormReportes>();
         }
 
         private void panel7_Click(object sender, EventArgs e)
         {
-            FormReportes form = new FormReportes();
-            form.Show();
+            AbrirFormulario<FormReportes>();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

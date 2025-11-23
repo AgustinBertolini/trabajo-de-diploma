@@ -129,10 +129,19 @@ namespace UI
                 if (producto == null)
                     continue;
 
+                if (producto.Activo == false)
+                {
+                    productosSinStock.Add(producto.Nombre);
+                    continue;
+                }
+
                 if ((producto.Stock - item.Cantidad) <= 0)
                 {
                     productosSinStock.Add(producto.Nombre);
-                }
+                } else if (producto.Activo == false)
+                  {
+                      productosSinStock.Add(producto.Nombre);
+                  }
                 else
                 {
                     itemsConStock.Add(new VentaItem

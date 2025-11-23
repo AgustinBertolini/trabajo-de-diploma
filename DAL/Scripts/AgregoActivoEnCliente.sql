@@ -1,0 +1,2 @@
+ALTER TABLE Clientes
+ADD activo BIT NOT NULL DEFAULT 1;
