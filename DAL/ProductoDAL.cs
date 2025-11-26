@@ -215,6 +215,7 @@ namespace DAL
                                         Stock = Convert.ToInt32(reader["stock"]),
                                         FechaCreacion = Convert.ToDateTime(reader["fechaCreacion"]),
                                         FechaActualizacion = Convert.ToDateTime(reader["fechaActualizacion"]),
+                                        Activo = Convert.ToBoolean(reader["active"]),
                                     });
                                 }
                             }
@@ -372,6 +373,53 @@ namespace DAL
                     try
                     {
                         using (SqlCommand cmd = new SqlCommand("DeleteProducto", conn,transaction))
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+
+                            cmd.Parameters.AddWithValue("@Id", id);
+
+
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        throw ex;
+                    }
+
+                }
+
+                return true;
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public bool ActivarProducto(int id)
+        {
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlTransaction transaction = conn.BeginTransaction();
+
+                    try
+                    {
+                        using (SqlCommand cmd = new SqlCommand("ActivarProducto", conn, transaction))
                         {
                             cmd.CommandType = CommandType.StoredProcedure;
 

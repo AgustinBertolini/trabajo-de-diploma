@@ -32,6 +32,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnCrearVenta = new System.Windows.Forms.Button();
             this.btnVerVenta = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,12 +85,25 @@
             this.btnVerVenta.UseVisualStyleBackColor = false;
             this.btnVerVenta.Click += new System.EventHandler(this.btnVerVenta_Click);
             // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button1.Location = new System.Drawing.Point(402, 369);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(162, 46);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Descargar serializado";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(945, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnVerVenta);
             this.Controls.Add(this.btnCrearVenta);
             this.Controls.Add(this.dataGridView1);
@@ -109,5 +123,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnCrearVenta;
         private System.Windows.Forms.Button btnVerVenta;
+        private System.Windows.Forms.Button button1;
     }
 }

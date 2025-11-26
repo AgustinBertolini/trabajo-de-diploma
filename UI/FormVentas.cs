@@ -10,11 +10,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Text;
+
 
 namespace UI
 {
     public partial class FormVentas : Form
     {
+        string serializedData;
         public FormVentas()
         {
             InitializeComponent();
@@ -51,6 +55,9 @@ namespace UI
                         }).ToList();
 
             dataGridView1.DataSource = datos;
+
+            serializedData = Newtonsoft.Json.JsonConvert.SerializeObject(datos, Newtonsoft.Json.Formatting.Indented);
+
 
             dataGridView1.Columns["Id"].Visible = false;
         }
@@ -174,6 +181,20 @@ namespace UI
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Archivo JSON (*.json)|*.json";
+            saveFileDialog.Title = "Guardar datos en JSON";
+            saveFileDialog.FileName = "ventas.json";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllText(saveFileDialog.FileName, serializedData, Encoding.UTF8);
+                MessageBox.Show("Archivo JSON guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

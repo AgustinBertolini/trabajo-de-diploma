@@ -135,6 +135,23 @@ namespace BLL
             }
         }
 
+        public bool ActivarProducto(int id)
+        {
+            try
+            {
+                ProductoDAL productoDAL = new ProductoDAL();
+
+                productoDAL.ActivarProducto(id);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public bool EditarProducto(int id, string nombre, decimal precio, int stock)
         {
             try

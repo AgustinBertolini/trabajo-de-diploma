@@ -33,6 +33,7 @@
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.btnEditarProducto = new System.Windows.Forms.Button();
             this.btnBorrarProducto = new System.Windows.Forms.Button();
+            this.btnActivarProducto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,7 +81,7 @@
             // 
             this.btnEditarProducto.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnEditarProducto.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnEditarProducto.Location = new System.Drawing.Point(323, 385);
+            this.btnEditarProducto.Location = new System.Drawing.Point(236, 385);
             this.btnEditarProducto.Name = "btnEditarProducto";
             this.btnEditarProducto.Size = new System.Drawing.Size(142, 53);
             this.btnEditarProducto.TabIndex = 3;
@@ -102,12 +103,26 @@
             this.btnBorrarProducto.UseVisualStyleBackColor = false;
             this.btnBorrarProducto.Click += new System.EventHandler(this.btnBorrarProducto_Click);
             // 
+            // btnActivarProducto
+            // 
+            this.btnActivarProducto.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnActivarProducto.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnActivarProducto.Location = new System.Drawing.Point(432, 385);
+            this.btnActivarProducto.Name = "btnActivarProducto";
+            this.btnActivarProducto.Size = new System.Drawing.Size(153, 53);
+            this.btnActivarProducto.TabIndex = 5;
+            this.btnActivarProducto.Tag = "label_activar_producto";
+            this.btnActivarProducto.Text = "Activar producto";
+            this.btnActivarProducto.UseVisualStyleBackColor = false;
+            this.btnActivarProducto.Click += new System.EventHandler(this.btnActivarProducto_Click);
+            // 
             // FormProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnActivarProducto);
             this.Controls.Add(this.btnBorrarProducto);
             this.Controls.Add(this.btnEditarProducto);
             this.Controls.Add(this.btnAgregarProducto);
@@ -131,5 +146,6 @@
         private System.Windows.Forms.Button btnAgregarProducto;
         private System.Windows.Forms.Button btnEditarProducto;
         private System.Windows.Forms.Button btnBorrarProducto;
+        private System.Windows.Forms.Button btnActivarProducto;
     }
 }
