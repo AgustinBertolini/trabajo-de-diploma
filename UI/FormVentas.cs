@@ -79,6 +79,12 @@ namespace UI
 
         private void btnCrearVenta_Click(object sender, EventArgs e)
         {
+            if (!(SessionManager.TienePermiso("Crear Venta")))
+            {
+                MessageBox.Show("No tenes permisos suficientes para crear ventas");
+                return;
+            }
+
             FormAgregarVenta form = new FormAgregarVenta();
             form.Show();
 
@@ -185,16 +191,24 @@ namespace UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Archivo JSON (*.json)|*.json";
-            saveFileDialog.Title = "Guardar datos en JSON";
-            saveFileDialog.FileName = "ventas.json";
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            try
             {
-                File.WriteAllText(saveFileDialog.FileName, serializedData, Encoding.UTF8);
-                MessageBox.Show("Archivo JSON guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Archivo JSON (*.json)|*.json";
+                saveFileDialog.Title = "Guardar datos en JSON";
+                saveFileDialog.FileName = "ventas.json";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    File.WriteAllText(saveFileDialog.FileName, serializedData, Encoding.UTF8);
+                    MessageBox.Show("Archivo JSON guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

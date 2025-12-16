@@ -117,32 +117,40 @@ namespace UI
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(inputNombre.Text))
+            try
             {
-                MessageBox.Show("El campo nombre es obligatorio");
-                return;
-            }
+                if (string.IsNullOrEmpty(inputNombre.Text))
+                {
+                    MessageBox.Show("El campo nombre es obligatorio");
+                    return;
+                }
 
-            if (numericUpDown1.Value <= 0)
+                if (numericUpDown1.Value <= 0)
+                {
+                    MessageBox.Show("El campo precio es obligatorio");
+                    return;
+                }
+
+                if (numericStock.Value <= 0)
+                {
+                    MessageBox.Show("El campo stock es obligatorio");
+                    return;
+                }
+
+                ProductoBLL productoBLL = new ProductoBLL();
+
+                productoBLL.EditarProducto(Convert.ToInt32(txtId.Text), inputNombre.Text, (decimal)numericUpDown1.Value, (int)numericStock.Value);
+
+                FormProductos form = new FormProductos();
+                form.Show();
+
+                this.Hide();
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("El campo precio es obligatorio");
-                return;
+                MessageBox.Show(ex.Message);
             }
             
-            if (numericStock.Value <= 0)
-            {
-                MessageBox.Show("El campo stock es obligatorio");
-                return;
-            }
-
-            ProductoBLL productoBLL = new ProductoBLL();
-
-            productoBLL.EditarProducto(Convert.ToInt32(txtId.Text), inputNombre.Text, (decimal)numericUpDown1.Value, (int)numericStock.Value);
-
-            FormProductos form = new FormProductos();
-            form.Show();
-
-            this.Hide();
         }
 
         private void comboUsuarios_SelectedIndexChanged(object sender, EventArgs e)
@@ -152,25 +160,33 @@ namespace UI
 
         private void btnAsignarUsuario_Click(object sender, EventArgs e)
         {
-            if (comboUsuarios.SelectedItem == null)
+            try
             {
-                MessageBox.Show("Debe seleccionar un vendedor para asignar.");
-                return;
+                if (comboUsuarios.SelectedItem == null)
+                {
+                    MessageBox.Show("Debe seleccionar un vendedor para asignar.");
+                    return;
+                }
+
+                var selected = comboUsuarios.SelectedItem;
+                int userId = (int)comboUsuarios.SelectedValue;
+                int productId = Convert.ToInt32(txtId.Text);
+
+                ProductoBLL productoBLL = new ProductoBLL();
+                bool resultado = productoBLL.AsignarProducto(userId, productId);
+
+                if (resultado)
+                    MessageBox.Show("Usuario asignado correctamente al producto.");
+                else
+                    MessageBox.Show("No se pudo asignar el usuario al producto.");
+
+                CargarVendedores();
             }
-
-            var selected = comboUsuarios.SelectedItem;
-            int userId = (int)comboUsuarios.SelectedValue;
-            int productId = Convert.ToInt32(txtId.Text);
-
-            ProductoBLL productoBLL = new ProductoBLL();
-            bool resultado = productoBLL.AsignarProducto(userId, productId);
-
-            if (resultado)
-                MessageBox.Show("Usuario asignado correctamente al producto.");
-            else
-                MessageBox.Show("No se pudo asignar el usuario al producto.");
-
-            CargarVendedores();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
 
         }
 

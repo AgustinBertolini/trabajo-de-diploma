@@ -80,27 +80,35 @@ namespace UI
 
         private void btnVincular_Click(object sender, EventArgs e)
         {
-            if(comboPadre.SelectedItem == null)
+            try
             {
-                 MessageBox.Show("Debe seleccionar un padre");
-                return;
-            }
+                if (comboPadre.SelectedItem == null)
+                {
+                    MessageBox.Show("Debe seleccionar un padre");
+                    return;
+                }
 
-            if(comboHijo.SelectedItem == null)
+                if (comboHijo.SelectedItem == null)
+                {
+                    MessageBox.Show("Debe seleccionar un hijo");
+                }
+
+                Permiso permisoPadre = (Permiso)comboPadre.SelectedItem;
+                Permiso permisoHijo = (Permiso)comboHijo.SelectedItem;
+
+                PermisoBLL permisoBLL = new PermisoBLL();
+                permisoBLL.VincularPermisos(permisoPadre.Id, permisoHijo.Id);
+
+                FormPermisos formPermisos = new FormPermisos();
+                formPermisos.Show();
+
+                this.Hide();
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("Debe seleccionar un hijo");
+                MessageBox.Show(ex.Message);
             }
             
-            Permiso permisoPadre = (Permiso)comboPadre.SelectedItem;
-            Permiso permisoHijo = (Permiso)comboHijo.SelectedItem;
-
-            PermisoBLL permisoBLL = new PermisoBLL();
-            permisoBLL.VincularPermisos(permisoPadre.Id, permisoHijo.Id);
-
-            FormPermisos formPermisos = new FormPermisos();
-            formPermisos.Show();
-
-            this.Hide();
 
 
         }

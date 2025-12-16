@@ -69,21 +69,29 @@ namespace UI
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem == null)
+            try
             {
-                MessageBox.Show("Debe seleccionar un permiso");
-                return;
+                if (comboBox1.SelectedItem == null)
+                {
+                    MessageBox.Show("Debe seleccionar un permiso");
+                    return;
+                }
+
+                Permiso permiso = (Permiso)comboBox1.SelectedItem;
+
+                PermisoBLL permisoBLL = new PermisoBLL();
+                permisoBLL.AsignarPermiso(idUsuario, permiso.Id);
+
+                FormUsuarios form = new FormUsuarios();
+                form.Show();
+
+                this.Hide();
             }
-
-            Permiso permiso = (Permiso)comboBox1.SelectedItem;
-
-            PermisoBLL permisoBLL = new PermisoBLL();
-            permisoBLL.AsignarPermiso(idUsuario, permiso.Id);
-
-            FormUsuarios form = new FormUsuarios();
-            form.Show();
-
-            this.Hide();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

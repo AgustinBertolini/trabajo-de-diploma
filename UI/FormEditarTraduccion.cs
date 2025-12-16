@@ -58,39 +58,47 @@ namespace UI
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNombre.Text))
+            try
             {
-                MessageBox.Show("El campo nombre es obligatorio");
-                return;
+                if (string.IsNullOrEmpty(txtNombre.Text))
+                {
+                    MessageBox.Show("El campo nombre es obligatorio");
+                    return;
+                }
+
+                var traduccionHistorica = Traductor.GetTraduccion(Convert.ToInt32(txtIdHidden.Text));
+                TraduccionHistoricoBLL traduccionHistoricoBLL = new TraduccionHistoricoBLL();
+
+                traduccionHistoricoBLL.CrearHistorico(traduccionHistorica.Valor, txtNombre.Text, traduccionHistorica.Id);
+
+                Traductor.EditarTraduccion(Convert.ToInt32(txtIdHidden.Text), txtNombre.Text);
+
+                var traduccion = Traductor.GetTraduccion(Convert.ToInt32(txtIdHidden.Text));
+                var idIdioma = traduccion.IdIdioma;
+
+                var idiomas = Traductor.GetIdiomas();
+                var idioma = idiomas.FirstOrDefault(t => t.Id == idIdioma);
+
+                if (idioma != null)
+                {
+                    Bitacoras.AltaBitacora("Traducción modificada: '" + txtNombre.Text + "' para el idioma " + idioma.Nombre, TipoEvento.Warning, SessionManager.GetInstance.Usuario.Id);
+                }
+
+
+
+
+
+
+                FormTraducciones form = new FormTraducciones();
+                form.Show();
+
+                this.Hide();
             }
-
-            var traduccionHistorica = Traductor.GetTraduccion(Convert.ToInt32(txtIdHidden.Text));
-            TraduccionHistoricoBLL traduccionHistoricoBLL = new TraduccionHistoricoBLL();
-
-            traduccionHistoricoBLL.CrearHistorico(traduccionHistorica.Valor, txtNombre.Text, traduccionHistorica.Id);
-
-            Traductor.EditarTraduccion(Convert.ToInt32(txtIdHidden.Text), txtNombre.Text);
-
-            var traduccion = Traductor.GetTraduccion(Convert.ToInt32(txtIdHidden.Text));
-            var idIdioma = traduccion.IdIdioma;
-
-            var idiomas = Traductor.GetIdiomas();
-            var idioma = idiomas.FirstOrDefault(t => t.Id == idIdioma);
-
-            if(idioma != null)
+            catch (Exception ex)
             {
-                Bitacoras.AltaBitacora("Traducción modificada: '" + txtNombre.Text + "' para el idioma " + idioma.Nombre, TipoEvento.Warning, SessionManager.GetInstance.Usuario.Id);
+                MessageBox.Show(ex.Message);
             }
-
-
-
-        
-
-
-            FormTraducciones form = new FormTraducciones();
-            form.Show();
-
-            this.Hide();
+            
         }
 
         private void txtIdIdiomaHidden_TextChanged(object sender, EventArgs e)

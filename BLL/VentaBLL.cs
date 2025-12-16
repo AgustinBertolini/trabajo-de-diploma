@@ -90,7 +90,7 @@ namespace BLL
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error al enviar correo al cliente {nombreCliente}: {ex.Message}");
+                throw new Exception($"Error al enviar correo al cliente {nombreCliente}: {ex.Message}");
             }
         }
     }

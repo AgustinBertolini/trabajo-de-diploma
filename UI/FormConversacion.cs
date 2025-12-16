@@ -114,25 +114,32 @@ namespace UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string mensaje = textBox1.Text.Trim();
-            if (!string.IsNullOrEmpty(mensaje))
+            try
             {
-                Mensaje mensajeEntidad = new Mensaje
+                string mensaje = textBox1.Text.Trim();
+                if (!string.IsNullOrEmpty(mensaje))
                 {
-                    Texto = mensaje,
-                    FechaEnvio = DateTime.Now,
-                    IdConversacion = idConversacion,
-                    IdEmisor = SessionManager.GetInstance.Usuario.Id
-                };
-                conversacionBLL.EnviarMensaje(mensajeEntidad);
-                textBox1.Clear();
-                CargarMensajesDeConversacion();
+                    Mensaje mensajeEntidad = new Mensaje
+                    {
+                        Texto = mensaje,
+                        FechaEnvio = DateTime.Now,
+                        IdConversacion = idConversacion,
+                        IdEmisor = SessionManager.GetInstance.Usuario.Id
+                    };
+                    conversacionBLL.EnviarMensaje(mensajeEntidad);
+                    textBox1.Clear();
+                    CargarMensajesDeConversacion();
 
-            }
-            else
+                }
+                else
+                {
+                    MessageBox.Show("El mensaje no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            } catch (Exception ex)
             {
-                MessageBox.Show("El mensaje no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message);
             }
+          
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)

@@ -60,21 +60,29 @@ namespace UI
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNombre.Text))
+            try
             {
-                MessageBox.Show("El campo nombre es obligatorio");
-                return;
+                if (string.IsNullOrEmpty(txtNombre.Text))
+                {
+                    MessageBox.Show("El campo nombre es obligatorio");
+                    return;
+                }
+
+                IdiomaBLL idiomaBLL = new IdiomaBLL();
+
+                idiomaBLL.EditarIdioma(Convert.ToInt32(txtIdHidden.Text), txtNombre.Text);
+                Bitacoras.AltaBitacora("ATENCION --> El idioma: " + txtNombre.Text + " fue modificado", TipoEvento.Warning, SessionManager.GetInstance.Usuario.Id);
+
+                FormTraducciones traducciones = new FormTraducciones();
+                traducciones.Show();
+
+                this.Hide();
             }
-
-            IdiomaBLL idiomaBLL = new IdiomaBLL();
-
-            idiomaBLL.EditarIdioma(Convert.ToInt32(txtIdHidden.Text), txtNombre.Text);
-            Bitacoras.AltaBitacora("ATENCION --> El idioma: " + txtNombre.Text + " fue modificado", TipoEvento.Warning, SessionManager.GetInstance.Usuario.Id);
-
-            FormTraducciones traducciones = new FormTraducciones();
-            traducciones.Show();
-
-            this.Hide();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
         }
     }
 }

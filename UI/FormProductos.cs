@@ -71,31 +71,39 @@ namespace UI
 
         private void btnBorrarProducto_Click(object sender, EventArgs e)
         {
-            if (!(SessionManager.TienePermiso("Productos") || SessionManager.TienePermiso("Borrar Producto")))
+            try
             {
-                MessageBox.Show("No tenes permisos suficientes para borrar un producto");
-                return;
-            }
+                if (!(SessionManager.TienePermiso("Productos") || SessionManager.TienePermiso("Borrar Producto")))
+                {
+                    MessageBox.Show("No tenes permisos suficientes para borrar un producto");
+                    return;
+                }
 
-            if (dataGridView1.SelectedRows.Count == 0)
+                if (dataGridView1.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("No hay un producto seleccionado");
+                    return;
+                }
+
+                if (dataGridView1.SelectedRows.Count > 1)
+                {
+                    MessageBox.Show("Se tiene que seleccionar un unico producto");
+                    return;
+                }
+
+                ProductoBLL productoBLL = new ProductoBLL();
+
+                int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id"].Value);
+
+                productoBLL.BorrarProducto(id);
+
+                CargarProducto();
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("No hay un producto seleccionado");
-                return;
+                MessageBox.Show(ex.Message);
             }
-
-            if (dataGridView1.SelectedRows.Count > 1)
-            {
-                MessageBox.Show("Se tiene que seleccionar un unico producto");
-                return;
-            }
-
-            ProductoBLL productoBLL = new ProductoBLL();
-
-            int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id"].Value);
-
-            productoBLL.BorrarProducto(id);
-
-            CargarProducto();
+           
         }
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
@@ -241,38 +249,46 @@ namespace UI
 
         private void btnActivarProducto_Click(object sender, EventArgs e)
         {
-            if (!(SessionManager.TienePermiso("Productos") || SessionManager.TienePermiso("Activar Producto")))
+            try
             {
-                MessageBox.Show("No tenes permisos suficientes para borrar un producto");
-                return;
-            }
+                if (!(SessionManager.TienePermiso("Productos") || SessionManager.TienePermiso("Activar Producto")))
+                {
+                    MessageBox.Show("No tenes permisos suficientes para borrar un producto");
+                    return;
+                }
 
-            if (dataGridView1.SelectedRows.Count == 0)
+                if (dataGridView1.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("No hay un producto seleccionado");
+                    return;
+                }
+
+                if (dataGridView1.SelectedRows.Count > 1)
+                {
+                    MessageBox.Show("Se tiene que seleccionar un unico producto");
+                    return;
+                }
+
+                ProductoBLL productoBLL = new ProductoBLL();
+
+                int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id"].Value);
+                bool activo = Convert.ToBoolean(dataGridView1.SelectedRows[0].Cells["Activo"].Value);
+
+                if (activo == true)
+                {
+                    MessageBox.Show("El producto ya esta activo");
+                    return;
+                }
+
+                productoBLL.ActivarProducto(id);
+
+                CargarProducto();
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("No hay un producto seleccionado");
-                return;
+                MessageBox.Show(ex.Message);
             }
-
-            if (dataGridView1.SelectedRows.Count > 1)
-            {
-                MessageBox.Show("Se tiene que seleccionar un unico producto");
-                return;
-            }
-
-            ProductoBLL productoBLL = new ProductoBLL();
-
-            int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id"].Value);
-            bool activo = Convert.ToBoolean(dataGridView1.SelectedRows[0].Cells["Activo"].Value);
-
-            if(activo == true)
-            {
-                MessageBox.Show("El producto ya esta activo");
-                return;
-            }
-
-            productoBLL.ActivarProducto(id);
-
-            CargarProducto();
+            
         }
     }
 }

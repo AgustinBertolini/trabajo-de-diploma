@@ -42,71 +42,94 @@ namespace UI
 
         private void btnEditarCliente_Click(object sender, EventArgs e)
         {
-            if (!(SessionManager.TienePermiso("Editar Cliente")))
+            try 
             {
-                MessageBox.Show("No tenes permisos suficientes para acceder a la pantalla");
-                return;
+                if (!(SessionManager.TienePermiso("Editar Cliente")))
+                {
+                    MessageBox.Show("No tenes permisos suficientes para acceder a la pantalla");
+                    return;
 
+                }
+                if (dataGridView1.CurrentRow == null || dataGridView1.CurrentRow.DataBoundItem == null)
+                {
+                    MessageBox.Show("Seleccione un cliente para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                Cliente clienteSeleccionado = dataGridView1.CurrentRow.DataBoundItem as Cliente;
+                if (clienteSeleccionado == null)
+                {
+                    MessageBox.Show("No se pudo obtener la información del cliente seleccionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                FormEditarCliente formEditar = new FormEditarCliente(clienteSeleccionado);
+                formEditar.Show();
+
+                this.Hide();
             }
-            if (dataGridView1.CurrentRow == null || dataGridView1.CurrentRow.DataBoundItem == null)
+            catch (Exception ex)
             {
-                MessageBox.Show("Seleccione un cliente para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                MessageBox.Show(ex.Message);
             }
-
-            Cliente clienteSeleccionado = dataGridView1.CurrentRow.DataBoundItem as Cliente;
-            if (clienteSeleccionado == null)
-            {
-                MessageBox.Show("No se pudo obtener la información del cliente seleccionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            FormEditarCliente formEditar = new FormEditarCliente(clienteSeleccionado);
-            formEditar.Show();
-
-            this.Hide();
+            
         }
 
         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
-            if (!(SessionManager.TienePermiso("Agregar Cliente")))
-            {
-                MessageBox.Show("No tenes permisos suficientes para acceder a la pantalla");
-                return;
+            try{
+                if (!(SessionManager.TienePermiso("Agregar Cliente")))
+                {
+                    MessageBox.Show("No tenes permisos suficientes para acceder a la pantalla");
+                    return;
+                }
+
+                FormAgregarCliente formAgregarCliente = new FormAgregarCliente();
+                formAgregarCliente.Show();
+
+                this.Hide();
             }
-
-            FormAgregarCliente formAgregarCliente = new FormAgregarCliente();
-            formAgregarCliente.Show();
-
-            this.Hide();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!(SessionManager.TienePermiso("Borrar Cliente")))
+            try 
             {
-                MessageBox.Show("No tenes permisos suficientes para acceder a la pantalla");
-                return;
+                if (!(SessionManager.TienePermiso("Borrar Cliente")))
+                {
+                    MessageBox.Show("No tenes permisos suficientes para acceder a la pantalla");
+                    return;
 
+                }
+
+                if (dataGridView1.CurrentRow == null || dataGridView1.CurrentRow.DataBoundItem == null)
+                {
+                    MessageBox.Show("Seleccione un cliente para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                Cliente clienteSeleccionado = dataGridView1.CurrentRow.DataBoundItem as Cliente;
+                if (clienteSeleccionado == null)
+                {
+                    MessageBox.Show("No se pudo obtener la información del cliente seleccionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                ClienteBLL clienteBLL = new ClienteBLL();
+                clienteBLL.BorrarCliente(clienteSeleccionado.Id);
+                MessageBox.Show("Cliente eliminado correctamente.");
+                CargarClientes();
             }
-
-            if (dataGridView1.CurrentRow == null || dataGridView1.CurrentRow.DataBoundItem == null)
+            catch (Exception ex)
             {
-                MessageBox.Show("Seleccione un cliente para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                MessageBox.Show(ex.Message);
             }
-
-            Cliente clienteSeleccionado = dataGridView1.CurrentRow.DataBoundItem as Cliente;
-            if (clienteSeleccionado == null)
-            {
-                MessageBox.Show("No se pudo obtener la información del cliente seleccionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            ClienteBLL clienteBLL = new ClienteBLL();
-            clienteBLL.BorrarCliente(clienteSeleccionado.Id);
-            MessageBox.Show("Cliente eliminado correctamente.");
-            CargarClientes();
+            
         }
 
         private void presupuestosToolStripMenuItem_Click(object sender, EventArgs e)

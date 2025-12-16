@@ -142,6 +142,12 @@ namespace UI
 
         private void btnCrearPresupuesto_Click(object sender, EventArgs e)
         {
+            if (!(SessionManager.TienePermiso("Crear Presupuesto")))
+            {
+                MessageBox.Show("No tenes permisos suficientes para crear presupuestos");
+                return;
+            }
+
             FormAgregarPresupuesto form = new FormAgregarPresupuesto();
             form.Show();
 
@@ -150,6 +156,13 @@ namespace UI
 
         private void btnVerPresupuesto_Click(object sender, EventArgs e)
         {
+            if (!(SessionManager.TienePermiso("Editar Presupuesto")))
+            {
+                MessageBox.Show("No tenes permisos suficientes para ver los detalles de los presupuestos");
+                return;
+            }
+
+
             if (dataGridView1.SelectedRows.Count == 0)
             {
                 MessageBox.Show("No hay un presupuesto seleccionado");

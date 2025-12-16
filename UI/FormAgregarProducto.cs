@@ -58,32 +58,40 @@ namespace UI
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(inputNombre.Text))
+            try
             {
-                MessageBox.Show("El campo nombre es obligatorio");
-                return;
-            }
+                if (string.IsNullOrEmpty(inputNombre.Text))
+                {
+                    MessageBox.Show("El campo nombre es obligatorio");
+                    return;
+                }
 
-            if (numericUpDown1.Value <= 0)
+                if (numericUpDown1.Value <= 0)
+                {
+                    MessageBox.Show("El campo precio es obligatorio");
+                    return;
+                }
+
+                if (numericStock.Value <= 0)
+                {
+                    MessageBox.Show("El campo stock es obligatorio");
+                    return;
+                }
+
+                ProductoBLL productoBLL = new ProductoBLL();
+
+                int userId = productoBLL.AltaProducto(inputNombre.Text, (decimal)numericUpDown1.Value, (int)numericStock.Value);
+
+                FormProductos form = new FormProductos();
+                form.Show();
+
+                this.Hide();
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("El campo precio es obligatorio");
-                return;
+                MessageBox.Show(ex.Message);
             }
-
-            if (numericStock.Value <= 0)
-            {
-                MessageBox.Show("El campo stock es obligatorio");
-                return;
-            }
-
-            ProductoBLL productoBLL = new ProductoBLL();
-
-            int userId = productoBLL.AltaProducto(inputNombre.Text, (decimal)numericUpDown1.Value, (int)numericStock.Value);
-
-            FormProductos form = new FormProductos();
-            form.Show();
-
-            this.Hide();
+            
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)

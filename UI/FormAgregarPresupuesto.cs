@@ -253,70 +253,78 @@ namespace UI
 
         private void btnCrearPresupuesto_Click_1(object sender, EventArgs e)
         {
-            if (_items.Count < 1)
+            try
             {
-                MessageBox.Show("Debe agregar al menos un producto al presupuesto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if(comboClientes.SelectedItem == null)
-            {
-                MessageBox.Show("Debe seleccionar un cliente para enviar el presupuesto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-
-
-            DialogResult resultado = MessageBox.Show(
-                "¿Estás seguro de querer enviar este presupuesto?\n\n" +
-                "Esto le enviará un correo al cliente informándole los ítems seleccionados.\n" +
-                "Tenés 48 horas para pasar este presupuesto a una venta efectiva.",
-                "Confirmar envío de presupuesto",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning
-            );
-
-            if (resultado == DialogResult.Yes)
-            {
-                try
+                if (_items.Count < 1)
                 {
-                    PresupuestoBLL presupuestoBLL = new PresupuestoBLL();
+                    MessageBox.Show("Debe agregar al menos un producto al presupuesto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
-                    List<PresupuestoItem> items = _items.Select(i => new PresupuestoItem
+                if (comboClientes.SelectedItem == null)
+                {
+                    MessageBox.Show("Debe seleccionar un cliente para enviar el presupuesto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+
+
+                DialogResult resultado = MessageBox.Show(
+                    "¿Estás seguro de querer enviar este presupuesto?\n\n" +
+                    "Esto le enviará un correo al cliente informándole los ítems seleccionados.\n" +
+                    "Tenés 48 horas para pasar este presupuesto a una venta efectiva.",
+                    "Confirmar envío de presupuesto",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                if (resultado == DialogResult.Yes)
+                {
+                    try
                     {
-                        IdProducto = i.ProductoId,
-                        Cantidad = i.Cantidad,
-                        PrecioUnitario = i.PrecioUnitario
-                    }).ToList();
+                        PresupuestoBLL presupuestoBLL = new PresupuestoBLL();
 
-                    Presupuesto presupuesto = new Presupuesto
+                        List<PresupuestoItem> items = _items.Select(i => new PresupuestoItem
+                        {
+                            IdProducto = i.ProductoId,
+                            Cantidad = i.Cantidad,
+                            PrecioUnitario = i.PrecioUnitario
+                        }).ToList();
+
+                        Presupuesto presupuesto = new Presupuesto
+                        {
+                            FechaCreacion = DateTime.Now,
+                            IdCliente = (comboClientes.SelectedItem as Cliente)?.Id ?? 0,
+                            Items = items
+                        };
+
+                        presupuestoBLL.AltaPresupuesto(presupuesto, items);
+
+                        MessageBox.Show("Presupuesto enviado correctamente al cliente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        FormPresupuesto form = new FormPresupuesto();
+                        form.Show();
+                        this.Hide();
+                    }
+                    catch (Exception ex)
                     {
-                        FechaCreacion = DateTime.Now,
-                        IdCliente = (comboClientes.SelectedItem as Cliente)?.Id ?? 0,
-                        Items = items
-                    };
-
-                    presupuestoBLL.AltaPresupuesto(presupuesto, items);
-
-                    MessageBox.Show("Presupuesto enviado correctamente al cliente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show($"Error al enviar el correo: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Envío cancelado.", "Operación cancelada", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     FormPresupuesto form = new FormPresupuesto();
                     form.Show();
                     this.Hide();
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error al enviar el correo: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Envío cancelado.", "Operación cancelada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                FormPresupuesto form = new FormPresupuesto();
-                form.Show();
-                this.Hide();
+                MessageBox.Show(ex.Message);
             }
+            
         }
     }
 }

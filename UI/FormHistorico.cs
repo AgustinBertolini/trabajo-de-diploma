@@ -24,28 +24,36 @@ namespace UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 0)
+            try
             {
-                MessageBox.Show("No hay una traduccion seleccionada");
-                return;
-            }
+                if (dataGridView1.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("No hay una traduccion seleccionada");
+                    return;
+                }
 
-            if (dataGridView1.SelectedRows.Count > 1)
+                if (dataGridView1.SelectedRows.Count > 1)
+                {
+                    MessageBox.Show("Se tiene que seleccionar una unica traduccion");
+                    return;
+                }
+
+
+                int idTraduccion = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["IdTraduccion"].Value);
+                string valorViejo = dataGridView1.SelectedRows[0].Cells["ValorViejo"].Value.ToString();
+
+                Traductor.EditarTraduccion(idTraduccion, valorViejo);
+
+                FormTraducciones form = new FormTraducciones();
+                form.Show();
+
+                this.Hide();
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("Se tiene que seleccionar una unica traduccion");
-                return;
+                MessageBox.Show(ex.Message);
             }
-
-
-            int idTraduccion = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["IdTraduccion"].Value);
-            string valorViejo = dataGridView1.SelectedRows[0].Cells["ValorViejo"].Value.ToString() ;
-
-            Traductor.EditarTraduccion(idTraduccion, valorViejo);
-
-            FormTraducciones form = new FormTraducciones();
-            form.Show();
-
-            this.Hide();
+            
 
         }
 

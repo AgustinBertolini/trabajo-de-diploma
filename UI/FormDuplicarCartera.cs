@@ -43,27 +43,36 @@ namespace UI
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if(comboBox1.SelectedItem == null)
+            try 
             {
-                MessageBox.Show("Seleccione un usuario origen.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (comboBox1.SelectedItem == null)
+                {
+                    MessageBox.Show("Seleccione un usuario origen.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                int idUsuarioOrigen = ((Usuario)comboBox1.SelectedItem).Id;
+
+                ClienteBLL clienteBLL = new ClienteBLL();
+
+                bool exito = clienteBLL.DuplicarCartera(idUsuarioOrigen, idUsuarioDestino);
+
+                if (exito)
+                {
+                    MessageBox.Show("Cartera duplicada con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrió un error al duplicar la cartera.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            int idUsuarioOrigen = ((Usuario)comboBox1.SelectedItem).Id;
-
-            ClienteBLL clienteBLL = new ClienteBLL();
-
-            bool exito = clienteBLL.DuplicarCartera(idUsuarioOrigen, idUsuarioDestino);
-
-            if (exito)
-            {
-                MessageBox.Show("Cartera duplicada con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Ocurrió un error al duplicar la cartera.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+           
         }
 
         private void FormDuplicarCartera_Load(object sender, EventArgs e)

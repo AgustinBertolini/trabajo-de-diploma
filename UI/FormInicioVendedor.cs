@@ -36,6 +36,7 @@ namespace UI
             }
             else
             {
+                formExistente.Show();
                 formExistente.Focus();
                 formExistente.WindowState = FormWindowState.Normal;
             }
@@ -157,12 +158,24 @@ namespace UI
 
         private void panel4_Click(object sender, EventArgs e)
         {
+            if (!(SessionManager.TienePermiso("Ventas")))
+            {
+                MessageBox.Show("No tenes permisos suficientes para acceder a las ventas");
+                return;
+            }
+
             AbrirFormulario<FormVentas>();
 
         }
 
         private void panel3_Click(object sender, EventArgs e)
         {
+            if (!(SessionManager.TienePermiso("Presupuestos")))
+            {
+                MessageBox.Show("No tenes permisos suficientes para acceder a los presupuestos");
+                return;
+            }
+
             AbrirFormulario<FormPresupuesto>();
         }
 
@@ -223,6 +236,12 @@ namespace UI
             }
             else
             {
+                if (!(SessionManager.TienePermiso("Presupuestos")))
+                {
+                    MessageBox.Show("No tenes permisos suficientes para acceder a los presupuestos");
+                    return;
+                }
+
                 id = conversacionBLL.CrearConversacion();
 
                 FormConversacion form = new FormConversacion(id);
@@ -242,21 +261,45 @@ namespace UI
 
         private void label7_Click(object sender, EventArgs e)
         {
+            if (!(SessionManager.TienePermiso("Presupuestos")))
+            {
+                MessageBox.Show("No tenes permisos suficientes para acceder a los presupuestos");
+                return;
+            }
+
             AbrirFormulario<FormPresupuesto>();
         }
 
         private void label9_Click(object sender, EventArgs e)
         {
+            if (!(SessionManager.TienePermiso("Ventas")))
+            {
+                MessageBox.Show("No tenes permisos suficientes para acceder a las ventas");
+                return;
+            }
+
             AbrirFormulario<FormVentas>();
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
+            if (!(SessionManager.TienePermiso("Presupuestos")))
+            {
+                MessageBox.Show("No tenes permisos suficientes para acceder a los presupuestos");
+                return;
+            }
+
             AbrirFormulario<FormPresupuesto>();
         }
 
         private void label8_Click(object sender, EventArgs e)
         {
+            if (!(SessionManager.TienePermiso("Ventas")))
+            {
+                MessageBox.Show("No tenes permisos suficientes para acceder a las ventas");
+                return;
+            }
+
             AbrirFormulario<FormVentas>();
         }
 

@@ -61,41 +61,49 @@ namespace UI
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
                 string.IsNullOrWhiteSpace(txtApellido.Text) ||
                 string.IsNullOrWhiteSpace(txtCuit.Text) ||
                 string.IsNullOrWhiteSpace(txtEmail.Text) ||
                 string.IsNullOrWhiteSpace(txtDireccion.Text) ||
                 comboTipoCliente.SelectedItem == null)
-            {
-                MessageBox.Show("Por favor, complete todos los campos antes de guardar.", "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                {
+                    MessageBox.Show("Por favor, complete todos los campos antes de guardar.", "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (ValidarCuit(txtCuit.Text) == false)
+                {
+                    MessageBox.Show("El CUIT ingresado no es válido.", "CUIT inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                var tipoClienteSeleccionado = comboTipoCliente.SelectedItem as TipoCliente;
+                int tipoClienteId = tipoClienteSeleccionado != null ? tipoClienteSeleccionado.Id : 0;
+
+                clienteEditar.Nombre = txtNombre.Text;
+                clienteEditar.Apellido = txtApellido.Text;
+                clienteEditar.Cuit = txtCuit.Text;
+                clienteEditar.Email = txtEmail.Text;
+                clienteEditar.Direccion = txtDireccion.Text;
+                clienteEditar.TipoClienteId = tipoClienteId;
+
+                ClienteBLL clienteBLL = new ClienteBLL();
+                clienteBLL.EditarCliente(clienteEditar);
+                MessageBox.Show("Cliente editado correctamente.");
+
+                FormClientes clientes = new FormClientes();
+                clientes.Show();
+
+                this.Hide();
             }
-
-            if(ValidarCuit(txtCuit.Text) == false)
+            catch (Exception ex)
             {
-                MessageBox.Show("El CUIT ingresado no es válido.", "CUIT inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                MessageBox.Show(ex.Message);
             }
-
-            var tipoClienteSeleccionado = comboTipoCliente.SelectedItem as TipoCliente;
-            int tipoClienteId = tipoClienteSeleccionado != null ? tipoClienteSeleccionado.Id : 0;
-
-            clienteEditar.Nombre = txtNombre.Text;
-            clienteEditar.Apellido = txtApellido.Text;
-            clienteEditar.Cuit = txtCuit.Text;
-            clienteEditar.Email = txtEmail.Text;
-            clienteEditar.Direccion = txtDireccion.Text;
-            clienteEditar.TipoClienteId = tipoClienteId;
-
-            ClienteBLL clienteBLL = new ClienteBLL();
-            clienteBLL.EditarCliente(clienteEditar);
-            MessageBox.Show("Cliente editado correctamente.");
-
-            FormClientes clientes = new FormClientes();
-            clientes.Show();
-
-            this.Hide();
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

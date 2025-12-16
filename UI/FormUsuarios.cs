@@ -97,46 +97,54 @@ namespace UI
 
         private void btnDeleteUser_Click(object sender, EventArgs e)
         {
-            if (!(SessionManager.TienePermiso("Usuarios") || SessionManager.TienePermiso("Borrar Usuario")))
+            try
             {
-                MessageBox.Show("No tenes permisos suficientes para borrar un usuario");
-                return;
+                if (!(SessionManager.TienePermiso("Usuarios") || SessionManager.TienePermiso("Borrar Usuario")))
+                {
+                    MessageBox.Show("No tenes permisos suficientes para borrar un usuario");
+                    return;
+                }
+
+                if (dataGridView1.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("No hay un usuario seleccionado");
+                    return;
+                }
+
+                if (dataGridView1.SelectedRows.Count > 1)
+                {
+                    MessageBox.Show("Se tiene que seleccionar un unico usuario");
+                    return;
+                }
+
+                UsuarioBLL usuarioBLL = new UsuarioBLL();
+
+                int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id"].Value);
+
+                string email = dataGridView1.SelectedRows[0].Cells["email"].Value.ToString();
+
+                Usuario usuario = usuarioBLL.GetUsuario(email);
+
+                bool usuarioBorrado = usuarioBLL.BorrarUsuario(id);
+
+                if (usuarioBorrado)
+                {
+                    Bitacoras.AltaBitacora("El usuario " + email + " fue dado de baja", TipoEvento.Message, SessionManager.GetInstance.Usuario.Id);
+
+                    var usuariosObtenidos = usuarioBLL.GetUsuarios();
+
+                    string digitoVerificador = DigitoVerificador.CalcularDigitoVerificador(usuariosObtenidos.Cast<IVerificableEntity>().ToList(), true);
+
+                    DigitoVerificador.GuardarDigitoVerificador(digitoVerificador);
+                }
+
+                CargarUsuarios();
             }
-
-            if (dataGridView1.SelectedRows.Count == 0)
+            catch (Exception ex)
             {
-                MessageBox.Show("No hay un usuario seleccionado");
-                return;
-            }  
-
-            if(dataGridView1.SelectedRows.Count > 1)
-            {
-                MessageBox.Show("Se tiene que seleccionar un unico usuario");
-                return;
+                MessageBox.Show(ex.Message);
             }
-
-            UsuarioBLL usuarioBLL = new UsuarioBLL();
-
-            int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id"].Value);
-
-            string email = dataGridView1.SelectedRows[0].Cells["email"].Value.ToString();
-
-            Usuario usuario = usuarioBLL.GetUsuario(email);
-
-            bool usuarioBorrado = usuarioBLL.BorrarUsuario(id);
-
-            if (usuarioBorrado)
-            {
-                Bitacoras.AltaBitacora("El usuario " + email + " fue dado de baja", TipoEvento.Message, SessionManager.GetInstance.Usuario.Id);
-
-                var usuariosObtenidos = usuarioBLL.GetUsuarios();
-
-                string digitoVerificador = DigitoVerificador.CalcularDigitoVerificador(usuariosObtenidos.Cast<IVerificableEntity>().ToList(), true);
-
-                DigitoVerificador.GuardarDigitoVerificador(digitoVerificador);
-            }
-
-            CargarUsuarios();
+           
         }
 
         private void btnEditUser_Click(object sender, EventArgs e)
@@ -259,33 +267,41 @@ namespace UI
 
         private void btnDesasignarPermiso_Click(object sender, EventArgs e)
         {
-            if (!(SessionManager.TienePermiso("Permisos")))
+            try
             {
-                MessageBox.Show("No tenes permisos suficientes");
-                return;
-            }
+                if (!(SessionManager.TienePermiso("Permisos")))
+                {
+                    MessageBox.Show("No tenes permisos suficientes");
+                    return;
+                }
 
-            if (dataGridView1.SelectedRows.Count == 0)
+                if (dataGridView1.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("No hay un usuario seleccionado");
+                    return;
+                }
+
+                if (dataGridView1.SelectedRows.Count > 1)
+                {
+                    MessageBox.Show("Se tiene que seleccionar un unico usuario");
+                    return;
+                }
+
+                UsuarioBLL usuarioBLL = new UsuarioBLL();
+
+                string email = dataGridView1.SelectedRows[0].Cells["email"].Value.ToString();
+
+
+                Usuario usuario = usuarioBLL.GetUsuario(email);
+
+                PermisoBLL permisoBLL = new PermisoBLL();
+                permisoBLL.DesasignarPermisos(usuario.Id);
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("No hay un usuario seleccionado");
-                return;
+                MessageBox.Show(ex.Message);
             }
-
-            if (dataGridView1.SelectedRows.Count > 1)
-            {
-                MessageBox.Show("Se tiene que seleccionar un unico usuario");
-                return;
-            }
-
-            UsuarioBLL usuarioBLL = new UsuarioBLL();
-
-            string email = dataGridView1.SelectedRows[0].Cells["email"].Value.ToString();
-
-
-            Usuario usuario = usuarioBLL.GetUsuario(email);
-
-            PermisoBLL permisoBLL = new PermisoBLL();
-            permisoBLL.DesasignarPermisos(usuario.Id);
+            
         }
 
       
@@ -316,36 +332,44 @@ namespace UI
 
         private void btnCopiarCartera_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 0)
+            try
             {
-                MessageBox.Show("No hay un usuario seleccionado");
-                return;
-            }
+                if (dataGridView1.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("No hay un usuario seleccionado");
+                    return;
+                }
 
-            if (dataGridView1.SelectedRows.Count > 1)
+                if (dataGridView1.SelectedRows.Count > 1)
+                {
+                    MessageBox.Show("Se tiene que seleccionar un unico usuario");
+                    return;
+                }
+
+
+                UsuarioBLL usuarioBLL = new UsuarioBLL();
+                ClienteBLL clienteBLL = new ClienteBLL();
+
+                int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id"].Value);
+
+                string email = dataGridView1.SelectedRows[0].Cells["email"].Value.ToString();
+
+                Usuario usuario = usuarioBLL.GetUsuario(email);
+
+                if (usuario.Rol.Nombre != "VENDEDOR")
+                {
+                    MessageBox.Show("Solo se puede copiar la cartera de clientes de un vendedor.");
+                    return;
+                }
+
+                FormDuplicarCartera formDuplicarCartera = new FormDuplicarCartera(id);
+                formDuplicarCartera.Show();
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("Se tiene que seleccionar un unico usuario");
-                return;
+                MessageBox.Show(ex.Message);
             }
-
-
-            UsuarioBLL usuarioBLL = new UsuarioBLL();
-            ClienteBLL clienteBLL = new ClienteBLL();
-
-            int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id"].Value);
-
-            string email = dataGridView1.SelectedRows[0].Cells["email"].Value.ToString();
-
-            Usuario usuario = usuarioBLL.GetUsuario(email);
-
-            if(usuario.Rol.Nombre != "VENDEDOR")
-            {
-                MessageBox.Show("Solo se puede copiar la cartera de clientes de un vendedor.");
-                return;
-            }
-
-            FormDuplicarCartera formDuplicarCartera = new FormDuplicarCartera(id);
-            formDuplicarCartera.Show();
+           
 
         }
     }

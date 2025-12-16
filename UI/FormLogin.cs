@@ -40,54 +40,62 @@ namespace UI
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            UsuarioBLL usuarioBLL = new UsuarioBLL();
-
-            string emailValue = txtEmail.Text;
-            string contraseñaValue = txtContraseña.Text;
-
-            if (string.IsNullOrEmpty(emailValue))
+            try
             {
-                MessageBox.Show("El campo email es obligatorio");
-                return;
-            }
-                
-            if (!emailValue.Contains("@") && !emailValue.Contains("."))
-            {
-                MessageBox.Show("El campo email tiene un valor invalido");
-                return;
-            }
-                
-            if (string.IsNullOrEmpty(contraseñaValue))
-            {
-                MessageBox.Show("El campo contraseña es obligatorio");
-                return;
-            }
+                UsuarioBLL usuarioBLL = new UsuarioBLL();
 
-            bool login = usuarioBLL.Login(emailValue, contraseñaValue);
+                string emailValue = txtEmail.Text;
+                string contraseñaValue = txtContraseña.Text;
 
-            if(login)
-            {
-                Bitacoras.AltaBitacora("Nuevo inicio de sesión", TipoEvento.Message, SessionManager.GetInstance.Usuario.Id);
-
-                if (SessionManager.GetInstance.Usuario.Rol.Nombre == "VENDEDOR")
+                if (string.IsNullOrEmpty(emailValue))
                 {
-                    FormInicioVendedor form = new FormInicioVendedor();
-                    form.Show();
+                    MessageBox.Show("El campo email es obligatorio");
+                    return;
+                }
+
+                if (!emailValue.Contains("@") && !emailValue.Contains("."))
+                {
+                    MessageBox.Show("El campo email tiene un valor invalido");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(contraseñaValue))
+                {
+                    MessageBox.Show("El campo contraseña es obligatorio");
+                    return;
+                }
+
+                bool login = usuarioBLL.Login(emailValue, contraseñaValue);
+
+                if (login)
+                {
+                    Bitacoras.AltaBitacora("Nuevo inicio de sesión", TipoEvento.Message, SessionManager.GetInstance.Usuario.Id);
+
+                    if (SessionManager.GetInstance.Usuario.Rol.Nombre == "VENDEDOR")
+                    {
+                        FormInicioVendedor form = new FormInicioVendedor();
+                        form.Show();
+                    }
+                    else
+                    {
+                        FormInicioAdmin form = new FormInicioAdmin();
+                        form.Show();
+                    }
+
+
+                    this.Hide();
                 }
                 else
                 {
-                    FormInicioAdmin form= new FormInicioAdmin();
-                    form.Show();
+                    MessageBox.Show("Contraseña invalida");
+
                 }
-                    
-
-                this.Hide();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Contraseña invalida");
-
+                MessageBox.Show(ex.Message);
             }
+            
         }
 
         private void Form1_LocationChanged(object sender, EventArgs e)
@@ -111,20 +119,20 @@ namespace UI
 
             string digitoVerificadorHistorico = DigitoVerificador.ObtenerDigitoGuardado();
 
-            //if(digitoVerificador != digitoVerificadorHistorico)
-            //{
-            //    DialogResult result = MessageBox.Show(
-            //        "Los datos fueron manipulados, por favor corrije las incosistencias.",
-            //        "Error de datos", 
-            //        MessageBoxButtons.OK,
-            //        MessageBoxIcon.Error
-            //    );
+            if (digitoVerificador != digitoVerificadorHistorico)
+            {
+                DialogResult result = MessageBox.Show(
+                    "Los datos fueron manipulados, por favor corrije las incosistencias.",
+                    "Error de datos",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
 
-            //    if (result == DialogResult.OK)
-            //    {
-            //        Application.Exit();
-            //    }
-            //}
+                if (result == DialogResult.OK)
+                {
+                    Application.Exit();
+                }
+            }
         }
 
         private void label1_Click_1(object sender, EventArgs e)

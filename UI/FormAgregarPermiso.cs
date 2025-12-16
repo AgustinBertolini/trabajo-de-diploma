@@ -56,20 +56,29 @@ namespace UI
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNombre.Text))
+            try
             {
-                MessageBox.Show("El campo nombre es obligatorio");
-                return;
+                if (string.IsNullOrEmpty(txtNombre.Text))
+                {
+                    MessageBox.Show("El campo nombre es obligatorio");
+                    return;
+                }
+
+                PermisoBLL permisoBLL = new PermisoBLL();
+
+                permisoBLL.AltaPermiso(txtNombre.Text, true);
+
+                FormPermisos permisos = new FormPermisos();
+                permisos.Show();
+
+                this.Hide();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
-            PermisoBLL permisoBLL = new PermisoBLL();
-
-            permisoBLL.AltaPermiso(txtNombre.Text, true);
-
-            FormPermisos permisos = new FormPermisos();
-            permisos.Show();
-
-            this.Hide();
+            
         }
 
         private void checkEsPadre_CheckedChanged(object sender, EventArgs e)

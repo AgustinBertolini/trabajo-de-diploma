@@ -139,24 +139,38 @@ namespace BLL
 
         public bool Login(string email, string contraseña)
         {
-            Usuario usuario = GetUsuario(email);
-
-            if (!ValidarContraseña(contraseña, usuario.Contraseña))
+            try
             {
-                return false;
+                Usuario usuario = GetUsuario(email);
+
+                if (usuario.Email == null)
+                {
+                    throw new Exception("El usuario no existe.");
+                }
+
+                if (!ValidarContraseña(contraseña, usuario.Contraseña))
+                {
+                    return false;
+                }
+
+                PermisoDAL permisoDAL = new PermisoDAL();
+
+                var permisos = permisoDAL.GetPermisosDeUsuario(usuario.Id);
+
+                usuario.Idioma = (Idioma)Traductor.GetIdiomas()[0];
+
+                SessionManager.Login(usuario);
+
+                SessionManager.AsignarPermisos(permisos);
+
+                return true;
             }
+            catch (Exception ex)
+            {
 
-            PermisoDAL permisoDAL = new PermisoDAL();
-
-            var permisos = permisoDAL.GetPermisosDeUsuario(usuario.Id);
-
-            usuario.Idioma = (Idioma)Traductor.GetIdiomas()[0];
-
-            SessionManager.Login(usuario);
-
-            SessionManager.AsignarPermisos(permisos);
-
-            return true;
+                throw ex;
+            }
+           
         }
 
         public void Logout()
