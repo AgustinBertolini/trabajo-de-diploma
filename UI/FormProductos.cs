@@ -58,7 +58,7 @@ namespace UI
             ProductoBLL productoBLL = new ProductoBLL();
             if (SessionManager.GetInstance.Usuario.Rol.Nombre == "VENDEDOR")
             {
-                dataGridView1.DataSource = productoBLL.GetProductosSinFiltrosByUserId(SessionManager.GetInstance.Usuario.Id);
+                dataGridView1.DataSource = productoBLL.GetProductosSinFiltrosByUserId(SessionManager.GetInstance.Usuario.Id).Where(x=>x.Activo == true).ToList();
                 dataGridView1.Columns["Activo"].Visible = false;
             }
             else
@@ -184,6 +184,9 @@ namespace UI
             if(SessionManager.GetInstance.Usuario.Rol.Nombre == "VENDEDOR")
             {
                 btnActivarProducto.Visible = false;
+                btnBorrarProducto.Visible=false;
+                btnAgregarProducto.Visible = false;
+                btnEditarProducto.Visible = false;
             }
         }
 

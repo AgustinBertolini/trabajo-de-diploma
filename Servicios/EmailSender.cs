@@ -31,8 +31,8 @@ namespace Servicios
         {
             this.smtpServer = "smtp.gmail.com";
             this.smtpPort = 587;
-            this.smtpUser = "soporte.mercado.clone@gmail.com";
-            this.smtpPassword = "xhtd uoba itch hwwv";
+            this.smtpUser = "agustinbertolini0@gmail.com";
+            this.smtpPassword = "jcqm duwm bywn btzg";
             this.enableSsl = true;
         }
 

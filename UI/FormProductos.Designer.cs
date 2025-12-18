@@ -41,7 +41,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 13);
+            this.label1.Location = new System.Drawing.Point(47, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 16);
             this.label1.TabIndex = 0;
@@ -53,14 +53,14 @@
             // 
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 32);
+            this.dataGridView1.Location = new System.Drawing.Point(50, 32);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(750, 325);
+            this.dataGridView1.Size = new System.Drawing.Size(891, 325);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -68,7 +68,7 @@
             // 
             this.btnAgregarProducto.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAgregarProducto.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnAgregarProducto.Location = new System.Drawing.Point(24, 385);
+            this.btnAgregarProducto.Location = new System.Drawing.Point(124, 385);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(158, 53);
             this.btnAgregarProducto.TabIndex = 2;
@@ -81,7 +81,7 @@
             // 
             this.btnEditarProducto.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnEditarProducto.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnEditarProducto.Location = new System.Drawing.Point(236, 385);
+            this.btnEditarProducto.Location = new System.Drawing.Point(336, 385);
             this.btnEditarProducto.Name = "btnEditarProducto";
             this.btnEditarProducto.Size = new System.Drawing.Size(142, 53);
             this.btnEditarProducto.TabIndex = 3;
@@ -94,7 +94,7 @@
             // 
             this.btnBorrarProducto.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnBorrarProducto.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnBorrarProducto.Location = new System.Drawing.Point(621, 385);
+            this.btnBorrarProducto.Location = new System.Drawing.Point(721, 385);
             this.btnBorrarProducto.Name = "btnBorrarProducto";
             this.btnBorrarProducto.Size = new System.Drawing.Size(153, 53);
             this.btnBorrarProducto.TabIndex = 4;
@@ -107,7 +107,7 @@
             // 
             this.btnActivarProducto.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnActivarProducto.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnActivarProducto.Location = new System.Drawing.Point(432, 385);
+            this.btnActivarProducto.Location = new System.Drawing.Point(532, 385);
             this.btnActivarProducto.Name = "btnActivarProducto";
             this.btnActivarProducto.Size = new System.Drawing.Size(153, 53);
             this.btnActivarProducto.TabIndex = 5;
@@ -121,7 +121,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1000, 450);
             this.Controls.Add(this.btnActivarProducto);
             this.Controls.Add(this.btnBorrarProducto);
             this.Controls.Add(this.btnEditarProducto);

@@ -275,6 +275,7 @@ namespace DAL
                                         Stock = Convert.ToInt32(reader["stock"]),
                                         FechaCreacion = Convert.ToDateTime(reader["fechaCreacion"]),
                                         FechaActualizacion = Convert.ToDateTime(reader["fechaActualizacion"]),
+                                        Activo = Convert.ToBoolean(reader["active"]),
                                     });
                                 }
                             }

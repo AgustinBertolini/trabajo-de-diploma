@@ -24,7 +24,7 @@ namespace UI
         {
             ClienteBLL clienteBLL = new ClienteBLL();
             List<Cliente> clientes = clienteBLL.GetClientes();
-            dataGridView1.DataSource = clientes.Where(x=>x.UserId == SessionManager.GetInstance.Usuario.Id).ToList();
+            dataGridView1.DataSource = clientes.Where(x=>x.UserId == SessionManager.GetInstance.Usuario.Id).Where(x=>x.Activo == true).ToList();
 
           
         }
