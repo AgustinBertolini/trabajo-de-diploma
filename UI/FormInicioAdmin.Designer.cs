@@ -56,8 +56,6 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label20 = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -88,7 +86,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(161, 43);
             this.label12.TabIndex = 2;
-            this.label12.Text = "Conversá con el administrador.";
+            this.label12.Text = "Conversá con los vendedores";
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label13
@@ -373,32 +371,10 @@
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(15, 16);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(85, 20);
+            this.label19.Size = new System.Drawing.Size(97, 20);
             this.label19.TabIndex = 2;
-            this.label19.Text = "Reportes";
+            this.label19.Text = "Reporteria";
             this.label19.Click += new System.EventHandler(this.label19_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(649, 43);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(126, 24);
-            this.comboBox1.TabIndex = 18;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // label20
-            // 
-            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(646, 24);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(123, 16);
-            this.label20.TabIndex = 17;
-            this.label20.Tag = "label_seleccionar_idioma";
-            this.label20.Text = "Seleccionar idioma";
             // 
             // FormInicioAdmin
             // 
@@ -406,8 +382,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(886, 580);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label20);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);
@@ -474,7 +448,5 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label20;
     }
 }

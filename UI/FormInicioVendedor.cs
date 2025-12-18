@@ -92,19 +92,7 @@ namespace UI
                 ctrl.Click += (s, ev) => panel5_Click(panel5, EventArgs.Empty);
             }
 
-            Idioma idiomaSeleccionado = SessionManager.GetInstance.Usuario.Idioma;
-
-            IdiomaBLL idiomaBLL = new IdiomaBLL();
-
-            List<Idioma> idiomas = idiomaBLL.GetIdiomas();
-
-            comboBox1.SelectedIndexChanged -= comboBox1_SelectedIndexChanged;
-
-            comboBox1.DataSource = idiomas;
-            comboBox1.DisplayMember = "Nombre";
-            comboBox1.SelectedItem = idiomaSeleccionado;
-
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            
         }
 
         private void FormInicioVendedor_FormClosing(object sender, FormClosingEventArgs e)
@@ -359,19 +347,6 @@ namespace UI
             AbrirFormulario<FormReportes>();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBox1.SelectedItem == null)
-            {
-                MessageBox.Show("Debe seleccionar un idioma");
-                return;
-            }
-
-            Idioma idioma = (Idioma)comboBox1.SelectedItem;
-
-            SessionManager.CambiarIdioma(idioma);
-
-
-        }
+       
     }
 }
